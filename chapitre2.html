@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduction au Cours de Programmation en Python</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <body>
+        <div class="top">
+            <h1 style="padding-right: 10px;">Lecture 2: Data structures in Python</h1>
+        </div>
+        <div class="container">
+            <div class="class2 ">
+                <h2>Introduction</h2>   
+                <p>The goal of this chapter is to learn how to declare and manipulate different data structures such as lists, strings, records (or tuples), and data dictionaries. We will see that the Python language provides many native functions (internal to the language) to manipulate these data structures.</p>    
+            </div> 
+            <div class="class2">
+                <h2>List</h2> 
+                <div class="class3">
+                    <h3>List declaration</h3>
+                    <h4>Definition</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px;">
+                        <p>Lists are collections of objects that can be of any type. A list appears as a succession of objects enclosed in square brackets and separated by commas.</p>
+                    </div>
+                    <h4>Declaration : Example</h4>
+<iframe src="https://trinket.io/embed/python3/a4809d9d59" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+                </div>
+                <div class="class3">
+                    <h3>List manipulation</h3>
+                    <p>It is possible to insert, delete elements, sort them. The Python language offers a set of functions to manipulate lists. These functions are summarized in the following table:</p>
+                    <table>
+                        <tr>
+                            <td>x in l</td>
+                            <td>Returns true if x is one of the elements of l.</td>
+                        </tr>
+                        <tr>
+                            <td>x not in l</td>
+                            <td>Returns true if x is not one of the elements of l.</td>
+                        </tr>
+                        <tr>
+                            <td>l + t</td>
+                            <td>Add the elements of the list l in the list t</td>
+                        </tr>
+                        <tr>
+                            <td>l * n</td>
+                            <td>Concatenates n copies of the list l</td>
+                        </tr>
+                        <tr>
+                            <td>l[i]</td>
+                            <td>Returns the i-th element of l. A negative index corresponds to the position len(l)+i</td>
+                        </tr>
+                        <tr>
+                            <td>l[i:j]</td>
+                            <td>Returns a list containing the elements of l with indices i to j excluded</td>
+                        </tr>
+                        <tr>
+                            <td>l[i:j] = l2</td>
+                            <td>Returns a list containing the elements of l with indices i to j excluded in the list l2</td>
+                        </tr>
+                        <tr>
+                            <td>l[i:j:k]</td>
+                            <td>Returns a list containing the elements of l whose indices are between i and j excluded, these indices are spaced by k (i; i + k; i + 2k; i + 3k;...)</td>
+                        </tr>
+                        <tr>
+                            <td>len(l)</td>
+                            <td>Return the number of elements of l</td>
+                        </tr>
+                        <tr>
+                            <td>min(l)</td>
+                            <td>Returns the smallest element of the, (attention: result difficult to predict when the types of the elements are different)</td>
+                        </tr>
+                        <tr>
+                            <td>max(l)</td>
+                            <td>Returns the biggest element of the, (attention: result difficult to predict when the types of the elements are different)</td>
+                        </tr>
+                        <tr>
+                            <td>sum(l)</td>
+                            <td>Return the sum of all elements</td>
+                        </tr>
+                        <tr>
+                            <td>del l[i:j]</td>
+                            <td>Delete the elements between the index i et >j.</td>
+                        </tr>
+                        <tr>
+                            <td>list (x)</td>
+                            <td>Convert x into a list</td>
+                        </tr>
+                        <tr>
+                            <td>l.count (x)</td>
+                            <td>Return the number of occurences of a value x</td>
+                        </tr>
+                        <tr>
+                            <td>l.index (x)</td>
+                            <td>Return the index of the first occurence of a value  x</td>
+                        </tr>
+                        <tr>
+                            <td>l.append (x)</td>
+                            <td>Add the element with a value x at the end of the list l</td>
+                        </tr>
+                        <tr>
+                            <td>l.extend (k)</td>
+                            <td>Add all the element of the list k at the end of the list l</td>
+                        </tr>
+                        <tr>
+                            <td>l.insert(i,x)</td>
+                            <td>Insert an element with the value x at the position i in the list l</td>
+                        </tr>
+                        <tr>
+                            <td>l.remove (x)</td>
+                            <td>Remove the first occurence of an element with the value x to the list l</td>
+                        </tr>
+                        <tr>
+                            <td>l.pop ([i])</td>
+                            <td>Return the element l[i] and delete the element to the list</td>
+                        </tr>
+                        <tr>
+                            <td>l.reverse (x)</td>
+                            <td>Reverse the order of the elements to the list</td>
+                        </tr>
+                        <tr>
+                            <td>l.sort ([key=None, reverse=False])</td>
+                            <td>Sorting the list l
+
+                                The parameter key is facultative : it allows to pass a function to order the elements.
+                                
+                                If reverse is True, the sorting is decreasing.</td>
+                        </tr>
+                    </table>
+                    <h4>List manipulation</h4>
+<iframe src="https://trinket.io/embed/python3/dfbcdaadb4" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> 
+                </div>
+               
+                <div class="class3">
+                    <h3>Copy of a list</h3>
+                    <p>Lists are immutable types: is an object whose state cannot be modified after its creation.</p>
+                    <p>Let's say the following code:</p>               
+<iframe src="https://trinket.io/embed/python3/6efa9441af" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>     
+                    <p>Here we see that when we modify the list y, the list x is also modified.</p>
+                    <p style="color:red; font-size: 20px"> * Attention:</p>
+                    <code>To copy a list into another list, you must copy the elements of the list and not the list itself!</code>
+                    <h4>La fonction copy()</h4>
+                    <p>The copy() function allows to copy the first level elements of a list and to store them in another list. This copy is called shallow copy and works for simple types (numbers, strings, booleans)</p>
+<iframe src="https://trinket.io/embed/python3/4c21d01912" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>The deepCopy() function</h4>
+                    <p>The deepcopy() function of the copy module allows to make a copy of the elements of all levels of a list and to store them in another list. This copy is called shallow copy and works for types such as lists of lists, data dictionaries, records,...</p>           
+<iframe src="https://trinket.io/embed/python3/cbc286ba9b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Browse a list</h3>
+                    <h4>The range() function</h4>
+                    <p>The function <span class="text">range(start, end, [step])</span>allows to browse a list from the start index to the end index in an incremental way. The optional parameter step allows to specify the increment step.</p>
+                    <p>This function is often used in for loops to go through all the elements of a list.</p>
+                    <h4>Exemple</h4>
+<iframe src="https://trinket.io/embed/python/dab8978a90" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> 
+                    <h4>Exemple</h4>
+<iframe src="https://trinket.io/embed/python/31d0642b21" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Use of the operator in</h4>
+                    <p>It is also possible to use the in operator to browse all the elements of a list.</p>
+<iframe src="https://trinket.io/embed/python/958f7097ab" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>  
+                    <p>The instruction for el in x is literally translated as: for all the elements of the list, do....</p>
+                    <h4>Abbreviated notation</h4>
+                    <p>There are also abbreviated notations when we want to build a list by going through its elements in order to initialize them.</p>
+                    <p>For example the following code:</p>
+<iframe src="https://trinket.io/embed/python/7188b4343c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>can be replaced by :</p>
+<iframe src="https://trinket.io/embed/python/367d4288e7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>It is also possible to use tests to select items from the list for inclusion or exclusion.</p>         
+<iframe src="https://trinket.io/embed/python3/b0a5da6166" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>List of list</h3>
+                    <p>It is possible to build lists of lists allowing to represent matrices, more generally lists of dimension N</p>
+<iframe src="https://trinket.io/embed/python/ea21c875bb" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+             
+                </div>  
+            </div>
+            <div class="class2">
+                <h2>The tuples</h2>
+                <div class="class3">
+                    <h3>Tuple declaration</h3>
+                <h4>Definition</h4>
+                <pre style="font-size: 15px; background-color: aliceblue;">A tuple is an array of objects that can be of any type. They are not modifiable (tuples are immutable
+
+or immutable).</pre>
+                <p>A tuple appears as a list of objects enclosed in brackets and separated by commas. Their creation uses the same format:</p>
+<iframe src="https://trinket.io/embed/python3/bcb282278c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Tuple manipulation</h3>
+                    <p>These objects are vectors of objects. Since strings are also arrays, these operations are partly the same as for strings.</p>
+                    <table>
+                        <tr>
+                            <td>x in s</td>
+                            <td>true if x is one of the elements of s</td>
+                        </tr>
+                        <tr>
+                            <td>x not in s</td>
+                            <td>reciprocal of the previous line</td>
+                        </tr>
+                        <tr>
+                            <td>s + t</td>
+                            <td>concatenation of s and t</td>
+                        </tr>
+                        <tr>
+                            <td>s * n</td>
+                            <td>concatenate n copies of s one after the other</td>
+                        </tr>
+                        <tr>
+                            <td>s[i]</td>
+                            <td>returns the i-th element of s</td>
+                        </tr>
+                        <tr>
+                            <td>s[i:j]</td>
+                            <td>return a tuple containing a copy of the elements of s with indices i to j excluded</td>
+                        </tr>
+                        <tr>
+                            <td>s[i:j:k]</td>
+                            <td>returns a tuple containing a copy of the elements of s whose indices are between i and j excluded, these indices are spaced by k : i; i + k; i +2k; i + 3k; :::</td>
+                        </tr>
+                        <tr>
+                            <td>len(s)</td>
+                            <td>number of elements of s</td>
+                        </tr>
+                        <tr>
+                            <td>min(s)</td>
+                            <td>smallest element of s, which is difficult to predict when the element types are different</td>
+                        </tr>
+                        <tr>
+                            <td>max(s)</td>
+                            <td>largest element of s</td>
+                        </tr>
+                        <tr>
+                            <td>sum(s)</td>
+                            <td>returns the sum of all elements</td>
+                        </tr>
+                    </table>
+                    <h4>Modifiable type : Fondamental</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px;">
+                    <p>A variable of modifiable type can be modified, it keeps the same type and the same identifier. It is only its content that changes</p>
+                    </div>
+                    <p>Tuples are not modifiable (or mutable), this means that it is impossible to modify one of their elements. Therefore, the following assignment line is not correct:</p>
+<iframe src="https://trinket.io/embed/python/2c0b37f6ed" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+         </div>  
+         <div class="class2">
+            <h2>Strings of characters</h2>
+            <div class="class3">
+                <h3>Declaration of a string of characters</h3>
+                <h4>String of characters : Definition</h4>
+                <pre style="font-size: 15px; background-color: aliceblue;">
+                A string means a finite sequence of characters, in other words, text.
+
+                The Python type is str.</pre>
+                <p>This text is enclosed between two quotation marks or two apostrophes, these two symbols are interchangeable.</p>
+                <h4>Exemple</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+<iframe src="https://trinket.io/embed/python/8bf3ed0ef1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>   
+                <h4>Special characters</h4>
+                <p>By default, python does not allow the insertion of characters such as accents in strings.</p>
+                <p>However, there are several special characters that can be used to format a string:</p>
+                <p style="text-align: center;">List of special characters</p>
+                <table>
+                    <tr>
+                        <td class="col1">"</td>
+                        <td class="col2">quotes</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">'</td>
+                        <td class="col2">apostrophe</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\n</td>
+                        <td class="col2">newline</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\\</td>
+                        <td class="col2">insert the symbole \</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\%</td>
+                        <td class="col2">percentage</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\t</td>
+                        <td class="col2">tabulation</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="class3">
+                <h3>Strings manipulation</h3>
+                <h4>Operators</h4>
+                <p>A string is similar to an array. The following operators apply to a string as well as to any array of integers, floats, etc.</p>
+                <p style="text-align: center;">List of operators</p>
+                <table>
+                    <tr>
+                        <td class="col1">+</td>
+                        <td class="col2">concatenation of strings</td>
+                        <td class="col3">t = "abc" + "def"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">+=</td>
+                        <td class="col2">concatenation then assignment</td>
+                        <td class="col3">t += "abc"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">in, not in</td>
+                        <td class="col2">Does one chain contain another ?</td>
+                        <td class="col3">"ed" in "med"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">*</td>
+                        <td class="col2">repetition of a string of characters</td>
+                        <td class="col3">t = "abc" * 4</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">[n]</td>
+                        <td class="col2">obtaining the n-th character, the first character has index 0</td>
+                        <td class="col3">t = "abc"
+
+                            print(t[0])
+                            
+                            # donne a</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">[i:j]</td>
+                        <td class="col2">obtaining the characters between the indices i and j-1 included, the first character has index 0</td>
+                        <td class="col3">t = "abc"
+
+                            print(t [0:2])
+                            
+                            # donne ab</td>
+                    </tr>
+                </table>
+                <ul>
+                    <li>The function len returns the number of characters in the string</li>
+                    <li>The function str allows to transform an integer, a float, or more commonly an object into a string</li>
+                </ul>
+                <h4>Exemple</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/08d62b3f2a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Advanced functions on strings</h4>
+                <p>There are other functions that allow you to manipulate strings. These functions are called as follows:</p>
+                <iframe src="https://trinket.io/embed/python/ccb3e6d0f4" width="100%" height="356" frameborder="0" marginwidth="0"
+                    marginheight="0" allowfullscreen></iframe>
+                <p>Where s is a string, fonction is the name of the operation we want to apply to s, res is the result of this
+                    manipulation.</p>
+                <table>
+                    <tr>
+                        <td>count( sub[, start[, end]])</td>
+                        <td>Returns the number of occurrences of the string sub, the default parameters start and end are optional and
+                            allow to reduce the search between characters of index start and end excluded.</td>
+                    </tr>
+                    <tr>
+                        <td>find( sub[, start[,end]])</td>
+                        <td>Searches for a string sub, the default parameters start and end are optional and have the same meaning as
+                            those of the previous function. This function returns -1 if the search was not successful.</td>
+                    </tr>
+                    <tr>
+                        <td>isalpha()</td>
+                        <td>Returns True if all characters are letters, False otherwise.</td>
+                    </tr>
+                    <tr>
+                        <td>isdigit()</td>
+                        <td>Returns True if all characters are numbers, False otherwise.</td>
+                    </tr>
+                    <tr>
+                        <td>replace( old, new[,count])</td>
+                        <td>Returns a copy of the string by replacing all occurrences of the string old with new. If the optional
+                            parameter count is set, then only the first count of occurrences will be replaced.</td>
+                    </tr>
+                    <tr>
+                        <td>split( [sep [,maxsplit]])</td>
+                        <td>Cuts the string using the string sep as delimiter. If the maxsplit parameter is set, at most maxsplit cuts
+                            will be performed.</td>
+                    </tr>
+                    <tr>
+                        <td>upper()</td>
+                        <td>Replace lower case letters with upper case letters.</td>
+                    </tr>
+                    <tr>
+                        <td>lower()</td>
+                        <td>Replace upper case letters with lower case letters.</td>
+                    </tr>
+                    <tr>
+                        <td>join ( li )</td>
+                        <td>Aggregates all the elements of the list li to form a string.</td>
+                    </tr>
+                    <tr>
+                        <td>startswith(prefix[, start[, end]])</td>
+                        <td>Tests if a string starts with a prefix.</td>
+                    </tr>
+                    <tr>
+                        <td>endswith(suffix[, start[, end]])</td>
+                        <td>Tests if a string ends with a suffix.</td>
+                    </tr>
+                </table>
+                <h4>Example of string manipulation</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/6057615563" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Exemple</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/2774d931e0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class3" >
+                <h3>Converting a string to datetime</h3>
+                <p>Write a program in Python language to convert a string of characters of the form "February 25, 2000" into a date, which is represented by a string of characters of the form "25/02/2000"</p>
+<iframe src="https://trinket.io/embed/python/2ed5598929" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Data dictionaries</h2>
+            <div class="class3" >
+                <h3>Introduction</h3>
+                <p>Dictionaries are more flexible arrays than lists. A list references elements by giving them a position: the list associates to each element an integer position between 0 and n-1 if n is the length of the list.</p>
+                <p>A dictionary allows to associate to an element something else than an integer position : it can be an integer, a real, a string, a tuple containing immutable objects. Generally speaking, a dictionary associates with a value what is called a key of immutable type. This key will allow to find the associated value.</p>
+                <p>The main advantage of dictionaries is the optimized search for keys. For example, we list the names of the employees of a company in a list. We then want to know if a person with a name specified in advance belongs to this list. You will then have to go through the list until you find this name or go through the whole list if it is not there. In the case of a dictionary, this name search will be much faster to write and execute.</p>
+            </div>
+            <div class="class3">
+                <h3>Declaration of a data dictionary</h3>  
+                <h4>Définition</h4>
+                <pre style="font-size: 15px; background-color: aliceblue;">
+        Dictionaries are lists of pairs. Each pair contains a key and a value. Each value is indicated by its key. The value can 
+        be of any type, the key must be of an immutable type, so it can neither be a list nor a dictionary. Each key as well as 
+        each value can have a different type from the other keys or values.</pre>
+                <p>A dictionary appears as a succession of pairs of objects enclosed in braces and separated by commas. The key and its value are separated by the : symbol. Their creation follows the same format :</p>
+                <iframe src="https://trinket.io/embed/python/9f23f5e635" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>The indices are no longer integers but strings for this example. To associate the value with the key, you just have to write :</p>
+                <iframe src="https://trinket.io/embed/python/01dd49c3e3" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+               
+            </div>    
+            <div class="class3">
+                <h3>Manipulation of a data dictionary</h3>
+                <p>Most of the functions available for lists are forbidden for dictionaries, such as concatenation or the multiplication operation (*). There are no more integer indices to identify elements, the only reference is their key. The following table lists the operations on dictionaries.</p>
+                <table>
+                    <tr>
+                        <td>x in d</td>
+                        <td>true if x is one of the keys of d</td>
+                    </tr>
+                    <tr>
+                        <td>x not in d</td>
+                        <td>reciprocal of the previous line</td>
+                    </tr>
+                    <tr>
+                        <td>d[i]</td>
+                        <td>returns the element associated with the key i</td>
+                    </tr>
+                    <tr>
+                        <td>len(d)</td>
+                        <td>number of elements of d</td>
+                    </tr>
+                    <tr>
+                        <td>min(d)</td>
+                        <td>returns the smaller key of d</td>
+                    </tr>
+                    <tr>
+                        <td>max(d)</td>
+                        <td>returns the larger key of d</td>
+                    </tr>
+                    <tr>
+                        <td>del d [i]</td>
+                        <td>deletes the element associated with the key i</td>
+                    </tr>
+                    <tr>
+                        <td>list (d)</td>
+                        <td>returns a list containing all the keys of the dictionary d</td>
+                    </tr>
+                    <tr>
+                        <td>dict (x)</td>
+                        <td>converts x into a dictionary if possible, d is then equal to dict( d.items () )</td>
+                    </tr>
+                    <tr>
+                        <td>d.copy ()</td>
+                        <td>Returns a copy of d</td>
+                    </tr>
+                    <tr>
+                        <td>d.items ()</td>
+                        <td>Returns an iterator over all pairs (key, value) included in the dictionary.</td>
+                    </tr>
+                    <tr>
+                        <td>d.keys ()</td>
+                        <td>Returns an iterator on all the keys of the dictionary d</td>
+                    </tr>
+                    <tr>
+                        <td>d.values ()</td>
+                        <td>Returns an iterator on all the values of the dictionary d</td>
+                    </tr>
+                    <tr>
+                        <td>d.get (k[,x])</td>
+                        <td>Returns d[k], if the key k is missing, then the value None is returned unless the optional parameter x is specified, in which case this value will be returned.</td>
+                    </tr>
+                    <tr>
+                        <td>d.clear ()</td>
+                        <td>Deletes all the items in the dictionary.</td>
+                    </tr>
+                    <tr>
+                        <td>d.update(d2)</td>
+                        <td>The dictionary d receives the content of d2.</td>
+                    </tr>
+                    <tr>
+                        <td>d.setdefault(k[,x])</td>
+                        <td>Sets d[k] if key k exists, otherwise assigns x to d[k]</td>
+                    </tr>
+                </table>
+                <h4>Sorting a dictionary on the keys : Exemple </h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <p>It is not possible to sort a dictionary. However, the following example allows you to display all the elements of a dictionary in ascending order of the keys.</p>
+                </div>
+                <iframe src="https://trinket.io/embed/python/ab51dc22e3" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Copy of a data dictionary</h4>
+                <p>Like lists, dictionaries are objects and an assignment is not equivalent to a copy. To copy a data dictionary, you must use the function copy</p>
+                <iframe src="https://trinket.io/embed/python/0575049960" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>      
+            </div>
+        </div>
+        <div class="class2">
+            <h2>The sets</h2>
+            <div class="class3">
+                <h3>Set declaration</h3>
+                <p>Le langage Python définit également ce qu'on appelle un ensemble. Ils n'acceptent que des types identiques et offrent la plupart des opérations liées aux ensembles comme l'intersection, l'union.</p>
+<iframe src="https://trinket.io/embed/python/07c9392a0f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Set manipulation</h3>
+                <h4>General</h4>
+                <ul>
+                    <li>union, symbolized by |</li>
+                    <li>intersection, symbolized by &</li>
+                    <li>difference, symbolized by -</li>
+                    <li>symmetric difference, symbolized by ^</li>
+                </ul>
+                <h4>Example of code</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/c18d5c8d9b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>First training</h2>
+            <div class="class3">
+                <h3>Exercice : Counting the occurrences of a table</h3>
+                <h4>Question :</h4>
+                <p>Give the python code to count the number of occurrences of each element in a list.</p>
+                <iframe src="https://trinket.io/embed/python/e4cd21663d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Conversion of a vector into a matrix</h3>
+                <h4>Question</h4>
+                <p>Give the code allowing to convert a vector of dimension 6 into a matrix of 3 rows and 2 columns (the first 3 elements of the vector constitute the first column of the matrix - the last 3, the second column)</p>
+                <iframe src="https://trinket.io/embed/python/e4cd21663d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>           
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Exercices of lecture 2 – Data structures in Python</h2>
+            <div class="class3">
+                <h4>Exercise 1: To begin</h4>
+                <p>Write a program that creates a list L of at least 5 integers then successively :</p>
+                <ol>
+                    <li>displays the value of L[4];</li>
+                    <li>modifies the list by replacing L[1] by the number 17 and L[3] by the sum of the neighbouring elements L[2] and
+                        L[4] ;</li>
+                    <li>displays 12 times the value of the last term in the list.</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 2: Browse a list</h4>
+                <p>Write a program that creates a list of integers, then using successive runs of the list performs the following actions:</p>
+                <ol>
+                    <li>displays the list in columns;</li>
+                    <li>counts the number of multiples of 3 present in the list;</li>
+                    <li>calculates the sum of all the even values of the list;</li>
+                    <li>calculates the maximum and minimum of the elements of the list;</li>
+                    <li>create a boolean true if the arithmetic mean of the values of the list is greater than or equal to 10; calculate the
+                        product of all the values of the list included in the interval [50, 70] ;</li>
+                    <li>displays the list in reverse (without creating a new list).</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 3: Calculate a histogram</h4>
+                <ol>
+                    <li>create a data dictionary to store the number of occurrences of each character in a string ;</li>
+                    <li>write a program that calculates the number of occurrences of a given character c in a string s.</li>
+                    <li>modify this program by storing the number of occurrences of each character in a string s in the data dictionary
+                        created in the first question.</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 4: Exchange of values</h4>
+                <p>Write a program that exchanges the values of the first and last cells of any non-empty list.</p>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 5: List symmetry</h4>
+                <p>Write a program that displays whether a list is symmetric (list identical to the list in reverse).</p>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 6: Palindrome</h4>
+                <p>Using the previous example, write a program that tests if a string (an array of characters) is a palindrome, i.e. that
+                    the inverted</p>
+                    <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exercise 7: List 2D</h4>
+                <p>A tray is a two-dimensional array that contains booleans. If tray[i][j] is True, there is a wall and if not, the cell
+                    is free. The goal of the exercise is to write a function <span class="bold">path</span> taking a tray and the coordinates of two squares deb
+                    and end and returns True if we can go from the square deb to the end square by moving horizontally and verti-
+                    cally. For example, if tray=[[True,False,False,False], [False,True,True,False], path(tray,(1, 3),(1, 0)) will return <span class="bold">False</span>
+                    and <span class="bold">path(tray</span>,(1, 3),(0, 1)) will return <span class="bold">True</span>.</p>
+                <ol>
+                    <li>Write a function <span class="bold">neighborsCase</span> that takes a tray and a square and returns the set of those horizontal or vertical
+                        immediate neighbors that are on the tray and are free.</li>
+                    <li>Write a function <span class="bold">neighborsCases</span> that takes a board and a set of cases and returns the set of all neighbors of those
+                        cases.</li>
+                    <li>Write a function <span class="bold">reachable</span> that takes a board and a square and returns the set of squares that can be reached
+                        from that square by moving horizontally and vertically</li>
+                    <li>Write the function <span class="bold">path</span></li>
+                </ol>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </body>     
+</html>
+    
+
+

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction au Cours de Programmation en Python</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="top">
+    <h1>Chapter 3: Object Oriented Programming: Classes and Objects</h1>
+  </div>
+  <div class="container">
+    <div class="class2">
+      <h2>Introduction</h2>
+      <p>
+        Imperative programming structured in the form of functions and
+        procedures allows to split a problem into several sub-problems. Each
+        method solves a part of the problem. Consequence: the architecture of
+        the program is made from the treatments it performs
+      </p>
+      <p><strong>Disadvantages of imperative programming:</strong></p>
+      <p>Imperative programming appears limited when :</p>
+      <ul>
+        <li>
+          we want to architect the application: gather processes, create new
+          ones, delete them. How to gather these processes according to their
+          semantics?
+        </li>
+        <li>to maintain / evolve the code.</li>
+        <li>
+          we want to make sure that the user does not modify some "critical"
+          variables of the code: problem of code robustness
+        </li>
+      </ul>
+      <p>
+        Object Oriented Programming (OOP) was developed as early as 1960 (by
+        Dah and Nygaard) and then in 1970 by Alan Kay by proposing a set of
+        principles to limit these problems. It is a programming paradigm
+      </p>
+      <p>
+        The OOP allows to model the pb from the data they process and how
+        these data interact with each other. These data are called Object. The
+        architecture of the program is made from the data it processes.
+      </p>
+      <p><strong>OOP Objectives:</strong></p>
+      <ul>
+        <li>Facilitate the reuse of code</li>
+        <li>Facilitate its evolution</li>
+        <li>
+          Improve the design of the solution in order to improve its
+          maintenance
+        </li>
+      </ul>
+      <p><strong>Example : Modeling of the functioning of a TV</strong></p>
+      <ul>
+        <li>Objects : - Screen (size, resolution, ...)</li>
+        <li>Remote control (color, weight)</li>
+        <li>Methods : - turn on / turn off</li>
+        <li>increase / decrease the sound</li>
+        <li>change channel</li>
+      </ul>
+      <p><strong>History :</strong></p>
+      <ul>
+        <li>
+          1967: SIMULA -> origin of OOP. Modeling of simulations. Natural
+          description by objects that change (OOP + event-driven programming)
+        </li>
+        <li>
+          70's : SmalTalk -> Development of OOP. First All Object language.
+          Advent of WIMP windowed environments (Window, Menu, Pointing Device)
+        </li>
+        <li>
+          80's : Appearance of OO languages, C++, Object Pascal, Delphi,
+          Objective C
+        </li>
+        <li>
+          1996 : Appearance of the Java language : "high-level" OO language
+        </li>
+        <li>1998: C++ standard</li>
+      </ul>
+    </div>
+    <div class="class2">
+      <h2>Object</h2>
+      <div class="class3">
+        <h3>Object concept</h3>
+        <h4>Object : <span class="right">Definition</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>An object is the semantic representation of a real object</p>
+        </div>
+        <h4><span class="right">Example</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>A person, a car, a TV, ...</p>
+        </div>
+        <h4><span class="right">Fondamental</span></h4>
+        <div class="footer">
+          <p>An object is defined by :</p>
+          <ul>
+            <li><span class="bold">A name</span> : the name of the object</li>
+            <li>
+              <span class="bold">One or more states </span>(color = blue,
+              weight = 10kg,...)
+            </li>
+            <li>
+              <span class="bold">One or more behaviors</span> (treatments)
+            </li>
+          </ul>
+        </div>
+        <h4><span class="right">Exemple</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>A black Peugeot 207 driving at 90km/h</p>
+          <ul>
+            <li>Name: Peugeot 207</li>
+            <li>Status: color = black, speed = 90km/h</li>
+            <li>Behavior: drives</li>
+          </ul>
+        </div>
+        <h4><span class="right">Remarque</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            They can also return the value of a state of the object. For
+            example, the treatment giveSpeed() can return the value of the
+            car's speed.
+          </p>
+          <ul>
+            <li>
+              The treatments of an object can modify the characteristics of
+              the object. For example, the changeColor()processing can change
+              the color of the car.
+            </li>
+            <li>
+              They can also return the value of a state of the object. For
+              example, the treatment giveSpeed()can return the value of the
+              car's speed.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Classes</h2>
+      <div class="class3">
+        <h3>Class concept</h3>
+        <h4>Class : <span class="right">Definition</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            A class is a mold used to build objects. It is the grouping of
+            characteristics and treatments within a single entity. A class is
+            an abstraction
+          </p>
+        </div>
+        <h4><span class="right">Example</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            The Car class is used to build cars (Peugeot 207, Renaut
+            Mégane,..)
+          </p>
+          <ul>
+            <li>Name : Car</li>
+            <li>Characteristics : color, speed</li>
+            <li>Treatments : start(), accelerate(), decelerate(), stop()</li>
+          </ul>
+        </div>
+        <h4>
+          Attributes and methods : <span class="right">Fondamental</span>
+        </h4>
+        <div class="footer">
+          <ul>
+            <li>The characteristics of a class are called attributes.</li>
+            <li>The treatments are called methods.</li>
+          </ul>
+        </div>
+        <h4>
+          Programming a class in Python language :
+          <span class="right">Fondamental</span>
+        </h4>
+        <div class="footer">
+          <p>In Python, a class is declared with the following syntax:</p>
+          <pre>
+<div class="line-number">   1</div><code>class ClassName :</code>
+<div class="line-number">   2</div><code>                  </code>   
+<div class="line-number">   3</div><code>   # Methods of the class</code>
+<div class="line-number">   4</div><code>                  </code>   
+<div class="line-number">   5</div><code>   # Attributes of the class</code></pre>
+        </div>
+        <h4>The Car class : <span class="right">Exemple</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <iframe src="https://trinket.io/embed/python/e6a941d087" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Methods of a class</h3>
+        <div class="class4">
+          <h4>Introduction</h4>
+          <p>Each class must have 4 types of methods:</p>
+          <ul>
+            <li>
+              methods called <span class="bold">constructors</span> allowing
+              to build objects ;
+            </li>
+            <li>
+              methods allowing to return the value of each attribute. These
+              methods are called <span class="text">getters</span>;
+            </li>
+            <li>
+              methods allowing to return the value of each attribute. These
+              methods are called <span class="text">setters</span>;
+            </li>
+            <li>
+              methods allowing to change the state of the attributes (for
+              example <span class="inline">drive, stop, </span>...)
+            </li>
+          </ul>
+        </div>
+        <div class="class4">
+          <h4>Constructor of a class</h4>
+          <h5>Constructeur d'une classe</h5>
+          <p>
+            A constructor is a method that allows to build objects of the same
+            type as the class. In Python a constructor is declared in the form
+            :
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>def __init__(self, param1 = valueDefault1, param2 = valueDefault2, ... paramN = valueDefaultN)</code></pre>
+        
+          <ul>
+            <li>
+              <span class="inline">self</span> is the object we create (the instance we manipulate) ;
+            </li>
+            <li>
+              param1, .. paramN : the parameters of the constructor.
+              Generally, these parameters are the variables that initialize
+              the values of the attributes. It is possible to give default
+              values (<span class="inline">valueDefault1, ..., valueDefaultN</span>)
+            </li>
+          </ul>
+          <h5>
+            Constructor of the Car class : <span class="right">Exemple</span>
+          </h5>
+          <iframe src="https://trinket.io/embed/python3/7d041f3358" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          <h5><span class="right">* Attention</span></h5>
+          <p>
+            As a reminder, the Python language does not support function
+            overloading. So it is not possible to define several constructors
+            in the same class.
+          </p>
+        </div>
+        <div class="class4">
+          <h4>Getter</h4>
+          <p>
+            A getter is a method that returns the value of an attribute. In
+            Python, a getter is declared as :
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>def _get_attributeName(self)</code></pre>
+          <ul>
+            <li><span class="inline">self</span> designates the object we create (the instance we manipulate).
+            </li>
+          </ul>
+          <h5>
+            Getters of the attributes of the class Car :
+            <span class="right">Exemple</span>
+          </h5>
+          <iframe src="https://trinket.io/embed/python3/60f3fb2096" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        <div class="class4">
+          <h4>Setter</h4>
+          <p>
+            A setter is a method that allows to change the value of an
+            attribute with a value passed in parameter. This method does not
+            return any result.
+          </p>
+          <p>In Python, a setter is declared as :</p>
+          <pre>
+<div class="line-number">   1</div><code>def _set_attributeName(self)</code></pre>
+          <h4>
+            Setters of the attributes of the class Car :
+            <span class="right">Exemple</span>
+<iframe src="https://trinket.io/embed/python3/5275272c88" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          </h4>
+        </div>
+        <div class="class4">
+          <h4>Treatment methods</h4>
+          <p>
+            It is possible to declare any type of method allowing to change
+            the state of an object and thus the values of the attributes or
+            more generally, to carry out a treatment from the data of the
+            object.
+          </p>
+          <p>
+            This type of method is declared in the standard way. They must
+            always take self as a parameter, i.e. that we manipulate
+          </p>
+          <h5>
+            Accelerate and decelerate methods of the Car class :
+            <span class="right">Exemple</span>
+          </h5>
+          <iframe src="https://trinket.io/embed/python3/cae64d77df" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Attributes of a class</h3>
+        <h4><span class="right">Fondamental</span></h4>
+        <div class="footer">
+          <p>
+            In Python, the attributes of a class are declared by specifying
+            the getter and setter of the attribute:
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>attributeName = property(_get_attributeName, _set_attributeName)</code></pre>
+        </div>
+        <h4>
+          Attributs de la classe Voiture : <span class="right">Exemple</span>
+        </h4>
+        <iframe src="https://trinket.io/embed/python3/06fd729513" width="100%" height="356" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>Exercise 1: Declaration of a Point2D class</h3>
+        <h4>Question</h4>
+        <ul>
+          <li>
+            In Python language, write the code for the <span class="text">Point2D</span> class that
+            models a point in 2D space with Cartesian coordinates (x and y)
+            and polar coordinates (r and theta).
+          </li>
+          <li>
+            Add the methods <span class="text">cartesian2Polar</span>and <span class="text">polar2Cartesian</span> which allow to
+            change the reference frame by recalculating the value of the
+            attributes r and theta or x and y.
+          </li>
+          <li>
+            Add a <span class="text">print</span> method to display the coordinates of the point in
+            Cartesian space and in polar space.
+          </li>
+        </ul>
+        <h4>Solution</h4>
+        <iframe src="https://trinket.io/embed/python3/ffdce0c836" width="100%" height="356" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Instantiation and manipulation of objects</h2>
+      <div class="class3">
+        <h3>Introduction</h3>
+        <p>
+          An object is constructed from a class by calling a constructor. We
+          say that an object is <span class="bold">an instantiation of a class</span>
+        </p>
+      </div>
+      <div class="class3">
+        <h3>Instantiation</h3>
+        <p>
+          To construct an object, the class constructor must be called
+          implicitly with the following syntax:
+        </p>
+        <pre>
+<div class="line-number">   1</div><code>myObject = ClassName(valueParam1, valueParam2, ..., valueParamN)</code></pre>
+        <h4>
+          Construction of a black car of speed 10km/h :
+          <span class="right">Exemple</span>
+        </h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <pre>
+<div class="line-number">   1</div><code>car1 = Car("black",20.0)</code></pre>
+          <p>
+            If the class constructor has parameters initialized with default
+            values, it is possible to initialize the value of the attributes
+            with these default values:
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>car2 = Car()</code></pre>
+          <p>
+            In this case, the car created will be red and its speed will be 0
+            km/h.
+          </p>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Manipulate an object</h3>
+        <p>The manipulation of an object consists of either:</p>
+        <ul>
+          <li>to access or change the value of an attribute ;</li>
+          <li>
+            to call a processing method (for example accelerate, decelerate,
+            ...).
+          </li>
+        </ul>
+        <p>
+          The value of an attribute is accessed by specifying the attribute by
+          its name and using the following syntax:
+        </p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.attributeName</code></pre>
+        <p>
+          It is possible to change the value of an attribute by replacing it
+          (using the assignment operator) with a new value. This new value
+          must be of the same type as the attribute.
+        </p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.attributeName = newValue</code></pre>
+        <p>
+          A processing method is accessed by specifying the method name (with
+          parameter values, if any) and using the following syntax:
+        </p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.method(valueParam1, valueParam2, .., valueParamN)</code></pre>
+        <h4><span class="right">Exemple</span></h4>
+<iframe src="https://trinket.io/embed/python3/920e7fa1a5" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>
+          Exercise 2: Instantiation and manipulation of a Point2D object
+        </h3>
+        <h4>Question</h4>
+        <p>From the <span class="text">Point2D</span> class declared in the previous exercise :</p>
+        <ul>
+          <li>
+            declare an object p of type Point2D with Cartesian coordinates
+            equal to 10.0 and 10.0 ;
+          </li>
+          <li>
+            call the method cartesian2Polar in order to calculate the polar
+            coordinates of the point p ;
+          </li>
+          <li>
+            call the print method of the object p in order to display all the
+            coordinates of the point p.
+          </li>
+        </ul>
+        <p>Solution</p>
+<iframe src="https://trinket.io/embed/python3/bcd4237124" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Composition and Aggregation</h2>
+      <div class="class3">
+        <h3>Introduction</h3>
+        <p>
+          The attributes of a class can be objects from other classes. A class
+          can thus group together objects created from another class.
+        </p>
+        <p>
+          In other words, an attribute can refer to an object. Depending on
+          the life cycle of this object, we will speak either of aggregation
+          or composition.
+        </p>
+      </div>
+      <div class="class3">
+        <h3>The composition</h3>
+        <p>
+          The composition translates a relation of subordination, of
+          belonging. It is a strong association that represents a
+          subordination link. Semantically, it expresses the relation "owns".
+        </p>
+        <p>
+          A class B is aggregated in a class A if the life cycle of an
+          instance of B depends on that of A.
+        </p>
+        <p>
+          For example: A car has an engine. If we destroy the car then we
+          destroy the engine.
+        </p>
+        <p>
+          At the code level, this is translated by the presence of an instance
+          of class B contained in the containing class A. The instance of
+          class B is created by class A.
+        </p>
+        <h4>Car and Engine Class : <span class="right">Exemple</span></h4>
+        <iframe src="https://trinket.io/embed/python3/b42c7c60c8" width="100%" height="356" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>The aggregation</h3>
+        <h4>Fondamental</h4>
+        <div class="footer">
+          <p>
+            In the case of aggregation, there is no notion of
+            container/content, just a relationship used. The two instances
+            know each other at a given time. Their life cycle is not linked
+            and they are independent.
+          </p>
+        </div>
+          <p>
+            At the code level, the aggregation results in the presence of an
+            instance of class B contained in the containing class A. This
+            instance is not created by the class A
+          </p>
+          <h4>Car and Driver Class : <span class="right">Exemple</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px"> 
+          <iframe src="https://trinket.io/embed/python3/957e6ffde8" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Exercise 3: 2D marker</h3>
+        <h4>Question</h4>
+        <p>
+          Let's consider a 2D game board defined by two Point2D p1 and p2 and
+          a player with a Point2D type position moving in this board.
+        </p>
+        <ul>
+          <li>Define the classes Board and Player.</li>
+          <li>Create a program that instantiates a game board with :</li>
+          <ul>
+            <li><span class="inline">p1 at coordinates (0,0) ;</span></li>
+            <li><span class="inline">p2 at coordinates (10,10) ;</span></li>
+            <li>a player at position (1,1).</li>
+          </ul>
+        </ul>
+        <p>Solution</p>
+        <iframe src="https://trinket.io/embed/python3/5cbaab0964" width="100%" height="356" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Exercice : Lecture 3 – Object Oriented Programming : Classes and Objects</h2>
+      <div class="class3">
+        <h4>Exercice 1: Point2D class</h4>
+        <p>Consider a class <span class="bold">Point2D</span> representing a point in space 2D and characterized by two coordinates x and y.</p>
+        <ol>
+          <li>Write the code of a class <span class="bold">Point2D</span> allowing to represent this class and its attributes with </li>
+          <ul>
+            <li>a constructor by default initializes the values of x and y to 0;</li>
+            <li>a constructor which initializes the values of x and y to values passed in parameter.</li>
+          </ul>
+          <li>Add in this class the accessors (getters) and mutators (setters) of the attributes x and y</li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Exercice 2: Robot class</h4>
+        <p>We consider a class <span class="bold">Robot</span> representing a robot which can move in the space 2D. Each robot is characterized by a
+          name name (represented by a character string) a position pos (represented by a point in the space 2D).</p>
+        <ol>
+          <li>Write the code of a class <span class="bold">Robot</span> allowing to represent the class <span class="bold">Robot</span>. By default, a robot is in position (0, 0) and
+            has the name ”John”.</li>
+          <li>Add in this class the accessors and mutators of the attributes name and pos.</li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Exercice 3: Board class</h4>
+        <p>We represent a board with a 2D grid of points (grid ) represented by a 2D list of points of N rows and M columns. It
+          also contains a list of objects of type <span class="bold">Robot</span> robots and an output exit of type <span class="bold">Point2D</span>.</p>
+        <ol>
+          <li>Write the code of a Board class allowing to represent this class as well as its attributes. By default, a board has 8
+            rows and 8 columns, contains no robot and the output is at position (0, 0).</li>
+          <li>Add in this class the accessors and mutators of the attributes of the class <span class="bold">Board</span>.</li>
+          <li>Add a method which allows you to add a robot to the list of robots</li>
+          <li>Add a method which allows to remove a robot of index i from the list of robots</li>
+          <li>We consider that a cell of the board can be either a wall or an empty cell by means of a boolean (0 if the cell is a
+            wall ; 1 if the cell is free). Modify the attribute grid to represent this information.</li>
+          <li>We consider the method <span class="bold">moveRobot</span> allowing to move a robot from the list of robots to a position end. According
+            to the position of the considered robot and the presence of the walls, this method returns a boolean whose value
+            indicates if the robot can be moved to this position (1) or not (0), as well as the list of the traversed cells. Declare
+            and write the code of the function <span class="bold">moveRobot</span>.</li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Exercice 4: Alice and Bob</h4>
+        <p>This exercise is to test your classes.</p>
+        <ol>
+          <li>Write a program that instantiates two robots named <span class="bold">Alice</span> and <span class="bold">Bob</span> and positioned as on the figure 1</li>
+          <li>Complete this program in order to instantiate a tray of 11 rows and 11 columns with walls similar to the figure 1.
+            the robots <span class="bold">Alice</span> and <span class="bold">Bob</span> to the previous board in the list of robots in the board a method that allows you to
+            move <span class="bold">Alice</span> and <span class="bold">Bob</span> to the exit.</li>
+        </ol>
+        <img src="TD3.png" class="center_img">
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div> 
+    </div>
+  </div>
+</body>
+
+</html>

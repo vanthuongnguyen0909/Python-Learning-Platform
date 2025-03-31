@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduction au Cours de Programmation en Python</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <html>
+        <div class="top">       
+            <h1>Application to datas analysis and visualization (Part 2)</h1>
+        </div>
+        <body class="container">
+            <div class="class2 ">  
+                <h2>Objectifs</h2>
+                <p>The purpose of this first workshop is to manipulate the Pandas module and learn to analyse and visualize simply datas.</p>
+            </div>
+            <div class="class2">
+                <h2>Introduction</h2>
+                <p>Pandas is an open-source library for simple and intuitive data manipulation and analysis in Python. It was developed by Wes McKinney in 2008 while he was working at AQR Capital Management. At the end of 2009, it was released as open source and is now actively used in the field of Big data and data science as it offers high performance and productivity to its users.</p>
+                <p>One of the strengths of Panda is that it is based on the very popular NumPy library. It provides various data structures and operations for processing numerical data and time series. In addition to that, the data produced by Panda is often used as input for plotting functions in Matplotlib, statistical analysis in SciPy, machine learning algorithms in Scikit-learn. Data scientists use it to load, process and analyze tabular data (data stored in .csv, .tsv or .xlsx format) using SQL queries.</p>
+            </div> 
+            <div class="class2">
+                <h2>Introduction to the Pandas module</h2>
+                <div class="class3">
+                    <h3>The Pandas module</h3>
+                    <div class="class4">
+                        <h3>Introduction</h3>
+                        <p>The pandas module can be load as the same way from another : with the import instruction</p>
+                        <pre>
+<div class="line-number">   1</div><code>>>> import pandas as pd # Import of the pandas library with the nickname pd</code></pre> 
+                    </div>
+                    <div class="class4">
+                        <h3>Datas representation using Pandas</h3>
+                        <h4>General</h4>
+                        <p>There are two way to represent datas using Pandas : Series and Dataframe</p>
+                        <h4>Series representation</h4>
+                        <p>A series is a one-dimensional labeled array that can contain any type of data (integers, strings, floating point numbers, Python objects, etc.). The axis labels represent the index of the series. To put it simply, a series is nothing more than a column in an Excel sheet.</p>
+                        <p>The basic method for creating a series is as follows:</p>
+                        <h4>Exemple</h4>
+                        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                        <pre>
+<div class="line-number">   1</div><code>ser = pd.Series(data,  index=index)</code></pre> 
+                        <p>where data can be a Python dictionary, an ndarray (multi-dimensional array of NumPy) or even a scalar value.</p>
+                        <p>The index passed as argument is a list of labels corresponding to each row of the series.</p>
+                        </div>
+                        <h4>Dataframe representation</h4>
+                        <p>A Dataframe data structure that organizes data into rows and columns, making it a two-dimensional data structure. You can think of it as a spreadsheet or SQL table, or a dictionary of Series objects. This is generally the most commonly used Panda object. Like a series, a Dataframe can be constructed from many different types: a dict of 1D ndarrays, lists, dicts, or Series, a two-dimensional numpy.ndarray or another Dataframe.</p>
+                        <p>The Pandas Dataframe is powerful because:</p>
+                        <ul>
+                            <li>It can easily load data from different data sources and different data formats;</li>
+                            <li>It allows you to easily perform statistics and answer questions about the data, such as: What is the mean, median, maximum or minimum of each column? Is there a correlation between column A and column B? What does the distribution of the data in column C look like?</li>
+                            <li>It also facilitates data cleaning by removing missing values and filtering rows or columns by certain criteria</li>
+                            <li>It allows you to visualize the data with the help of Matplotlib. Draw bars, lines, histograms, bubbles, etc. ;</li>
+                            <li>It allows to store the cleaned and transformed data in a CSV, another file or a database.</li>
+                            <li>You can define your own Python functions for certain calculation tasks and apply them to your Dataframes data.</li>
+                        </ul>
+                        <h4>Dataframe : Exemple</h4>
+                        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                            <pre>
+<div class="line-number">   1</div><code>df= pd.DataFrame(data,  index=index, columns=columns)</code></pre> 
+                        <p>where the index represents the set of row labels and columns the set of column labels</p>
+                        </div>
+                    </div>
+                    <div class="class4">
+                        <h3>Import and export datas</h3>
+                        <p>There are several function to import datas from a file, depending on the file format :</p>
+                        <ul>
+                            <li>CSV file : <span class="text">pd.read_csv()</span></li>
+                            <li>Excel file : <span class="text">pd.read_excel();</span></li>
+                            <li>SQL file : <span class="text">pd.read_sql().</span></li>
+                        </ul>
+                        <p>Each of these functions returns a Dataframe object. To transform a Dataframe into a Serie, just transpose the Dataframe with the transpose() function.</p>   
+                        <p>It's possible to export the contained datas from a Dataframe to a file</p>
+                        <ul>
+                            <li>CSV file : <span class="text">pd.to_csv()</span></li>
+                            <li>Excel file : <span class="text">pd.to_excel();</span></li>
+                            <li>SQL file : <span class="text">pd.to_sql().</span></li>
+                        </ul>
+                        <h4>Datas import and export example : exemple</h4>
+<iframe src="https://trinket.io/embed/python3/f0d78f47c6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="class4">
+                        <h3>Inspect datas contained in a Dataframe</h3>
+                        <p>Datas contained in a Dataframe df can be inspected in several ways :</p>
+                        <ul>
+                            <li>by displaying the first lines of the Dataframe : <span class="text">df.head()</span></li>
+                            <li>by displaying the last lines of the Dataframe : <span class="text">df.tail()</span></li>
+                            <li>by displaying the number of columns and rows : <span class="text">df.shape</span></li>
+                            <li>by displaying a concise summary of the Dataframe : <span class="text">df.info()</span></li>
+                            <li>displaying a statistical summary of numerical data: <span class="text">df.describe()</span></li>
+                        </ul>
+                        <h4>Inspect datas example : Exemple</h4>
+<iframe src="https://trinket.io/embed/python3/1199cb4e3c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="class4">
+                        <h3>Access to the elements of a Dataframe</h3>
+                        <h4>General</h4>
+                        <p>To display a table, simply designate the table by its name.</p>
+                        <h4>Exemple</h4>
+                        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                            <pre>
+<div class="line-number">   1</div><code>>>> a</code>
+<div class="line-number">   2</div><code>array([[1, 2, 3],</code>
+<div class="line-number">   3</div><code>       [4, 5, 6]])</code></pre> 
+                        </div>
+                    </div>
+                    <div class="class4">
+                        <h3>Python Pandas Tutorial: A Complete Introduction for Beginners</h3>
+                        <h4>General</h4>
+                        <p>Read the tutorial in <a href="https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/">https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/ </a>which explain all operations with Pandas module</p>
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>Data analysis and visualization Vietnam population</h3>
+                    <div class="class4">
+                        <h4>Display a Pandas Dataframe</h4>
+                        <h4>Question</h4>
+                        <p>Load the data.zip file and extract it in your work folder.
+
+                            With Pandas module, load the file "Viet Nam-2019.csv" and create a Dataframe.
+                            
+                            Display the columns names, the number of row, the number of columns and the first lines of this Dataframe.
+                            
+                            Indexes this Dataframe with the column "Age".</p>
+                    </div>
+                    <div class="class4">
+                        <h4>Displaying the number of men and women in 2019 and 2020 by age in Vietnam</h4>
+                        <h4>Question</h4>
+                        <p>With the files "Viet Nam-2019.csv", "Viet Nam-2019.csv", create two graphs wich display the number of men and women by age.</p>
+                        <p>You must obtain the following results (the graphs are visible in the folder graphs/Population_2019.png and graphs/Population_2020.png in the moodle)</p>
+                        <img src="Population_2019.png" class="center_img">
+                        <img src="variation_population_19_20.png" class="center_img">
+                    </div>
+                    <div class="class4">
+                        <h4>Population variation between 2019 and 2020 for each gender</h4>
+                        <p class="bold">Question</p>
+                        <p>With the files "Viet Nam-2019.csv", "Viet Nam-2019.csv", create a graph wich show the variation of the population by age between 2019 and 2020 for each gender.</p>
+                        <p>You must obtain the following result (the graph is visible in the folder graphs/variation_population_19_20.png in the moodle)</p>
+                        <img src="variation_population_19_20.png" class="center_img">
+                    </div>
+                    <div class="class4">
+                        <h4>Population variation during a given period for each gender</h4>
+                        <h4>Question</h4>
+                        <p>With the files in the folder datas, create a graph wich show the variation of the population between 1990 and 2020 for each gender.</p>
+                        <p>You must obtain the following result (the graph is visible in the folder graphs/variation_sex.png in the moodle):</p>
+                        <img src="variation_sex.png" class="center_img">
+                        <p>In the previous graph, the years are not sorted. Change the previous graph in order to display the years in a sorted way.</p>
+                        <p>You must obtain the following result (the graph is visible in the folder graphs/variation2_sex.png in the moodle):</p>
+                        <img src="variation2_sex.png" class="center_img">
+                    </div>
+                    <div class="class4">
+                        <h4>Population variation during a given period by age</h4>
+                        <h4>Question</h4>
+                        <p>With the files in the folder datas, create a graph wich show the variation of the population by age between 1990 and 2020
+
+                            You must obtain the following result (the graph is visible in the folder graphs/variation_age.png in the moodle)</p>
+                        <img src="variation_age.png" class="center_img">
+                    </div>
+                    <div class="class4">
+                        <h4>Population variation during a given period by age group</h4>
+                        <h4>Question</h4>
+                        <p>With the files in the folder datas, create a graph wich show the variation of the population by age group between 1990 and 2020
+                            You must obtain the following result (the graph is visible in the folder graphs/variation_age_group.png in the moodle):</p>
+                        <img src="variation_age_group.png" class="center_img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

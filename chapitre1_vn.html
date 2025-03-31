@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi" xml:lang="vi" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Giới thiệu khóa học lập trình Python</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <body>  
+        <div class="top">   
+                <h1 style="padding-right:10px">Lập trình Python : Cơ bản</h1>
+        </div>
+        <div class="container">
+            <div class="class2 ">               
+                <h2>Giới thiệu</h2>
+                <p>Mục đích của khóa học này là trình bày các khái niệm về lập trình thuật toán và nâng cao.</p>
+                <h4>Ưu điểm của ngôn ngữ này :</h4>
+                <ul>
+                    <li>Đây là một ngôn ngữ thông dịch, không phải là ngôn ngữ biên dịch</li></br>
+                    <li>Dễ dàng sửa lỗi nhờ vào dấu vết (traceback)</li></br>
+                    <li>Khả năng đọc mã tốt hơn: thụt lề là bắt buộc nếu không sẽ xảy ra lỗi</li></br>
+                    <li>Tài liệu phong phú và tuyệt vời.</li></br>
+                    <li>Tồn tại nhiều modules cho việc trực quan hóa dữ liệu, tính toán khoa học, học máy, v.v.</li>
+                        
+                </ul>
+                <p>Khóa học này được chia thành 3 chương:</p>
+                <ol>
+                    <li><strong>Các nguyên tắc cơ bản của ngôn ngữ Python</strong></li></br>
+                    <li><strong>Cấu trúc dữ liệu trong Python</strong></li></br>
+                    <li><strong>Giới thiệu về lập trình hướng đối tượng trong Python</strong></li></br>
+                </ol>               
+            </div>
+            <div class="class2">
+                <h2>Các biến</h2>
+                <div class="class3">
+                    <h3>Giới thiệu</h3>
+                    <p>Một biến đề cập đến việc gán tên hoặc mã định danh cho thông tin: bằng cách đặt tên cho chúng, người ta có thể thao tác thông tin này dễ dàng hơn nhiều.</p>
+                    <p>Ưu điểm của việc sử dụng biến là bạn có thể viết chương trình hợp lệ cho các giá trị khác nhau: bạn có thể thay đổi giá trị của biến và chương trình sẽ luôn chạy theo cùng một cách và thực hiện cùng loại phép tính bất kể giá trị được thao tác. Các biến đóng vai trò tương tự như các ẩn số trong phương trình toán học.</p>
+                </div>
+                <div class="class3">
+                    <h3>Định nghĩa</h3>
+                    <h4>Định nghĩa : Khái niệm biến</h4>
+                    <div class="content">
+                        <p>Một <span class="bold">biến</span> được đặc trưng bởi :</p>
+                        <ul>
+                            <li><span class="bold">một định danh</span> : nó có thể chứa các chữ cái, số, khoảng trống được gạch chân nhưng không thể bắt đầu bằng số. Chữ thường và chữ hoa được phân biệt. Nó cũng là duy nhất..</li>
+                            <li><span class="bold">một kiểu</span> : là thông tin về nội dung của biến, cho trình thông dịch python biết cách xử lý thông tin này.</li>
+                        </ul>
+                    </div>
+                    <h4>Định nghĩa : Hằng số biến</h4>
+                    <div class="content">
+                        <p>Hằng số là đối lập của biến, chúng đều là những giá trị số, chuỗi, ..., mọi thứ không được chỉ định bằng tên. Các hằng số có một kiểu nhưng không có mã định danh.</p>
+                    
+                    </div>
+                    <h4><span class="color">Nền tảng: Gõ động</span></h4>
+                    <div class="footer">
+                        <p>Kiểu gõ trong Python là kiểu động: kiểu không được chỉ định rõ ràng, nó được liên kết ngầm với thông tin bị thao túng. Ví dụ: viết x=3.4 không chỉ định kiểu biến x nhưng nó ẩn vì x nhận một giá trị thực: x có kiểu float trong Python.</p>
+                        <p>Không giống như các ngôn ngữ như C, không cần khai báo một biến để chỉ ra rằng nó tồn tại, chỉ cần gán một giá trị cho nó là đủ. Kiểu của biến sẽ được xác định bởi kiểu của hằng được gán cho nó. Kiểu của biến có thể thay đổi, nó luôn tương ứng với kiểu của phép gán cuối cùng.</p>                   
+<iframe src="https://trinket.io/embed/python3/f697ca962f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+                
+                <div class="class3">
+                    <h3>Các kiểu dữ liệu trong Python</h3>
+                    <h4>Số nguyên và số thực</h4>
+                    <p>Có hai loại số trong Python, số thực <span class="bold">float</span> và số nguyên <span class="bold">int</span>. Lệnh x=3 tạo một biến kiểu <span class="bold">int</span> được khởi tạo thành 3 trong khi y=3.0 tạo một biến kiểu <span class="bold">float</span> được khởi tạo thành 3.0.</p>
+                    <p>Chương trình sau đây cho phép kiểm tra điều này bằng cách hiển thị các biến x và y, giá trị của chúng và loại tương ứng của chúng nhờ hàm type.</p>
+<iframe src="https://trinket.io/embed/python3/da767a1a7d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Loại bất biến (hoặc bất biến)</h4>
+                    <strong>
+                        <p>Một biến thuộc loại bất biến không thể sửa đổi được. Một thao tác trên một biến thuộc loại này nhất thiết dẫn đến việc tạo ra một biến khác cùng loại, ngay cả khi biến sau chỉ là tạm thời.</p>
+                    </strong>
+                    <p>Nói cách khác, lệnh đơn giản x+=3 bao gồm việc thêm vào biến x giá trị 3 tạo ra một biến thứ hai có giá trị của x tăng thêm 3 sau đó sao chép nội dung của nó vào biến x. Số là loại không thể thay đổi giống như chuỗi và bộ dữ liệu là mảng đối tượng. Không thể sửa đổi một biến thuộc loại này, cần phải tạo lại một biến khác cùng loại sẽ tích hợp sửa đổi.</p>
+                    <h4>Không có loại</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                        <p>Python cung cấp loại None có nghĩa là một biến không chứa gì. Biến có kiểu None và bằng None.</p>
+                        <pre>
+<div class="line-number">   1</div><code>x = none</code></pre>   
+                    </div>
+                       
+                </div>
+                <div class="class3">
+                    <h3>Các phép toán tử</h3>
+                    <h4>Toán tử số học</h4>
+                    <p>Danh sách các toán tử số học trong Python được tóm tắt trong bảng sau:</p>
+                    <p style="text-align: center;">Danh sách các toán tử số học</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Toán tử </th>
+                            <th class="col2">Ý nghĩa</th>
+                            <th class="col3">Ví dụ</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                << >>
+                            </td>
+                            <td>dịch chuyển trái, dịch chuyển phải</td>
+                            <td>x = 8 << 1</td>
+                        </tr>
+                        <tr>
+                            <td>|</td>
+                            <td>toán tử logic hoặc từng bit một</td>
+                            <td>x = 8 | 1</td>
+                        </tr>
+                        <tr>
+                            <td>&</td>
+                            <td>toán tử logic và từng bit một</td>
+                            <td>x = 11 & 2</td>
+                        </tr>
+                        <tr>
+                            <td>+ -</td>
+                            <td>phép cộng, phép trừ</td>
+                            <td>x = y + z</td>
+                        </tr>
+                        <tr>
+                            <td>+= -=</td>
+                            <td>phép cộng hoặc phép trừ rồi phép gán</td>
+                            <td>x += 3</td>
+                        </tr>
+                        <tr>
+                            <td>//</td>
+                            <td>phép chia số nguyên, kết quả là số thực nếu một trong các số là số thực</td>
+                            <td>x = y // 3</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Phần dư của phép chia số nguyên (modulo)</td>
+                            <td>x = y % 3</td>
+                        </tr>
+                        <tr>
+                            <td>*= /=</td>
+                            <td>phép nhân hoặc chia rồi phép gán</td>
+                            <td>x *= 3 </td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>lũy thừa (số nguyên hoặc không, căn bậc hai = ** 0,5))</td>
+                            <td>x = y ** 3</td>
+                        </tr>
+                    </table>
+                
+                
+                    <h4>Chuyển đổi từ số nguyên sang thực và ngược lại</h4>
+                    <p>Các hàm int và float được sử dụng để chuyển đổi bất kỳ số hoặc chuỗi nào thành số nguyên (làm tròn) và số thực tương ứng.</p>
+<iframe src="https://trinket.io/embed/python3/858f9b8e92" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>     
+                    <h4>Boolean operators (Toán tử Boolean)</h4>
+                    <p style="text-align: center;">Danh sách các toán tử boolean</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Toán tử</th>
+                            <th class="col2">Nghĩa</th>
+                            <th class="col3">Ví dụ</th>
+                        </tr>
+                        <tr>
+                            <td>and, or</td>
+                            <td>Logical and, or</td>
+                            <td>x = True or False (result = True)</td>
+                        </tr>
+                        <tr>
+                            <td>not</td>
+                            <td>Logical negation</td>
+                            <td>x = not x</td>
+                        </tr>
+                    </table>
+                
+                
+                    <h4>Toán tử so sánh</h4>
+                    <p style="text-align: center;">Danh sách toán tử so sánh</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Toán tử</th>
+                            <th class="col2">Nghĩa</th>
+                            <th class="col3">Ví dụ</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                < >
+                            </td>
+                            <td>thấp hơn, trên</td>
+                            <td>x = 5 < 5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <= >=
+                            </td>
+                            <td>nhỏ hơn hoặc bằng, lớn hơn hoặc bằng</td>
+                            <td>x = 5 <= 5</td>
+                        </tr>
+                        <tr>
+                            <td>== !=</td>
+                            <td>bằng nhau, khác nhau</td>
+                            <td>x = 5 == 5</td>
+                        </tr>
+                    </table>
+                    <p>Python cũng có các toán tử để kiểm tra việc nhận dạng hoặc thành viên của một tập hợp các phần tử:</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Toán tử</th>
+                            <th class="col2">Nghĩa</th>
+                            <th class="col3">Ví dụ</th>
+                        </tr>
+                        <tr>
+                            <td>is</td>
+                            <td>kiểm tra nhận dạng </td>
+                            <td>"3" is str</td>
+                        </tr>
+                        <tr>
+                            <td>in</td>
+                            <td>kiểm tra thành viên</td>
+                            <td>3 in [3, 4, 5]</td>
+                        </tr>
+                    </table>
+                    <p>Hai toán tử này sẽ được sử dụng sau:</p>
+                    <ul>
+                        <li>in với danh sách, từ điển, vòng lặp;</li>
+                        <li>is khi học danh sách.</li>
+                    </ul>
+                </div>               
+            </div>
+            <div class="class2">
+                <h2>Đầu vào / Đầu ra trong Python</h2>
+                <div class="class3">
+                    <h3>Hướng dẫn đầu vào</h3>
+                    <ul>
+                        <li>Lệnh này sẽ trả về một chuỗi. Vì vậy nếu người dùng gõ số nguyên 25 thì kết quả ban đầu là '25'.</li>
+                        <li>Nếu muốn chuyển chuỗi thành số nguyên, chúng ta có thể sử dụng hàm int().</li>
+                        <li>Một cách ít chính xác hơn là để Python chọn loại có hàm eval().</li>
+                    </ul>
+                </div>
+                <div class="class3"> 
+                    <h3>Lệnh in(print)</h3>
+            
+                    <ul>
+                        <li>Lệnh này cho phép hiển thị chủ yếu các chuỗi.</li>
+                        <li>Đối với lệnh input(), nếu bạn muốn chuyển một số nguyên thành chuỗi, bạn có thể sử dụng hàm Repr().</li>
+                        <li>Lệnh in (print) gây ra ngắt dòng (hành vi mặc định). Để viết một chuỗi các chuỗi, bạn có thể sử dụng phép nối các chuỗi bằng cách sử dụng toán tử "+".</li>
+                    </ul>
+                    <h4>Ví dụ</h4>
+<iframe src="https://trinket.io/embed/python3/c913463579" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                    
+            </div>
+            <div class="class2">
+                <h2>Kiểm tra và vòng lặp</h2>
+                <div class="class3">
+                    <h3>Giới thiệu</h3>
+                    <p>Cấu trúc có điều kiện (thử nghiệm) và lặp lại (vòng lặp) là một khái niệm cơ bản trong thuật toán.</p>
+                </div>
+                <div class="class3">
+                    <h3>Các bài kiểm tra</h3>
+                    <h4>Định nghĩa: Các bài kiểm tra</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                        <p>Các bài kiểm tra cho phép thực hiện các hướng dẫn khác nhau tùy thuộc vào giá trị của một điều kiện logic.</p>
+                        <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code>   
+<div class="line-number">   3</div><code>   instruction2</code>
+<div class="line-number">   4</div><code>   ...</code> 
+<div class="line-number">   5</div><code>else :</code>   
+<div class="line-number">   6</div><code>   instruction3</code>  
+<div class="line-number">   7</div><code>   instruction4</code>  
+<div class="line-number">   8</div><code>   ...</code></pre>      
+                    </div>   
+                <h4>Remarque: Mệnh đề else là tùy ý</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">    
+                <p>Khi điều kiện1 là sai và không có hướng dẫn để thực hiện trong trường hợp này, mệnh đề khác là vô dụng. Cú pháp của bài kiểm tra trở thành :</p>
+                <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code>   
+<div class="line-number">   3</div><code>   instruction2</code>  
+<div class="line-number">   4</div><code>   ...</code></pre>
+                </div>
+                <h4>Remarque: Một số mệnh đề Elif</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>Nếu cần liên kết một số bài kiểm tra liên tiếp, có thể cô đọng văn bản với từ khóa elif :</p>
+                    <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code> 
+<div class="line-number">   3</div><code>   instruction2</code>   
+<div class="line-number">   4</div><code>   ...</code>  
+<div class="line-number">   5</div><code>elif condition2 :</code>  
+<div class="line-number">   6</div><code>   instruction3</code>  
+<div class="line-number">   7</div><code>   instruction4</code>   
+<div class="line-number">   8</div><code>   ...</code>   
+<div class="line-number">   9</div><code>elif condition3 :</code> 
+<div class="line-number">  10</div><code>   instruction5</code> 
+<div class="line-number">  11</div><code>   instruction6</code>  
+<div class="line-number">  12</div><code>else :</code>  
+<div class="line-number">  13</div><code>   instruction7</code>  
+<div class="line-number">  14</div><code>   instruction8</code>   
+<div class="line-number">  15</div><code>   ...</code></pre>       
+                </div>
+                <h4><span class="color">Nền tảng : Viết một cấu trúc có điều kiện</span></h4>
+                <div class="footer">
+                <p> 
+                    Phần bù của các câu lệnh từ các dòng chứa từ khóa if, elif, else rất quan trọng: nó là một phần của cú pháp ngôn ngữ và được gọi là thụt lề. Nó cho phép nhóm các hướng dẫn lại với nhau. Nếu một dòng bị thụt lề kém, thì nó không được thực thi trong khối hành động của cấu trúc có điều kiện.
+                </p>    
+                <p>Ví dụ:</p>
+                <iframe src="https://trinket.io/embed/python3/247ca6fe6a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Hai hình thức viết</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>Có hai kịch bản kiểm tra cô đọng.</p>
+                    <ul>
+                        <li>
+                            Đầu tiên là viết một bài kiểm tra và hướng dẫn duy nhất phụ thuộc vào nó trên một dòng duy nhất.
+                        </li>
+                    </ul>
+                    <p>Nếu cần liên kết một số bài kiểm tra liên tiếp, có thể cô đọng văn bản với từ khóa elif :</p>
+                    <pre>
+<div class="line-number">   1</div><code>if condition : instruction1</code>
+<div class="line-number">   2</div><code>else : instruction2</code></pre>   
+                </div>
+                <p>Cách viết cô đọng của đoạn mã sau:</p>
+<iframe src="https://trinket.io/embed/python3/0ac4414b19" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>có thể được thay đổi bởi :</p>
+<iframe src="https://trinket.io/embed/python3/199bde99fe" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <ul>
+                    <li>Trường hợp thứ hai của văn bản cô đọng liên quan đến so sánh chuỗi.</li>
+                    <li>Bài kiểm tra nếu 3 < x và x < 5 : câu lệnh có thể được cô đọng bởi nếu 3 < x < 5 : câu lệnh. Do đó, có thể đặt cạnh nhau càng nhiều so sánh càng cần thiết: nếu 3 < x < y < 5 : tuyên bố.</li>
+                    <li>Từ khóa "in" cũng cho phép cô đọng một số bài kiểm tra khi biến cần kiểm tra là số nguyên. Nếu x == 1 hoặc x == 6 hoặc x == 50 : câu lệnh có thể được tóm tắt đơn giản bằng nếu x trong (1,6,50) : câu lệnh hoặc nếu x trong {1,6,50} : câu lệnh cho danh sách lớn.</li>
+                </ul>
+                <p>Cách viết cô đọng của đoạn mã sau:</p>
+                <iframe src="https://trinket.io/embed/python3/436fee8a86" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>có thể được thay đổi bởi :</p>
+                <iframe src="https://trinket.io/embed/python3/aafa102c6c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Các vòng lặp</h3>
+                    <p>Ngôn ngữ Python cung cấp hai loại vòng lặp: vòng lặp while và vòng lặp for. Không làm... trong khi vòng lặp trong Python (tương đương với vòng lặp "Lặp lại" trong thuật toán)</p>
+                    <h4><span class="color">Fondamental : While</span></h4>
+                    <div class="footer">
+                        <p>Việc thực hiện vòng lặp while tuân theo sơ đồ viết sau:</p>
+                        <pre>
+<div class="line-number">   1</div><code>while condition :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>   
+<div class="line-number">   3</div><code>   ...</code> 
+<div class="line-number">   4</div><code>   instruction n</code></pre>  
+                        <p>Trong đó điều kiện là một điều kiện xác định sự tiếp tục lặp lại của các hướng dẫn có trong vòng lặp. Miễn là điều kiện này là đúng, các lệnh từ 1 đến n được thực thi.</p>
+                    </div>
+                <h4>Ví dụ: Ví dụ về vòng lặp While</h4>       
+<iframe src="https://trinket.io/embed/python3/331eb7c463" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Remarque : Indentation</h4>             
+<iframe src="https://trinket.io/embed/python3/0cca5e03e6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Remarque: Vòng lặp vô hạn</h4>
+                <p>Điều kiện chi phối vòng lặp này nhất thiết phải được sửa đổi bên trong nó. Mặt khác, một vòng lặp như vậy được gọi là vòng lặp vô hạn vì không thể thoát ra khỏi nó.</p>
+                <p>Ví dụ sau đây chứa một vòng lặp vô hạn vì biểu tượng = bị thiếu trong lệnh cuối cùng. Biến n không bao giờ được sửa đổi và điều kiện n<3 luôn đúng.</p>
+<iframe src="https://trinket.io/embed/python3/71f3066cfc" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4><span class="color">Fondamental : While</span></h4>
+                <div class="footer">    
+                    <p>Việc thực hiện vòng lặp for tuân theo sơ đồ viết sau:</p>
+                    <pre>
+<div class="line-number">   1</div><code>for x in set :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>
+<div class="line-number">   3</div><code>   ...</code>
+<div class="line-number">   4</div><code>   instruction n</code></pre> 
+                <p>Để duyệt một tập hợp các giá trị giữa hai giới hạn tối thiểu và tối đa bị loại trừ, hãy dùng hàm range:</p>
+                <pre>
+<div class="line-number">   1</div><code>for x in range(min,max)</code>
+<div class="line-number">   2</div><code>   instruction1</code>  
+<div class="line-number">   3</div><code>   ...</code>   
+<div class="line-number">   4</div><code>   instruction n</code></pre>  
+                </div>
+                <h4>Ví dụ: Ví dụ về vòng lặp for</h4>
+<iframe src="https://trinket.io/embed/python3/951a4b84ed" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exemple : Ví dụ về một vòng lặp để tính tổng 10 số nguyên đầu tiên</h4>
+<iframe src="https://trinket.io/embed/python3/213b087134" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Cấu trúc kết hợp</h4>
+                <p>Như trong ngôn ngữ C, có thể lồng các cấu trúc lặp lại and/or có điều kiện giữa chúng.</p>
+                <p>Ví dụ:</p>
+<iframe src="https://trinket.io/embed/python3/faffee322d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Viết chương trình đầu tiên của bạn bằng ngôn ngữ Python với Spyder (Anaconda)</h3>
+                    <h4>Bảng cửu chương</h4>
+                    <p>Trong ngôn ngữ Python, viết một chương trình để tính toán bảng cửu chương của một số do người dùng nhập</p>
+                    <ul>
+                        <li>với <span class="bold">while</span></li>
+                        <li>với <span class="bold">for</span></li>
+                    </ul>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Bài tập : Giải quyết vấn đề</h3>
+                    <p>Một nông dân nuôi cừu và gà tây và khi đến lúc nộp thuế, anh ta tò mò tuyên bố: Tôi có 36 đầu và 100 chân trong trang trại của mình! Tìm một thuật toán để xác định số lượng cừu và gà tây, sau đó dịch nó sang Python theo sơ đồ sau (M: cừu, D: gà tây, p: chân)</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class2">
+                <h2>Các hàm trong ngôn ngữ Python</h2>
+                <div class="class3">
+                    <h3>Khái niệm</h3>
+                    <h4>Giới thiệu</h4>
+                    <p>Hàm là các chương trình nhỏ cho phép mô-đun hóa thuật toán thành các tác vụ cơ bản.</p>
+                    <p>Ưu điểm:</p>
+                    <ul>
+                        <li>Khả năng đọc mã tốt hơn: chương trình cuối cùng do đó dễ hiểu hơn ;</li>
+                        <li>Cho phép gỡ lỗi tốt hơn: dễ dàng cách ly lỗi hơn nếu xảy ra: chỉ cần kiểm tra từng lỗi một hoặc các hàm để xác định lỗi nào trả về kết quả xấu;</li>
+                        <li>Tránh và ngăn chặn sự dư thừa mã.</li>
+                    </ul>              
+                    <h4>Định nghĩa : Hàm</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>Hàm là một phần của chương trình - hoặc chương trình con - hoạt động độc lập với phần còn lại của chương trình. Nó nhận một danh sách các tham số và trả về một kết quả. Phần thân của hàm là bất kỳ câu lệnh nào trong chương trình được thực thi nếu hàm được gọi.</p>
+                    </div>
+                    <h4><span class="color">Nền tảng : Khai báo hàm</span></h4>
+                    <div class="footer">  
+                        <pre>
+<div class="line-number">   1</div><code>def function_name (par_1, ..., par_n) :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>  
+<div class="line-number">   3</div><code>   ...</code>   
+<div class="line-number">   4</div><code>   instruction n</code>
+<div class="line-number">   5</div><code>   return res_1, ..., res_n</code></pre>        
+                    <ul class="distance">
+                        <li>function_name là tên của hàm, nó tuân theo quy tắc giống như tên biến.</li>
+                        <li>par_1 đến par_n là tên các tham số.</li>
+                        <li>res_1 đến res_n là kết quả mà hàm trả về.</li>
+                        <li>Các lệnh liên quan đến một hàm phải được thụt lề theo từ khóa def.</li>
+                        <li>Nếu không có kết quả, câu lệnh return là tùy chọn hoặc có thể được sử dụng một mình mà không cần có giá trị hoặc biến theo sau. Câu lệnh này có thể xuất hiện nhiều lần trong mã hàm nhưng chỉ một trong số chúng được thực thi. Kể từ thời điểm đó, tất cả các câu lệnh khác trong hàm sẽ bị bỏ qua.</li>
+                        <li>Lệnh chung cho phép bạn mở rộng (và do đó sửa đổi) phạm vi của một biến đối với mô-đun kèm theo; theo mặc định, phạm vi của biến được xác định trong hàm là cục bộ.</li>
+                        <li>Các tham số của hàm được truyền bằng tham chiếu (copy).</li>
+                    </ul>
+                    </div>
+                    <h4><span class="color">Nền tảng: Gọi một hàm</span></h4>
+                    <div class="footer">
+                    <p>Để thực thi một hàm được xác định theo cách này, chỉ cần làm theo cú pháp sau:</p>
+                        <pre>
+<div class="line-number">   1</div><code>x_1, ..., x_n = function_name (value_1, value_2, ..., value_n)</code></pre>
+                <p>Trong đó function_name là tên của hàm, value_1 đến value_n trong đó giá trị của các tham số, x_1 đến x_n là kết quả của hàm. Đây là bài tập tùy ý.</p>
+                <p>Nếu không muốn giữ lại kết quả, bạn có thể gọi hàm như sau:</p>
+                        <pre>
+<div class="line-number">   1</div><code>function_name (value_1, value_2, ..., value_n)</code></pre>
+                    </div>
+                <h4>Ví dụ: Ví dụ về khai báo và gọi hàm</h4></pre>
+                <p>Chương trình sau đây sử dụng hai hàm. Cái đầu tiên chuyển đổi tọa độ Descartes thành tọa độ cực. Nó lấy hai số thực làm tham số và trả về hai số thực khác. Hàm thứ hai hiển thị kết quả của hàm thứ nhất cho bất kỳ cặp giá trị nào (x; y). Nó không trả về bất kỳ kết quả nào.</p>       
+<iframe src="https://trinket.io/embed/python3/f4334e0b7a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Phạm vi của các biến</h3>
+                    <h4>Tổng quát</h4>
+                    <p>Xác định một hàm có nghĩa là xác định một không gian tên mới, do đó tất cả các khai báo bên trong của một hàm sẽ không hiển thị với các hàm khác. Trong trường hợp này chúng ta nói về phạm vi cục bộ để chỉ định hành vi này.</p>
+                    <p>Một hàm được định nghĩa trong một không gian bao quanh gọi là mô-đun, có phạm vi toàn cục.</p>
+                    <p>Hai loại này được liên kết như sau:</p>
+                    <ul>
+                        <li>Mô-đun kèm theo xác định phạm vi toàn cục, tức là một không gian chứa các biến được tạo (bằng cách gán).</li>
+                        <li>Mỗi lệnh gọi hàm (trong mô-đun) xác định một phạm vi cục bộ mới, tức là một không gian khép kín dành cho các tên không xung đột với không gian kèm theo.</li>
+                        <li>Tên được gán là tên cục bộ, trừ khi được khai báo rõ ràng bằng câu lệnh chung..</li>
+                        <li>Tất cả các tên còn lại là tên chung (tức là được xác định trong mô-đun kèm theo) hoặc nội bộ (tức là tên được xác định trước bởi python).</li>
+                    </ul>
+                    
+                    <h4><span class="color">Nền tảng : Quy tắc 3 nhịp L, G và I</span></h4>
+                    <div class="footer">
+                        <p>Việc tham chiếu đến tên biến kích hoạt tìm kiếm trong ba cấp độ phạm vi, cục bộ (L), toàn cầu (G) và cuối cùng là nội bộ (I).</p>
+                        <p>Việc gán tên tạo hoặc sửa đổi tên cục bộ theo mặc định</p>
+                        <p>Việc khai báo bằng câu lệnh chung cho phép các tên được gắn vào mô-đun kèm theo (không gian tên).</p>
+                        <div class="center_img">
+                            <img src="scope.png">
+                        </div>   
+                    </div>
+                    <h4>Định nghĩa: Biến cục bộ</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>Biến cục bộ là một biến có phạm vi được thu gọn thành một hàm..</p>
+                    </div>
+                    <h4>Định nghĩa: Biến toàn cục</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>Biến toàn cục là biến có phạm vi bao trùm toàn bộ chương trình.</p>
+                    </div>
+                    <h4>Ví dụ: Ví dụ về biến cục bộ và biến toàn cục</h4>
+                    <p>Ví dụ sau đây kết hợp các biến cục bộ và toàn cục. Mã định danh n được sử dụng để chỉ định cả biến toàn cục bằng 1 và biến cục bộ bằng 1. Bên trong hàm, n chỉ định biến cục bộ bằng 2. Bên ngoài hàm, n chỉ định biến toàn cục bằng 1.</p>                 
+<iframe src="https://trinket.io/embed/python3/f16923f7d0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Lệnh "toàn cục"</h4>
+                    <p>Có thể tham chiếu đến các biến toàn cục trong một hàm thông qua từ khóa toàn cục. Điều này cho hàm biết rằng mã định danh không còn là biến cục bộ mà là biến toàn cục đã được khai báo.</p>
+<iframe src="https://trinket.io/embed/python3/764927768f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4 style="color: rouge">* Chú ý :</h4>
+                <p>Nên tránh khả năng này càng nhiều càng tốt vì locale_global có thể được coi là một hàm có tham số ẩn. Hàm locale_global không còn độc lập với các hàm khác vì nó sửa đổi một trong các dữ liệu chương trình.</p>                
+                </div>
+                <div class="class3">
+                    <h3>Phạm vi hàm</h3>
+                    <h4>Tổng quát</h4>
+                    <p>Ngôn ngữ python cũng coi các hàm là các biến của một kiểu cụ thể. Phạm vi của hàm tuân theo các quy tắc tương tự như phạm vi của các biến. Một hàm chỉ có thể được gọi nếu nó đã được định nghĩa trước khi được gọi.</p>
+                    <h4>Các hàm lồng nhau</h4>
+                    <p>Vì có thể khai báo các biến cục bộ nên cũng có thể định nghĩa các hàm cục bộ hoặc các hàm lồng nhau. Một hàm cục bộ chỉ có thể được gọi từ bên trong hàm mà nó được định nghĩa.</p>
+                    <h4>Ví dụ</h4>
+                    <p>Trong ví dụ sau, hàm display_pair bao gồm một hàm cục bộ mà chỉ hàm này mới có thể gọi được.</p>
+<iframe src="https://trinket.io/embed/python3/d1748b080b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>   
+                <div class="class3"> 
+                    <h3>Các tham số có giá trị mặc định</h3>
+                    <p>Khi một hàm thường được gọi với cùng các giá trị cho các tham số của nó thì có thể chỉ định một giá trị mặc định cho chúng</p>
+                    <pre>
+<div class="line-number">   1</div><code>def function_name (param_1, param_2 = value_2, ..., param_n = value_n):</code>
+<div class="line-number">   2</div><code>   ...</code></pre>   
+                    <ul>
+                        <li>Trong đó function_name là tên hàm, param_1 đến param_n là tên của tham số, value_2 đến value_n là giá trị mặc định của param_2 đến param_n.</li>
+                        <li>Ràng buộc duy nhất trong định nghĩa này là nếu một giá trị mặc định được chỉ định cho một tham số thì tất cả các tham số tiếp theo cũng phải có giá trị mặc định.</li>
+                    </ul>
+                    <h4>Ví dụ: Ví dụ khai báo hàm với tham số mặc định</h4>
+<iframe src="https://trinket.io/embed/python3/60aaaf9108" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Remarque: Vị trí của các tham số mặc định</h4>
+                    <p>Không thể có một tham số không có giá trị mặc định liên quan xuất hiện sau một tham số có giá trị mặc định được chỉ định. Chương trình sau không thể thực hiện được.</p>               
+<iframe src="https://trinket.io/embed/python3/a65fec962c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3"> 
+                    <h3>Thứ tự tham số</h3>
+                    <p>Trong quá trình gọi, tên của các tham số không can thiệp nữa, giả sử rằng mỗi tham số nhận được giá trị có cùng vị trí với nó khi hàm được gọi. Tuy nhiên, có thể thay đổi thứ tự này bằng cách chỉ định tham số nào sẽ nhận giá trị nào.</p>
+                    <pre>
+<div class="line-number">   1</div><code>x_1, ..., x_n = function_name (param_1 = value_1, ..., param_n = value_n)</code></pre>
+                    <p>Trong đó function_name là tên hàm, param_1 đến param_n là tên của tham số, value_1 đến value_n là giá trị tham số.</p>
+                    <p>Với cú pháp này, thứ tự viết không quan trọng. Giá trị value_i sẽ luôn được gán cho param_i. Các biến x_1 đến x_n nhận kết quả do hàm trả về.</p>
+                    <p>Thứ tự của kết quả không thể thay đổi. Nếu có nhiều kết quả trả về thì không thể chọn kết quả nào cần giữ: tất cả hoặc không có kết quả nào.</p>
+                    <p>Khả năng này rất thú vị, đặc biệt khi có nhiều tham số mặc định và chỉ phải thay đổi giá trị của một trong các tham số cuối cùng.</p>                
+<iframe src="https://trinket.io/embed/python3/0c58702a81" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Hàm quá tải</h3>
+                    <h4>Tổng quát</h4>
+                    <p>Không giống như các ngôn ngữ khác, python không cho phép nạp chồng hàm. Nói cách khác, không thể có nhiều hàm có cùng tên ngay cả khi mỗi hàm có số tham số khác nhau.</p>
+                    <h4>Ví dụ</h4>         
+<iframe src="https://trinket.io/embed/python3/bed3626b3b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>Chương trình nhỏ trước đó có cú pháp đúng nhưng việc thực thi nó lại gây ra lỗi vì định nghĩa thứ hai của hàm sẽ xóa định nghĩa đầu tiên.</p>
+                </div>
+                <div class="class3">
+                    <h3>Sửa đổi tham số </h3>
+                    <p>Các tham số thuộc loại không thể thay đổi và có thể sửa đổi hoạt động theo những cách khác nhau bên trong một hàm.</p>
+                    <p>Các tham số này được thao tác trong phần thân của hàm và đôi khi còn được sửa đổi. Tùy thuộc vào loại tham số, những sửa đổi này có tác động trở lại bên ngoài chức năng. Các loại bất biến không thể được sửa đổi và điều này vẫn đúng. Khi một hàm chấp nhận một tham số thuộc loại bất biến, nó chỉ nhận được một bản sao giá trị của nó.
+                    </p>
+                    <p>Do đó, nó có thể sửa đổi tham số này mà không ảnh hưởng đến biến hoặc giá trị được sử dụng khi hàm được gọi. Đây được gọi là truyền tham số theo giá trị.</p>
+                    <p>Mặt khác, bất kỳ sửa đổi nào của một biến thuộc loại có thể sửa đổi bên trong hàm đều được phản ánh trong biến được sử dụng khi hàm được gọi. Kiểu truyền thứ hai này được gọi là truyền theo địa chỉ.</p>
+                    <h4>Ví dụ</h4>
+                    <p>Ví dụ sau sử dụng hàm Elements_sum để sửa đổi hai tham số.</p>
+                    <p>Tham số đầu tiên n, không thể thay đổi: việc sửa đổi nó không ảnh hưởng đến biến nb.</p>
+                    <p>Mặt khác, phần tử đầu tiên của tham số danh sách nhận giá trị 0. Phần tử đầu tiên của danh sách l không có cùng giá trị sau khi gọi Element_sum so với phần tử anh ta có trước đó.</p>
+<iframe src="https://trinket.io/embed/python3/7d344545f7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>Danh sách l là <span class="bold">được sửa đổi bên trong hàm</span> phần tử_sum. Bên trong hàm, danh sách l được chỉ định bởi mã định danh danh sách, đó là danh sách tương tự.</p>
+                    <p>Biến nb thuộc loại không thể thay đổi. Giá trị của nó đã được sao chép vào tham số n của hàm element_sum
+                    </p>
+                    <p>Bất kỳ sửa đổi nào của n bên trong hàm này đều không có tác động gì bên ngoài hàm.</p>
+                    <h4>Remarque</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+                    <p>Trong thực tế, việc truyền tham số trong Python rất giống với ngôn ngữ C:</p>
+                    <ul>
+                        <li>Các tham số không thể sửa đổi (có thể thay đổi) tương ứng với đoạn văn theo tham chiếu của C. Trên thực tế, đoạn văn được thực hiện bằng tham chiếu, nhưng vì không thể thay đổi các đối tượng không thể sửa đổi tại chỗ nên việc này giống như tạo một bản sao.</li>
+                        <li>Các tham số có thể sửa đổi (có thể thay đổi) như danh sách, từ điển... tương ứng với đoạn địa chỉ C.</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>Hàm đệ quy</h3>
+                    <h4>Định nghĩa: tổng quát</h4>
+                    <p>Hàm đệ quy là hàm gọi chính nó.</p>
+                    <h4>Ví dụ</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+                        <p>Hàm đệ quy được trích dẫn thường xuyên nhất là hàm giai thừa. Phần này nêu bật hai thành phần của hàm đệ quy, chính đệ quy và điều kiện dừng.</p>         
+<iframe src="https://trinket.io/embed/python3/81c1693718" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>                
+                    <p>Dòng cuối cùng của hàm giai thừa là đệ quy, trong khi dòng trước đó là điều kiện dừng, nếu không có điều kiện dừng thì hàm sẽ tiếp tục gọi chính nó, ngăn cản chương trình hoàn thành quá trình thực thi của nó. Nếu điều kiện này được chỉ định không chính xác hoặc bị thiếu, trình thông dịch python sẽ hiển thị một chuỗi thông báo không bị gián đoạn</p>
+                    </div>
+                    <h4>Chú ý !</h4>
+                    <p>Python không cho phép hơn 1000 cuộc gọi đệ quy: Factorielle(999) nhất thiết gây ra lỗi thời gian chạy ngay cả khi điều kiện dừng được chỉ định rõ.</p>
+                    <p>Trong trường hợp này, bạn phải chuyển hàm này thành hàm không đệ quy tương đương, điều này luôn có thể thực hiện được.</p>
+<iframe src="https://trinket.io/embed/python3/c4d63b9204" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class2">
+                <h2>Viết chương trình bằng Python</h2>
+                <div class="class3">
+                    <h3>Quy tắc viết</h3>
+                    <h4>Một dòng = một lệnh</h4>
+                    <p>Python yêu cầu một câu lệnh trên mỗi dòng. Không thể sử dụng hai dòng để viết bài tập trừ khi bạn kết thúc mỗi dòng không phải là dòng cuối cùng bằng ký hiệu \ Ví dụ sau là không thể.</p>
+<iframe src="https://trinket.io/embed/python/163c3c9569" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+            <div class="class2">
+                <h2>Đào tạo đầu tiên</h2>
+                <div class="class3">
+                    <h3>Bài tập: Bề mặt hình tròn</h3>
+                    <p>Thực hiện một chức năng <span class="bold">surfCircle(R)</span> trả về bề mặt của hình tròn (R là nửa đường kính của hình tròn).</p>
+                    <p>Ví dụ :</p>
+                    <p>print(surfCircle(2.5)) must print the value 19.635</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Bài tập: Tối đa ba giá trị</h3>
+                    <p>Thực hiện một hàm <span class="bold">maximum(n1,n2,n3)</span>trả về số lớn nhất trong 3 số n1, n2, n3 được cho làm đối số.</p>
+                    <p>Ví dụ: việc thực hiện lệnh:</p>
+                    <p>print(maximum(2,5,4)) must return the value of 5</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Bài tập: Tên của một tháng</h3>
+                    <p>Thực hiện một hàm <span class="bold">nameMonth(n)</span> trả về tên của tháng n.</p>
+                    <p>Ví dụ, việc thực hiện lệnh :</p>
+                    <p>print(nameMonth(4)) must return the value of April</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>  
+            <div class="class2">
+                <h2>Bài tập bài 1 – Ngôn ngữ Python: cơ sở</h2>   
+                <div class="class3">
+                    <h4>Bài tập 1: Phương trình bậc hai</h4>
+                    <p>
+                        Chúng ta muốn tính hai nghiệm, nếu chúng tồn tại, của phương trình bậc hai: <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msup>
+                                <mi>a</mi>
+                            </msup>
+                            <msup>
+                                <mi>x</mi>
+                                <mn>2</mn>
+                            </msup>
+                            <mo>+</mo>
+                            <mi>b</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mi>c</mi>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </math></p>
+                        Chương trình thu được ba hệ số A, B, C và cung cấp: hai nghiệm hoặc nghiệm kép hoặc nghiệm duy nhất
+                        nghiệm nếu phương trình âm (tức là nếu a=0) hoặc thực tế là phương trình không có nghiệm thực
+                        Viết chương trình tính và hiển thị nghiệm của phương trình này với A, B, C do người dùng nhập vào.</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Bài tập 2: Số nguyên tố</h4>
+                    <p>1. Đề xuất thuật toán xác định số n có phải là số nguyên tố chỉ chia hết cho 1 và chính nó hay không</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Sửa đổi thuật toán này để nó viết những số đầu tiên trong số m số nguyên đầu tiên.</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Bài tập 3: Bài toán hiển thị</h4>      
+                    <p>Gọi N là số nguyên được người dùng nhập vào sao cho N ≥ 0</p>
+                    <p>1.Viết chương trình hiển thị N dòng được xây dựng như sau (ghi số dòng):
+                        <ol>
+                            <li>∗</li>
+                            <li>∗ ∗</li>
+                            <li>∗ ∗ ∗</li>
+                            <li>∗ ∗ ∗∗</li>
+                        </ol>
+                    </p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Viết chương trình hiển thị N dòng có cấu trúc như sau:
+                        <ol>
+                            <li>∗</li>
+                            <li>***</li>
+                            <li>*****</li>
+                            <li>*******</li>
+                        </ol></p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Bài tập 4: Bộ định kỳ</h4>
+                    <p>Đặt tập truy hồi U được xác định bởi:
+                        
+                        
+                        
+                        U0 = 1
+                        Ui+1 =
+                        { −Ui + 3 if Ui is divisible by 2
+                        −3Ui + 1 else.
+                        with N ≥ 0.
+                        Viết chương trình tính và hiển thị các số hạng từ hạng 0 đến N với N do người dùng nhập vào.</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Bài tập 5: Ném xúc xắc</h4> 
+                    <p>Trò chơi bao gồm việc tung hai con xúc xắc và cố gắng lấy được hai con 6. Khi người dùng tạo ra số 6 với một trong các viên xúc xắc của mình, người dùng có thể giữ viên xúc xắc này và chỉ ném viên xúc xắc còn lại. Chúng tôi giả sử rằng viên xúc xắc đã đưa ra các giá trị D1 và D2.</p> 
+                    <p>1. Viết hàm rollDice lấy tham số là giá trị của xúc xắc D1 và D2 ​​và trả về xúc xắc để khởi động lại (hoặc không có)</p>             
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Viết chương trình mô phỏng vòng lặp trò chơi: chỉ cần xúc xắc ra không trùng với hai số 6 thì máy tính sẽ tung xúc xắc lại. Chương trình này phải gọi hàm rollDice.</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </body> 
+
+</html>
+

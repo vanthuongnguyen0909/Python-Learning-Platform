@@ -1,0 +1,28 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container{
+    border: solid 3px rgb(0, 213, 255);
+    display: flex;
+}
+.left-column {
+    width: 20%; /* Chiếm 30% chiều rộng của phần chứa */
+    background-color: #f8f8f8; /* Màu nền nhạt */
+    padding: 20px; /* Khoảng cách bên trong */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Đổ bóng nhẹ bên phải */
+}
+.right-column {
+    width: 80%; /* Chiếm 70% chiều rộng của phần chứa */
+    padding: 20px; /* Khoảng cách bên trong */
+    background-color:rgb(181, 213, 255);
+}
+a {
+    display: block;
+    margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

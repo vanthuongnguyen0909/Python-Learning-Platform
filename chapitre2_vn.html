@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="vi" xml:lang="vi" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction au Cours de Programmation en Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="top">
+        <h1 style="padding-right: 10px;">Bài giảng 2: Cấu trúc dữ liệu trong Python</h1>
+    </div>
+    <div class="container">
+        <div class="class2 ">
+            <h2>Giới thiệu</h2>
+            <p>Mục tiêu của chương này là tìm hiểu cách khai báo và thao tác các cấu trúc dữ liệu khác nhau như danh
+                sách, chuỗi, bản ghi (hoặc bộ dữ liệu) và từ điển dữ liệu. Chúng ta sẽ thấy rằng ngôn ngữ Python cung
+                cấp nhiều hàm gốc (bên trong ngôn ngữ) để thao tác các cấu trúc dữ liệu này.</p>
+        </div>
+        <div class="class2">
+            <h2>Danh sách</h2>
+            <div class="class3">
+                <h3>Danh sách khai báo</h3>
+                <h4>Định nghĩa</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;">
+                    <p>Danh sách là tập hợp các đối tượng có thể thuộc bất kỳ loại nào. Danh sách xuất hiện dưới dạng
+                        một chuỗi các đối tượng được đặt trong dấu ngoặc vuông và được phân tách bằng dấu phẩy.</p>
+                </div>
+                <h4>Khai báo : Ví dụ</h4>
+                <iframe src="https://trinket.io/embed/python3/a4809d9d59" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+            </div>
+            <div class="class3">
+                <h3>Danh sách thao tác</h3>
+                <p>Có thể chèn, xóa các phần tử, sắp xếp chúng. Ngôn ngữ Python cung cấp một tập hợp các hàm để thao tác
+                    với danh sách. Các chức năng này được tóm tắt trong bảng sau:</p>
+                <table>
+                    <tr>
+                        <td>x in l</td>
+                        <td>Trả về true nếu x là một trong các phần tử của l.</td>
+                    </tr>
+                    <tr>
+                        <td>x not in l</td>
+                        <td>Trả về true nếu x không phải là một trong các phần tử của l.</td>
+                    </tr>
+                    <tr>
+                        <td>l + t</td>
+                        <td>Thêm các phần tử của danh sách l vào danh sách t</td>
+                    </tr>
+                    <tr>
+                        <td>l * n</td>
+                        <td>Nối n bản sao của danh sách l</td>
+                    </tr>
+                    <tr>
+                        <td>l[i]</td>
+                        <td>Trả về phần tử thứ i của l. Chỉ số âm tương ứng với vị trí len(l)+i</td>
+                    </tr>
+                    <tr>
+                        <td>l[i:j]</td>
+                        <td>Trả về một danh sách chứa các phần tử của l với các chỉ số từ i đến j bị loại trừ</td>
+                    </tr>
+                    <tr>
+                        <td>l[i:j] = l2</td>
+                        <td>Trả về một danh sách chứa các phần tử của l với các chỉ số từ i đến j bị loại trừ trong danh sách l2</td>
+                    </tr>
+                    <tr>
+                        <td>l[i:j:k]</td>
+                        <td>Trả về một danh sách chứa các phần tử của l có chỉ số nằm giữa i và j bị loại trừ, các chỉ số này cách nhau bởi k (i; i + k; i + 2k; i + 3k;...)</td>
+                    </tr>
+                    <tr>
+                        <td>len(l)</td>
+                        <td>Trả về số phần tử của l</td>
+                    </tr>
+                    <tr>
+                        <td>min(l)</td>
+                        <td>Trả về phần tử nhỏ nhất của, (chú ý: kết quả khó dự đoán khi loại phần tử khác nhau)</td>
+                    </tr>
+                    <tr>
+                        <td>max(l)</td>
+                        <td>Trả về phần tử lớn nhất của, (chú ý: kết quả khó dự đoán khi các kiểu
+                            của các phần tử là khác nhau)</td>
+                    </tr>
+                    <tr>
+                        <td>sum(l)</td>
+                        <td>Trả về tổng của tất cả các phần tử</td>
+                    </tr>
+                    <tr>
+                        <td>del l[i:j]</td>
+                        <td>Xóa các phần tử nằm giữa chỉ số i và j.</td>
+                    </tr>
+                    <tr>
+                        <td>list (x)</td>
+                        <td>Chuyển x thành danh sách</td>
+                    </tr>
+                    <tr>
+                        <td>l.count (x)</td>
+                        <td>Trả về số lần xuất hiện của một giá trị x</td>
+                    </tr>
+                    <tr>
+                        <td>l.index (x)</td>
+                        <td>Trả về chỉ số xuất hiện đầu tiên của giá trị x</td>
+                    </tr>
+                    <tr>
+                        <td>l.append (x)</td>
+                        <td>Thêm phần tử có giá trị x vào cuối danh sách l</td>
+                    </tr>
+                    <tr>
+                        <td>l.extend (k)</td>
+                        <td>Thêm tất cả phần tử của danh sách k vào cuối danh sách l</td>
+                    </tr>
+                    <tr>
+                        <td>l.insert(i,x)</td>
+                        <td>Chèn một phần tử có giá trị x vào vị trí i trong danh sách l</td>
+                    </tr>
+                    <tr>
+                        <td>l.remove (x)</td>
+                        <td>Xóa lần xuất hiện đầu tiên của phần tử có giá trị x vào danh sách l</td>
+                    </tr>
+                    <tr>
+                        <td>l.pop ([i])</td>
+                        <td>Trả về phần tử l[i] và xóa phần tử đó khỏi danh sách</td>
+                    </tr>
+                    <tr>
+                        <td>l.reverse (x)</td>
+                        <td>Đảo ngược thứ tự các phần tử trong danh sách</td>
+                    </tr>
+                    <tr>
+                        <td>l.sort ([key=None, reverse=False])</td>
+                        <td>Sắp xếp danh sách l Khóa tham số là tùy ý : nó cho phép truyền một hàm để sắp xếp thứ tự các phần tử. Nếu ngược lại là True thì việc sắp xếp đang giảm dần.</td>
+                    </tr>
+                </table>
+                <h4>Danh sách thao tác</h4>
+                <iframe src="https://trinket.io/embed/python3/dfbcdaadb4" width="100%" height="356" frameborder="0"
+                    marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="class3">
+                <h3>Bản sao của một danh sách</h3>
+                <p>Danh sách là loại bất biến: là một đối tượng có trạng thái không thể sửa đổi sau khi được tạo.</p>
+                <p>Hãy nói đoạn mã sau:</p>
+                <iframe src="https://trinket.io/embed/python3/6efa9441af" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>Ở đây chúng ta thấy rằng khi chúng ta sửa đổi danh sách y thì danh sách x cũng được sửa đổi.</p>
+                <p style="color:red; font-size: 20px"> * Chú ý:</p>
+                <code>Để sao chép một danh sách sang một danh sách khác, bạn phải sao chép các thành phần của danh sách chứ không phải chính danh sách đó!</code>
+                <h4>Hàm copy()</h4>
+                <p>Hàm copy() cho phép sao chép các phần tử cấp đầu tiên của danh sách và lưu trữ chúng trong danh sách
+                    khác. Bản sao này được gọi là bản sao nông và hoạt động với các kiểu đơn giản (số, chuỗi, boolean)
+                </p>
+                <iframe src="https://trinket.io/embed/python3/4c21d01912" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Hàm deepCopy()</h4>
+                <p>Hàm deepcopy() của mô-đun sao chép cho phép tạo bản sao của các thành phần ở tất cả các cấp độ của
+                    danh sách và lưu trữ chúng trong danh sách khác. Bản sao này được gọi là bản sao nông và hoạt động
+                    với các loại như danh sách, từ điển dữ liệu, bản ghi,...</p>
+                <iframe src="https://trinket.io/embed/python3/cbc286ba9b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Duyệt qua danh sách</h3>
+                <h4>Hàm range()</h4>
+                <p>Hàm <span class="text">range(start, end, [step])</span> cho phép duyệt danh sách từ chỉ mục đầu đến chỉ mục cuối theo cách tăng dần. Bước tham số tùy chọn cho phép chỉ định bước tăng.</p>
+                <p>Hàm này thường được sử dụng trong vòng lặp for để duyệt qua tất cả các phần tử của danh sách.</p>
+                <h4>Ví dụ</h4>
+                <iframe src="https://trinket.io/embed/python/dab8978a90" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Ví dụ</h4>
+                <iframe src="https://trinket.io/embed/python/31d0642b21" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Việc sử dụng toán tử  "in" </h4>
+                <p>Cũng có thể sử dụng toán tử "in" để duyệt tất cả các phần tử của danh sách.</p>
+                <iframe src="https://trinket.io/embed/python/958f7097ab" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>Lệnh for el in x được dịch theo nghĩa đen là: với tất cả các phần tử của danh sách, hãy làm....
+                </p>
+                <h4>Ký hiệu viết tắt</h4>
+                <p>Ngoài ra còn có các ký hiệu viết tắt khi chúng ta muốn xây dựng một danh sách bằng cách duyệt qua các
+                    phần tử của nó để khởi tạo chúng.</p>
+                <p>Ví dụ: đoạn mã sau:</p>
+                <iframe src="https://trinket.io/embed/python/7188b4343c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>có thể được thay thế bởi :</p>
+                <iframe src="https://trinket.io/embed/python/367d4288e7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>Cũng có thể sử dụng các bài kiểm tra để chọn các mục từ danh sách để đưa vào hoặc loại trừ.</p>
+                <iframe src="https://trinket.io/embed/python3/b0a5da6166" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Danh sách của danh sách</h3>
+                <p>Có thể xây dựng danh sách các danh sách cho phép biểu diễn ma trận, tổng quát hơn là danh sách chiều
+                    N</p>
+                <iframe src="https://trinket.io/embed/python/ea21c875bb" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Các bộ dữ liệu</h2>
+            <div class="class3">
+                <h3>Khai báo bộ dữ liệu</h3>
+                <h4>Định nghĩa</h4>
+                <pre
+                    style="font-size: 15px; background-color: aliceblue;">Tuple là một mảng các đối tượng có thể thuộc bất kỳ loại nào. Chúng không thể sửa đổi được (bộ dữ liệu là bất biến hoặc bất biến).</pre>
+                <p>Một bộ dữ liệu xuất hiện dưới dạng danh sách các đối tượng được đặt trong dấu ngoặc đơn và được phân
+                    tách bằng dấu phẩy. Sáng tạo của họ sử dụng cùng một định dạng:</p>
+                <iframe src="https://trinket.io/embed/python3/bcb282278c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Thao tác bộ dữ liệu</h3>
+                <p>Những đối tượng này là vectơ của đối tượng. Vì chuỗi cũng là mảng nên các thao tác này một phần giống
+                    như đối với chuỗi.</p>
+                <table>
+                    <tr>
+                        <td>x in s</td>
+                        <td>đúng nếu x là một phần tử của s</td>
+                    </tr>
+                    <tr>
+                        <td>x not in s</td>
+                        <td>nghịch đảo của dòng trước</td>
+                    </tr>
+                    <tr>
+                        <td>s + t</td>
+                        <td>nối của s và t</td>
+                    </tr>
+                    <tr>
+                        <td>s * n</td>
+                        <td>nối n bản sao của s lần lượt</td>
+                    </tr>
+                    <tr>
+                        <td>s[i]</td>
+                        <td>trả về phần tử thứ i của s</td>
+                    </tr>
+                    <tr>
+                        <td>s[i:j]</td>
+                        <td>trả về một bộ chứa bản sao của các phần tử của s với các chỉ số từ i đến j bị loại trừ</td>
+                    </tr>
+                    <tr>
+                        <td>s[i:j:k]</td>
+                        <td>trả về một bộ chứa bản sao của các phần tử của s có chỉ số nằm giữa i và j bị loại trừ, các chỉ mục này cách nhau bởi k : i; tôi + k; tôi +2k; tôi + 3k; :::</td>
+                    </tr>
+                    <tr>
+                        <td>len(s)</td>
+                        <td>số phần tử của s</td>
+                    </tr>
+                    <tr>
+                        <td>min(s)</td>
+                        <td>phần tử nhỏ nhất của s, khó dự đoán khi các loại phần tử khác nhau
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>max(s)</td>
+                        <td>phần tử lớn nhất của s</td>
+                    </tr>
+                    <tr>
+                        <td>sum(s)</td>
+                        <td>trả về tổng của tất cả các phần tử</td>
+                    </tr>
+                </table>
+                <h4>Loại có thể sửa đổi: Nền tảng</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;">
+                <p>Một biến có kiểu có thể sửa đổi có thể được sửa đổi, nó giữ nguyên kiểu và cùng mã định danh. Chỉ có nội dung của nó là thay đổi.</p>
+                </div>
+                <p>Các bộ dữ liệu không thể sửa đổi (hoặc có thể thay đổi), điều này có nghĩa là không thể sửa đổi một
+                    trong các phần tử của chúng. Do đó, dòng gán sau đây không chính xác:</p>
+                <iframe src="https://trinket.io/embed/python/2c0b37f6ed" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Chuỗi ký tự (String)</h2>
+            <div class="class3">
+                <h3>Khai báo một chuỗi ký tự (String)</h3>
+                <h4>String of characters : Định nghĩa</h4>
+                <pre style="font-size: 15px; background-color: aliceblue;">
+                    Một chuỗi có nghĩa là một chuỗi ký tự hữu hạn, nói cách khác là văn bản..
+
+                    Kiểu Python là str.</pre>
+                <p>Đoạn văn bản này được đặt giữa hai dấu ngoặc kép hoặc hai dấu nháy đơn, hai ký hiệu này có thể thay
+                    thế cho nhau.</p>
+                <h4>Ví dụ</h4>
+                <iframe src="https://trinket.io/embed/python/8bf3ed0ef1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Ký tự đặc biệt</h4>
+                <p>Mặc định python không cho phép chèn các ký tự như dấu trong chuỗi.</p>
+                <p>Tuy nhiên, có một số ký tự đặc biệt có thể được sử dụng để định dạng chuỗi:</p>
+                <p style="text-align: center;">Danh sách các ký tự đặc biệt</p>
+                <table>
+                    <tr>
+                        <td class="col1">"</td>
+                        <td class="col2">dấu ngoặc kép</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">'</td>
+                        <td class="col2">dấu nháy đơn</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\n</td>
+                        <td class="col2">dòng mới</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\\</td>
+                        <td class="col2">chèn ký hiệu \</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\%</td>
+                        <td class="col2">phần trăm</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">\t</td>
+                        <td class="col2">sự lập bảng</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="class3">
+                <h3>Thao tác với chuỗi</h3>
+                <h4>Toán tử</h4>
+                <p>Một chuỗi tương tự như một mảng. Các toán tử sau đây áp dụng cho một chuỗi cũng như cho bất kỳ mảng
+                    số nguyên, số float, v.v..</p>
+                <p style="text-align: center;">Danh sách các toán tử</p>
+                <table>
+                    <tr>
+                        <td class="col1">+</td>
+                        <td class="col2">nối các chuỗi</td>
+                        <td class="col3">t = "abc" + "def"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">+=</td>
+                        <td class="col2">nối rồi gán</td>
+                        <td class="col3">t += "abc"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">in, not in</td>
+                        <td class="col2">Một chuỗi có chứa một chuỗi khác không?</td>
+                        <td class="col3">"ed" in "med"</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">*</td>
+                        <td class="col2">sự lặp lại của một chuỗi ký tự</td>
+                        <td class="col3">t = "abc" * 4</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">[n]</td>
+                        <td class="col2">lấy ký tự thứ n, ký tự đầu tiên có chỉ số 0</td>
+        <td class="col3"><pre>t = "abc"
+        print(t[0])
+        # donne a</pre></td>
+                    </tr>
+                    <tr>
+                        <td class="col1">[i:j]</td>
+                        <td class="col2">lấy các ký tự nằm giữa chỉ số i và j-1, ký tự đầu tiên có chỉ số 0</td>
+        <td class="col3"><pre>>t = "abc"
+        print(t [0:2])
+        # donne ab</pre></td> 
+                    </tr>
+                </table>
+                <ul>
+                    <li>Hàm len trả về số ký tự trong chuỗi</li>
+                    <li>Hàm str cho phép chuyển đổi một số nguyên, một số float hoặc phổ biến hơn là một đối tượng thành
+                        một chuỗi</li>
+                </ul>
+                <h4>Ví dụ</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/08d62b3f2a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Các hàm nâng cao trên chuỗi</h4>
+                <p>Có các chức năng khác cho phép bạn thao tác với chuỗi. Các chức năng này được gọi như sau:</p>
+                <iframe src="https://trinket.io/embed/python/ccb3e6d0f4" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>Trong đó s là một chuỗi, fonction là tên thao tác muốn áp dụng cho s, res là kết quả của thao tác
+                    này.</p>
+                <table>
+                    <tr>
+                        <td>count( sub[, start[, end]])</td>
+                        <td>Trả về số lần xuất hiện của chuỗi con, các tham số mặc định bắt đầu và kết thúc là tùy chọn và cho phép giảm việc tìm kiếm giữa các ký tự của chỉ mục bắt đầu và kết thúc bị loại trừ.</td>
+                    </tr>
+                    <tr>
+                        <td>find( sub[, start[,end]])</td>
+                        <td>Tìm kiếm một chuỗi phụ, các tham số mặc định bắt đầu và kết thúc là tùy chọn và có cùng ý nghĩa với các tham số của hàm trước đó. Hàm này trả về -1 nếu tìm kiếm không thành công.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>isalpha()</td>
+                        <td>Trả về True nếu tất cả các ký tự là chữ cái, nếu không thì trả về False.</td>
+                    </tr>
+                    <tr>
+                        <td>isdigit()</td>
+                        <td>Trả về True nếu tất cả ký tự là số, nếu không thì trả về False.</td>
+                    </tr>
+                    <tr>
+                        <td>replace( old, new[,count])</td>
+                        <td>Trả về bản sao của chuỗi bằng cách thay thế tất cả các lần xuất hiện của chuỗi cũ bằng chuỗi mới. Nếu số lượng tham số tùy chọn được đặt thì chỉ số lần xuất hiện đầu tiên sẽ được thay thế.</td>
+                    </tr>
+                    <tr>
+                        <td>split( [sep [,maxsplit]])</td>
+                        <td>Cắt chuỗi bằng cách sử dụng chuỗi sep làm dấu phân cách. Nếu tham số maxsplit được đặt, tối đa việc cắt maxsplit sẽ được thực hiện.</td>
+                    </tr>
+                    <tr>
+                        <td>upper()</td>
+                        <td>Thay thế chữ thường bằng chữ in hoa.</td>
+                    </tr>
+                    <tr>
+                        <td>lower()</td>
+                        <td>Thay thế chữ hoa bằng chữ thường.</td>
+                    </tr>
+                    <tr>
+                        <td>join ( li )</td>
+                        <td>Tổng hợp tất cả các phần tử của danh sách li để tạo thành một chuỗi.</td>
+                    </tr>
+                    <tr>
+                        <td>startswith(prefix[, start[, end]])</td>
+                        <td>Kiểm tra xem một chuỗi có bắt đầu bằng tiền tố hay không.</td>
+                    </tr>
+                    <tr>
+                        <td>endswith(suffix[, start[, end]])</td>
+                        <td>Kiểm tra xem một chuỗi có kết thúc bằng hậu tố hay không.</td>
+                    </tr>
+                </table>
+                <h4>Ví dụ về thao tác chuỗi</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/6057615563" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Ví dụ</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <iframe src="https://trinket.io/embed/python/2774d931e0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class3">
+                <h3>Chuyển đổi chuỗi thành datetime</h3>
+                <p>Viết chương trình bằng ngôn ngữ Python để chuyển một chuỗi ký tự có dạng “25/02/2000” thành một ngày
+                    tháng được biểu thị bằng một chuỗi ký tự có dạng “25/02/2000”</p>
+                <iframe src="https://trinket.io/embed/python/2ed5598929" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Từ điển dữ liệu</h2>
+            <div class="class3">
+                <h3>Giới thiệu</h3>
+                <p>Từ điển là mảng linh hoạt hơn danh sách. Danh sách tham chiếu các phần tử bằng cách gán cho chúng một
+                    vị trí: danh sách liên kết với mỗi phần tử một vị trí số nguyên trong khoảng từ 0 đến n-1 nếu n là
+                    độ dài của danh sách.</p>
+                <p>Từ điển cho phép liên kết với một phần tử một cái gì đó khác ngoài vị trí số nguyên: nó có thể là số
+                    nguyên, số thực, chuỗi, bộ chứa các đối tượng bất biến. Nói chung, một từ điển liên kết với một giá
+                    trị được gọi là khóa thuộc loại bất biến. Khóa này sẽ cho phép tìm giá trị liên quan.</p>
+                <p>Ưu điểm chính của từ điển là tìm kiếm khóa được tối ưu hóa. Ví dụ: chúng tôi liệt kê tên của các nhân
+                    viên của một công ty trong một danh sách. Sau đó, chúng tôi muốn biết liệu một người có tên được chỉ
+                    định trước có thuộc danh sách này hay không. Sau đó, bạn sẽ phải xem qua danh sách cho đến khi tìm
+                    thấy tên này hoặc xem qua toàn bộ danh sách nếu không có. Trong trường hợp từ điển, việc tìm kiếm
+                    tên này sẽ được viết và thực thi nhanh hơn nhiều.</p>
+            </div>
+            <div class="class3">
+                <h3>Khai báo từ điển dữ liệu</h3>
+                <h4>Định nghĩa</h4>
+                <pre style="font-size: 15px; background-color: aliceblue;">
+                    Từ điển là danh sách các cặp. Mỗi cặp chứa một khóa và một giá trị. Mỗi giá trị được biểu thị bằng khóa của nó. Giá trị có 
+                    thể thuộc bất kỳ loại nào, khóa phải thuộc loại bất biến, vì vậy nó không thể là danh sách hay từ điển. Mỗi khóa cũng như 
+                    mỗi giá trị có thể có một loại khác với các khóa hoặc giá trị khác.</pre>
+                <p>Từ điển xuất hiện dưới dạng một chuỗi các cặp đối tượng được đặt trong dấu ngoặc nhọn và được phântách bằng dấu phẩy. Khóa và giá trị của nó được phân tách bằng ký hiệu :. Sáng tạo của họ tuân theo cùng một định dạng:</p>
+                <iframe src="https://trinket.io/embed/python/9f23f5e635" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>Các chỉ số không còn là số nguyên nữa mà là các chuỗi trong ví dụ này. Để liên kết giá trị với khóa,
+                    bạn chỉ cần viết :</p>
+                <iframe src="https://trinket.io/embed/python/01dd49c3e3" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+            </div>
+            <div class="class3">
+                <h3>Thao tác từ điển dữ liệu</h3>
+                <p>Hầu hết các chức năng có sẵn cho danh sách đều bị cấm đối với từ điển, chẳng hạn như phép nối hoặc
+                    phép nhân (*). Không còn chỉ số nguyên nào để xác định các phần tử, tham chiếu duy nhất là khóa của
+                    chúng. Bảng sau liệt kê các thao tác trên từ điển.</p>
+                <table>
+                    <tr>
+                        <td>x in d</td>
+                        <td>true if x là một trong các khóa của d</td>
+                    </tr>
+                    <tr>
+                        <td>x not in d</td>
+                        <td>nghịch đảo của dòng trước</td>
+                    </tr>
+                    <tr>
+                        <td>d[i]</td>
+                        <td>trả về phần tử liên kết với khóa i</td>
+                    </tr>
+                    <tr>
+                        <td>len(d)</td>
+                        <td>số phần tử của d</td>
+                    </tr>
+                    <tr>
+                        <td>min(d)</td>
+                        <td>trả về từ khóa nhỏ hơn của d</td>
+                    </tr>
+                    <tr>
+                        <td>max(d)</td>
+                        <td>trả về từ khóa lớn hơn của d</td>
+                    </tr>
+                    <tr>
+                        <td>del d [i]</td>
+                        <td>xóa phần tử liên kết với từ khóa i</td>
+                    </tr>
+                    <tr>
+                        <td>list (d)</td>
+                        <td>trả về một danh sách chứa tất cả các từ khóa của từ điển d</td>
+                    </tr>
+                    <tr>
+                        <td>dict (x)</td>
+                        <td>chuyển x thành từ điển nếu có thể, khi đó d sẽ bằng dict( d.items () )</td>
+                    </tr>
+                    <tr>
+                        <td>d.copy ()</td>
+                        <td>Trả về một bản sao của d</td>
+                    </tr>
+                    <tr>
+                        <td>d.items ()</td>
+                        <td>Trả về một trình lặp trên tất cả các cặp (khóa, giá trị) có trong từ điển.</td>
+                    </tr>
+                    <tr>
+                        <td>d.keys ()</td>
+                        <td>Trả về một iterator trên tất cả các khóa của từ điển d</td>
+                    </tr>
+                    <tr>
+                        <td>d.values ()</td>
+                        <td>Trả về một iterator trên tất cả các giá trị của từ điển d</td>
+                    </tr>
+                    <tr>
+                        <td>d.get (k[,x])</td>
+                        <td>Trả về d[k], nếu thiếu khóa k thì giá trị Không được trả về trừ khi tham số tùy chọn x được chỉ định, trong trường hợp đó giá trị này sẽ được trả về.</td>
+                    </tr>
+                    <tr>
+                        <td>d.clear ()</td>
+                        <td>Xóa tất cả các mục trong từ điển.</td>
+                    </tr>
+                    <tr>
+                        <td>d.update(d2)</td>
+                        <td>Từ điển d nhận nội dung của d2.</td>
+                    </tr>
+                    <tr>
+                        <td>d.setdefault(k[,x])</td>
+                        <td>Đặt d[k] nếu từ khóa k tồn tại, nếu không thì gán x cho d[k]</td>
+                    </tr>
+                </table>
+                <h4>Sắp xếp từ điển trên các phím: Ví dụ </h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px;"> 
+                <p>Không thể sắp xếp một từ điển. Tuy nhiên, ví dụ sau cho phép bạn hiển thị tất cả các thành phần của
+                    từ điển theo thứ tự tăng dần của các khóa.</p>
+                </div>
+                <iframe src="https://trinket.io/embed/python/ab51dc22e3" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bản sao của từ điển dữ liệu</h4>
+                <p>Giống như danh sách, từ điển là đối tượng và bài tập không tương đương với một bản sao. Để sao chép
+                    từ điển dữ liệu, bạn phải sử dụng hàm copy</p>
+                <iframe src="https://trinket.io/embed/python/0575049960" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Bộ</h2>
+            <div class="class3">
+                <h3>Đặt khai báo</h3>
+                <p>Ngôn ngữ Python cũng định nghĩa cái được gọi là tập hợp. Họ chỉ chấp nhận các loại giống hệt nhau và
+                    cung cấp hầu hết các hoạt động liên quan đến tập hợp như giao lộ, hợp.</p>
+                <iframe src="https://trinket.io/embed/python/07c9392a0f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Đặt thao tác</h3>
+                <h4>Tổng quan</h4>
+                <ul>
+                    <li>sự kết hợp, ký hiệu là |</li>
+                    <li>giao điểm, ký hiệu là &</li>
+                    <li>sự khác biệt, ký hiệu là -</li>
+                    <li>sự khác biệt đối xứng, ký hiệu là ^</li>
+                </ul>
+                <h4>Ví dụ về mã</h4>
+                <iframe src="https://trinket.io/embed/python/c18d5c8d9b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Đào tạo đầu tiên</h2>
+            <div class="class3">
+                <h3>Bài tập: Đếm số lần xuất hiện của bảng</h3>
+                <h4>Câu hỏi :</h4>
+                <p>Cung cấp mã python để đếm số lần xuất hiện của từng phần tử trong danh sách.</p>
+                <iframe src="https://trinket.io/embed/python/e4cd21663d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+            <div class="class3">
+                <h3>Chuyển đổi một vectơ thành ma trận</h3>
+                <h4>Câu hỏi</h4>
+                <p>Đưa ra mã cho phép chuyển đổi vectơ chiều 6 thành ma trận 3 hàng và 2 cột (3 phần tử đầu tiên của
+                    vectơ tạo thành cột đầu tiên của ma trận - 3 phần tử cuối cùng, cột thứ hai)</p>
+                <iframe src="https://trinket.io/embed/python/e4cd21663d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="class2">
+            <h2>Bài tập đọc 2 – Cấu trúc dữ liệu trong Python</h2>
+            <div class="class3">
+                <h4>Bài tập 1: Bắt đầu</h4>
+                <p>Viết chương trình tạo một danh sách L gồm ít nhất 5 số nguyên sau đó lần lượt:</p>
+                <ol>
+                    <li>hiển thị giá trị của L[4];</li>
+                    <li>sửa đổi danh sách bằng cách thay thế L[1] bằng số 17 và L[3] bằng tổng của các phần tử lân cận
+                        L[2] và L[4] ;</li>
+                    <li>hiển thị 12 lần giá trị của số hạng cuối cùng trong danh sách.</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 2: Duyệt danh sách</h4>
+                <p>Viết chương trình tạo một danh sách các số nguyên, sau đó sử dụng các lần chạy liên tiếp của danh
+                    sách để thực hiện các hành động sau:</p>
+                <ol>
+                    <li>hiển thị danh sách theo cột;</li>
+                    <li>đếm số bội số của 3 có trong danh sách;</li>
+                    <li>tính tổng của tất cả các giá trị chẵn của danh sách;</li>
+                    <li>tính toán giá trị lớn nhất và nhỏ nhất của các phần tử trong danh sách;</li>
+                    <li>tạo một giá trị boolean true nếu giá trị trung bình số học của các giá trị trong danh sách lớn
+                        hơn hoặc bằng 10; tính tích của tất cả các giá trị trong danh sách có trong khoảng [50, 70] ;
+                    </li>
+                    <li>hiển thị danh sách ngược lại (không tạo danh sách mới).</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 3: Tính biểu đồ</h4>
+                <ol>
+                    <li>tạo một từ điển dữ liệu để lưu trữ số lần xuất hiện của mỗi ký tự trong một chuỗi;</li>
+                    <li>viết chương trình tính số lần xuất hiện của ký tự c trong chuỗi s.</li>
+                    <li>sửa đổi chương trình này bằng cách lưu trữ số lần xuất hiện của mỗi ký tự trong chuỗi s trong từ
+                        điển dữ liệu được tạo trong câu hỏi đầu tiên.</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 4: Trao đổi giá trị</h4>
+                <p>Viết chương trình trao đổi giá trị của ô đầu tiên và ô cuối cùng của bất kỳ danh sách không trống
+                    nào.</p>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 5: Danh sách đối xứng</h4>
+                <p>Viết chương trình hiển thị danh sách có đối xứng hay không (danh sách giống với danh sách ngược lại).
+                </p>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 6: Bảng màu</h4>
+                <p>Sử dụng ví dụ trước, hãy viết chương trình kiểm tra xem một chuỗi (một mảng ký tự) có phải là một
+                    bảng màu hay không, tức là chuỗi đảo ngược</p>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Bài tập 7: Liệt kê 2D</h4>
+                <p>Khay là một mảng hai chiều chứa các boolean. Nếu khay[i][j] đúng thì có một bức tường và nếu không
+                    thì ô đó trống. Mục tiêu của bài tập là viết hàm <span class="bold">path</span>lấy một khay và tọa độ của hai hình
+                    vuông deb và end và trả về True nếu chúng ta có thể đi từ hình vuông deb đến hình vuông cuối cùng
+                    bằng cách di chuyển theo chiều ngang và chiều dọc. Ví dụ: nếu khay=[[True,False,False,False],
+                    [False,True,True,False], <span class="bold">path(tray</span>,(1, 3),(1, 0)) sẽ trả về <span class="bold">False</span> và <span class="bold">path(tray </span>,(1, 3),(0, 1)) sẽ trả
+                    về <span class="bold">True</span>.</p>
+                <ol>
+                    <li>Viết hàm <span class="bold">NeighborCase</span> nhận vào một khay và một hình vuông rồi trả về tập hợp các hàng xóm ngay
+                        lập tức theo chiều ngang hoặc chiều dọc nằm trên khay và miễn phí.</li>
+                    <li>Viết hàm <span class="bold">NeighborCases</span> Các trường hợp lấy một bảng và một tập hợp các trường hợp rồi trả về tập hợp
+                        tất cả các lân cận của các trường hợp đó.</li>
+                    <li>Viết hàm <span class="bold">recharge</span> lấy một bảng và một hình vuông rồi trả về tập hợp các ô vuông có thể
+                        đến được từ hình vuông đó bằng cách di chuyển theo chiều ngang và chiều dọc</li>
+                    <li>Viết hàm <span class="bold">path</span>.</li>
+                </ol>
+                <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+        </div>
+</body>
+
+</html>

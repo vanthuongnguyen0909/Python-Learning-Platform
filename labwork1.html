@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduction au Cours de Programmation en Python</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <body>
+        <div class="top">
+            <h1>Application to datas analysis and visualization (Part 1)</h1>
+        </div>
+        <div class="container">
+            <div class="class2 ">
+                <h2>Objectifs</h2>
+                <p>The purpose of this first workshop is to manipulate the NumPy modules and the Pyplot sub-module of the Mathplotlib module. The application example we will use here concerns the analysis and visualization of general data of a population</p>
+            </div>
+            <div class="class2">
+                <h2>Introduction to the NumPy and Pyplot modules</h2>
+                <div class="class3">
+                    <h3>Introduction</h3>
+                    <p>The NumPy module allows you to perform numerical calculations with Python. It introduces an easier management of arrays of numbers and provides efficient support for large multidimensional arrays, and high-level mathematical routines (special functions, linear algebra, statistics, etc.).</p>
+                    <pre>
+<div class="line-number">   1</div><code>>>> import numpy as np # Import of the numpy library with the nickname np</code></pre>  
+                </div>
+                <div class="class3">
+                    <h3>Creating a NumPy array</h3>
+                    <h4>Arrays with NumPy</h4>
+                    <p>A NumPy array (usually called array) is a homogeneous multidimensional array: all elements must have the same type, usually numeric. The different dimensions are called axes, while the number of dimensions - 0 for a scalar, 1 for a vector, 2 for a matrix, etc. - is called the rank.</p>
+                    <p>Warning: do not confuse the rank of an array with the rank of a matrix!</p>
+                    <h4><span class="right">Exemple</span></h4>
+<iframe src="https://trinket.io/embed/python3/78fb2b0d63" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Creating a numpy array of numbers</h4>
+                    <p>A table is created with the instruction np.array().</p>
+                    <p>All the elements are delimited by square brackets. Each element is separated by a comma.</p>
+                    <pre>
+<div class="line-number">   1</div><code>>>> a = np.array([1,2,3,4,5])</code></pre>  
+                    <p>It is also possible to create arrays of arrays representing multi-dimensional arrays:</p>
+                    <pre>
+<div class="line-number">   1</div><code>>>> a = np.array([[1, 2, 3], [4, 5, 6]])</code></pre> 
+                    <h4>Creating a numpy array with the linspace function</h4>
+                    <p>It is possible to create a table with the function linspace(start, end, n).</p>
+                    <p>This function returns a NumPy array starting with an element of value start, ending with the element of value end with n elements regularly spaced.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <pre>
+<div class="line-number">   1</div><code>>>> tab = np.linspace(1., 4., 6)</code>
+<div class="line-number">   1</div><code>array([ 1. ,  1.6,  2.2,  2.8,  3.4,  4. ])</code></pre> 
+                    <h4>Creating an numpy array with the arange function</h4>
+                    <p>The function arange(start, end, step) creates a sequence of numbers starting at the start value and ending at the end value (excluded) separated by a step value.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <pre>
+<div class="line-number">   1</div><code>>>> np.arange(10, 30, 5) # From 10 to 30 (excluded) by steps of 5, default integer type</code>
+<div class="line-number">   2</div><code>array([10, 15, 20, 25])</code>
+<div class="line-number">   3</div><code>>>> tab = np.arange(0.5, 2.1, 0.3) </code>
+<div class="line-number">   4</div><code>>>> tab</code> 
+<div class="line-number">   5</div><code>array([ 0.5,  0.8,  1.1,  1.4,  1.7,  2. ])</code></pre>
+                </div>
+                <div class="class3">
+                    <h3>Displaying a numpy array</h3>
+                    <h4>General</h4>
+                    <p>To display a table, simply designate the table by its name.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <pre>
+<div class="line-number">   1</div><code>>>> a</code>
+<div class="line-number">   2</div><code>array([[1, 2, 3],</code>
+<div class="line-number">   3</div><code>       [4, 5, 6]])</code></pre>
+                </div>
+                <div class="class3">
+                    <h3>Manipulating a nympy array</h3>
+                    <h4>Access to the elements</h4>
+                    <p>The elements of an array are accessed by specifying the index between brackets (in the case of a 1D array) or the list of indices in the case of N-D arrays</p>                 
+<iframe src="https://trinket.io/embed/python3/d032c6e77d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Functions of the NumPy module</h3>
+                    <h4>Useful functions</h4>
+                    <p style="text-align: center;">List (not exhaustive) of the functions present in NumPy</p>
+                    <table>
+                        <tr>
+                            <td class="col1">sin(x)</td>
+                            <td class="col2">Sinus</td>
+                            <pre><td class="col3">>>> x = 1.12
+                                                  >>> r = np.sin(x)</td></pre>
+                        </tr>
+                        <tr>
+                            <td class="col1">cos(x)</td>
+                            <td class="col2">Cosine</td>
+                            <td class="col3">>>> r = np.cos(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">tan(x)</td>
+                            <td class="col2">Tangent</td>
+                            <td class="col3">>>> r = np.tan(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arcsin(x)</td>
+                            <td class="col2">Arc sine</td>
+                            <td class="col3">>>> r = np.arcsin(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arccos(x)</td>
+                            <td class="col2">Arc cosine</td>
+                            <td class="col3">>>> r = np.arcos(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arctan(x)</td>
+                            <td class="col2">Arc tangent</td>
+                            <td class="col3">>>> r = np.arctan(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">sinh(x)</td>
+                            <td class="col2">Hyperbolic sine</td>
+                            <td class="col3">>>> r = np.sinh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">cosh(x)</td>
+                            <td class="col2">Hyperbolic cosine</td>
+                            <td class="col3">>>> r = np.cosh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">tanh(x)</td>
+                            <td class="col2">Hyperbolic tangent</td>
+                            <td class="col3">>>> r = np.tanh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arcsinh(x)</td>
+                            <td class="col2">Hyperbolic arc sine</td>
+                            <td class="col3">>>> r = np.arcsinh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arccosh(x)</td>
+                            <td class="col2">Hyperbolic arc cosine</td>
+                            <td class="col3">>>> r = np.arccosh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arctanh(x)</td>
+                            <td class="col2">Hyperbolic arc tangent</td>
+                            <td class="col3">>>> r = np.arctanh(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">x**n</td>
+                            <td class="col2">Power n</td>
+                            <pre><td class="col3"></td>>>> n = 2
+
+                                                       >>> r = x**n</pre>
+                        </tr>
+                        <tr>
+                            <td class="col1">sqrt(x)</td>
+                            <td class="col2">Square root</td>
+                            <td class="col3">>>> r = np.sqrt(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">exp(x)</td>
+                            <td class="col2">Exponential</td>
+                            <td class="col3">>>> r = np.exp(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">log(x)</td>
+                            <td class="col2">Neperian logarithm</td>
+                            <td class="col3">>>> r = np.log(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">abs(x)</td>
+                            <td class="col2">Absolute value</td>
+                            <td class="col3">>>> r = np.abs(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">sign(x)</td>
+                            <td class="col2">Sign</td>
+                            <td class="col3">>>> s = np.sign(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">arround(x,n)</td>
+                            <td class="col2">Rounded to n decimal</td>
+                            <td class="col3">>>> s = np.arround(x,n)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">trunc(x)</td>
+                            <td class="col2">Returns the integer part of the number (the number is truncated)</td>
+                            <td class="col3">>>> s = np.trunc(x)</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">random.random()</td>
+                            <td class="col2">Generate a random number between 0 and 1 excluded</td>
+                            <td class="col3">>>> s = np.random.random()</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">random.random(n)</td>
+                            <td class="col2">Generate n random numbers between 0 and 1 excluded</td>
+                            <td class="col3">>>> s = np.array() = np.random.random(n)</td>
+                        </tr>
+                    </table>
+                    <h4>Exemple</h4>
+<iframe src="https://trinket.io/embed/python3/458a9bba66" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class2">
+                <h2>The Pyplot module</h2>
+                <div class="class3">
+                    <h3>Introduction</h3>
+                    <p>The <span class="text">Pyplot </span>sub-module of the <span class⁼"bold">Mathplotlib</span> module allows you to draw graphs in Python.</p>
+                    <p>To use this module, you must use the following instruction:</p>
+                    <pre>
+<div class="line-number">   1</div><code>>>> import matplotlib.pyplot as plt # Import of the pyplot sub-module of the mathplotlib module with the nickname plt</code></pre>
+                    <ul>
+                        <li>The creation of a graph is done with the <span class="bold">figure</span> function.</li>
+                        <li>The <span class="text">savefig </span>function allows you to save a figure.</li>
+                    </ul>
+<iframe src="https://trinket.io/embed/python3/d2bf434f2d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>The code of all the examples of the graphs present in the following subsections is visible by clicking on this file: curves_example.py <span class="modifie">[py]</span></p>
+                </div>
+                <div class="class3">
+                    <h3>Drawing a curve</h3>
+                    <h4>General</h4>
+                    <p>The <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html" target="_blank">plot </a>function allows you to draw a curve.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">      
+<iframe src="https://trinket.io/embed/python3/3476bdf772" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>          
+                        <img src="courbe1.png" class="center_img">
+                    </div>
+                    <h4>Axes and legend</h4>
+                    <p>It is possible to specify :</p>
+                    <ul>
+                        <li>the name of the axes with the <span class="text">xlabel</span> and <span class="text">ylabel</span> functions;</li>
+                        <li>the name of the graphic with the <span class="text">title </span> function;</li>
+                        <li>the position of the graph legend with the <span class="text">legend</span> function.</li>
+                    </ul>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">    
+<iframe src="https://trinket.io/embed/python3/1568a9eccf" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="courbe1_Axes_Legend.png" class="center_img">
+                    </div>
+                    <h4>Several curves</h4>
+                    <p>It is possible to plot several curves within the same graph by calling the plot function several times in succession.</p>
+                    <p>For each curve, it is possible to specify :</p>
+                    <ul>
+                        <li>its color with the color parameter;</li>
+                        <li>the plot style (solid, dotted, ...) with the linestyle parameter.</li>
+                    </ul>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+<iframe src="https://trinket.io/embed/python3/450e57664a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="courbe2_Axes_Legend.png" class="center_img">
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>Plotting a point cloud</h3>
+                    <h4>General</h4>
+                    <p>The <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">scatter </a>function allows you to draw scatter graphs.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+<iframe src="https://trinket.io/embed/python3/2c0a7b8b1c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <p>The <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">scatter </a>function uses many parameters to specify, among others:</p>
+                        <ul>
+                            <li>the size of the points with the s parameter;</li>
+                            <li>the color of the points with the c parameter.</li>
+                        </ul>
+                        <img src="nuage_points.png" class="center_img">
+                    </div>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+<iframe src="https://trinket.io/embed/python3/06549e0f4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="nuage_points2.png" class="center_img">
+                    </div>
+                    <p>A detailed usage example for each of the parameters is available at <a href="http://www.python-simple.com/python-matplotlib/scatterplot.php" target="_blank">http://www.python-simple.com/python-matplotlib/scatterplot.php</a></p>
+                    <h3>Drawing a histogram</h3>  
+                    <h4>General</h4>
+                    <p>The <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html" target="_blank">hist </a>function allows you to draw a histogram.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+<iframe src="https://trinket.io/embed/python3/f063ce6b3c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="histo.png" class="center_img">
+                    </div>
+                    <p>It is possible to plot several histograms in order to compare several series of data, for example, by passing an array of series to the hist function.</p>
+                    <p>It is possible to specify the name of each series using the label parameter.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">   
+<iframe src="https://trinket.io/embed/python3/f2d4c6a2f1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="histo2.png" class="center_img">
+                    </div>
+                    <p>It is also possible to specify the size of each interval of the histogram using the bins parameter.</p>
+                    <h4><span class="right">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">   
+<iframe src="https://trinket.io/embed/python3/e2232431da" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="histo3.png" class="center_img">
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>Multiple graphs</h3>
+                    <h4>General</h4>
+                    <p>The <a href="https://updago.univ-poitiers.fr/pluginfile.php/341826/mod_scorm/content/3/co/TP1_15.html" target="_blank">subplot </a>function allows you to create graphics composed of several graphics.</p>
+                    <p>This function must be called for each subplot. It takes 3 arguments: number of rows, number of columns and graph number.</p>
+                    <h4>Example 1 : Two graphs <span class="rignt">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">   
+                        <p>The following graph is composed of one row and two columns. It has two graphs:</p>
+                        <ul>
+                            <li>ua subgraph on the 1st row and 1st column created with the instruction plt.subplot(121) ;</li>
+                            <li>a subgraph on the 1st row and 2nd column created with the instruction plt.subplot(122).</li>
+                        </ul>
+                        <img src="multi.png" class="center_img">
+                    </div>
+<iframe src="https://trinket.io/embed/python3/e6581a391b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Example 1 : Four graphs <span class="rignt">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px"> 
+                        <p>The following graph is composed of 2 rows and 2 columns. It has 4 graphs :</p>
+                        <ul>
+                            <li>a graph at the top left (1st row 1st column) created with the instruction plt.subplot(221);</li>
+                            <li>a graph at the top right (1st row 2nd column) created with the instruction plt.subplot(222);</li>
+                            <li>a graph at the bottom left (2nd line 1st column) created with the instruction plt.subplot(223);</li>
+                            <li>a graph at the bottom right (2nd row 2nd column) created with the instruction plt.subplot(224).</li>
+                        </ul>
+<iframe src="https://trinket.io/embed/python3/0dbb25dee7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="multi2.png" class="center_img">
+                    </div>
+                    <h4>Example 3 : Three graphs <span class="rignt">Exemple</span></h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px"> 
+                        <p>The following graph is composed of 2 rows and 2 columns. It is composed of 3 graphs:</p>
+                        <ul>
+                            <li>a graphic at the top (1st line) created with the instruction plt.subplot(211) ;</li>
+                            <li>a graph at the bottom left (2nd line 1st column) created with the instruction plt.subplot(223) ;</li>
+                            <li>a graph at the bottom right (2nd row 2nd column) created with the instruction plt.subplot(224).</li>
+                        </ul>
+<iframe src="https://trinket.io/embed/python3/b615beec7f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                        <img src="multi3.png" class="center_img">
+                    </div>
+                </div> 
+            </div>
+            <div class="class2">
+                <h2>Data analysis and visualization</h2>
+                <div class="class3">
+                    <h3>Exercice : Implementation of a statistics module</h3>
+                    <p>The goal is to complete the file stats.py in order to implement functions allowing to evaluate the mean, variance, covariance, median and coefficients of the regression line of a data set represented as a one-dimensional array.</p>
+                    <p class="bold">Question</p>
+                    <p>Implement the body of the <span class="inline">mean</span> function.
+                        The mean <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                              <mi>m</mi>
+                              <mi>x</mi>
+                            </msub>
+                          </math> of a set of  N elements <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                              <mi>x</mi>
+                              <mi>i</mi>
+                            </msub>
+                          </math> corresponds to:
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msub>
+                            <mi>m</mi>
+                            <mi>x</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mi>N</mi>
+                        </mfrac>
+                        <munderover>
+                            <mo>&#x2211;<!-- ∑ --></mo>
+                            <mrow class="MJX-TeXAtom-ORD">
+                                <mi>k</mi>
+                                <mo>=</mo>
+                                <mn>0</mn>
+                            </mrow>
+                            <mrow class="MJX-TeXAtom-ORD">
+                                <mi>N</mi>
+                                <mo>&#x2212;<!-- − --></mo>
+                                <mn>1</mn>
+                            </mrow>
+                        </munderover>
+                        <msub>
+                            <mi>x</mi>
+                            <mi>k</mi>
+                        </msub>
+                    </math></p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Implement the body of the <span class="inline">variance</span> function.
+
+                        The variance <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msubsup>
+                              <mi>&#x03C3;<!-- σ --></mi>
+                              <mi>x</mi>
+                              <mn>2</mn>
+                            </msubsup>
+                          </math> of a set of N éléments <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                              <mi>x</mi>
+                              <mi>i</mi>
+                            </msub>
+                          </math> corresponds to :: 
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msubsup>
+                            <mi>&#x03C3;<!-- σ --></mi>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msubsup>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mi>N</mi>
+                        </mfrac>
+                        <munderover>
+                            <mo>&#x2211;<!-- ∑ --></mo>
+                            <mrow class="MJX-TeXAtom-ORD">
+                                <mi>k</mi>
+                                <mo>=</mo>
+                                <mn>0</mn>
+                            </mrow>
+                            <mrow class="MJX-TeXAtom-ORD">
+                                <mi>N</mi>
+                                <mo>&#x2212;<!-- − --></mo>
+                                <mn>1</mn>
+                            </mrow>
+                        </munderover>
+                        <msubsup>
+                            <mi>x</mi>
+                            <mi>k</mi>
+                            <mn>2</mn>
+                        </msubsup>
+                        <mo>&#x2212;<!-- − --></mo>
+                        <msubsup>
+                            <mi>m</mi>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msubsup>
+                    </math></p> 
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Implement the body of the <span class="inline">covariance</span> function.
+                    
+                        The covariance <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>s</mi>
+                                <mrow class="MJX-TeXAtom-ORD">
+                                    <mi>x</mi>
+                                    <mi>y</mi>
+                                </mrow>
+                            </msub>
+                        </math> of two sets of N elements <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>x</mi>
+                                <mi>i</mi>
+                            </msub>
+                        </math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>y</mi>
+                                <mi>i</mi>
+                            </msub>
+                        </math> corresponds to : <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <msub>
+                                <mi>s</mi>
+                                <mrow class="MJX-TeXAtom-ORD">
+                                    <mi>x</mi>
+                                    <mi>y</mi>
+                                </mrow>
+                            </msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mi>N</mi>
+                            </mfrac>
+                            <munderover>
+                                <mo>&#x2211;<!-- ∑ --></mo>
+                                <mrow class="MJX-TeXAtom-ORD">
+                                    <mi>k</mi>
+                                    <mo>=</mo>
+                                    <mn>0</mn>
+                                </mrow>
+                                <mrow class="MJX-TeXAtom-ORD">
+                                    <mi>N</mi>
+                                    <mo>&#x2212;<!-- − --></mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </munderover>
+                            <msub>
+                                <mi>x</mi>
+                                <mi>k</mi>
+                            </msub>
+                            <msub>
+                                <mi>y</mi>
+                                <mi>k</mi>
+                            </msub>
+                            <mo>&#x2212;<!-- − --></mo>
+                            <msub>
+                                <mi>m</mi>
+                                <mi>x</mi>
+                            </msub>
+                            <msub>
+                                <mi>m</mi>
+                                <mi>y</mi>
+                            </msub>
+                        </math></p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Implement the body of the <span class="inline">regression</span> function.
+
+                        The regression line of <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>y</mi>
+                          </math> on <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>x</mi>
+                          </math> corresponds to the line y = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>y</mi>
+                            <mo>=</mo>
+                            <mi>a</mi>
+                            <mo>.</mo>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mi>b</mi>
+                          </math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>a</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                              <msub>
+                                <mi>s</mi>
+                                <mrow class="MJX-TeXAtom-ORD">
+                                  <mi>x</mi>
+                                  <mi>y</mi>
+                                </mrow>
+                              </msub>
+                              <msubsup>
+                                <mi>&#x03C3;<!-- σ --></mi>
+                                <mi>x</mi>
+                                <mn>2</mn>
+                              </msubsup>
+                            </mfrac>
+                          </math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>b</mi>
+                            <mo>=</mo>
+                            <msub>
+                              <mi>m</mi>
+                              <mi>y</mi>
+                            </msub>
+                            <mo>&#x2212;<!-- − --></mo>
+                            <mi>a</mi>
+                            <mo>.</mo>
+                            <msub>
+                              <mi>m</mi>
+                              <mi>x</mi>
+                            </msub>
+                          </math></p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Implement the body of the <span class="inline">median</span> function. The median <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msub>
+                          <mi>&#x03BC;<!-- μ --></mi>
+                          <mi>x</mi>
+                        </msub>
+                      </math> of x increasingly ordered values corresponds to value at <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mi>n</mi>
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mo>/</mo>
+                        </mrow>
+                        <mn>2</mn>
+                      </math> index. You can use the <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.sort.html">sort </a>function present in the NumPy module in order to order the array <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mi>x</mi>
+                      </math> passed in parameter of the function </p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Loading a dataset</h3>
+                    <h4>Context</h4>
+                    <p>The file population.csv contains, for a series of 66 individuals with for each individual, the values of sex, height and weight.</p>
+                    <p>The format of this file, called CSV (Comma Separated Values) format, is the standard format for exchanging statistical data between software.</p>
+                    <p>A CSV file can be read and loaded almost directly into an array object. You can then perform all the calculations you need to analyze this data via Python.</p>
+                    <p>In this format, the first line (often) gives the names of the characters studied and the following lines each describe an individual by listing the values of the characters of this individual and by separating them by commas.</p>
+                    <p>Loading a file into a NumPy array is done using the :</p>
+                    <pre>
+<div class="line-number">  1</div><code>>>> tab = genfromtxt(open(file_name,"rb"),delimiter=",",names=True,dtype=None)</code></pre>
+                    <p>avec :</p>
+                    <ul>
+                        <li><span class="inline">tab</span>, corresponds to a <span class="inline">NumPy</span> array;</li>
+                        <li><span class="inline">file_name</span>, corresponds to the name of the file ;</li>
+                        <li><span class="inline">delimiter</span>, the delimiting character between each column;</li>
+                        <li><span class="inline">names</span>, a boolean indicating whether or not to keep the column names.</li>
+                    </ul>
+                    <p class="bold">Question</p>
+                    <p>Place this file in your working directory. Load the file into the editor and observe the structure of the information.</p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Create a population table from the data stored in the file "population.csv".</p>
+                    <p>Display in the console the content of the population object.</p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Display in the console the content of the objects <span class="inline">population["sex"], population["weight"] and population["height"]</span></p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Display in the console the content of the objects <span class="inline">population[0], population[1].</span></p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Display in the console the content of the objects <span class="inline">population[1]["sex"], population[1]["weight"].</span></p>
+                    <p>What do you conclude about the accessibility of the data ?</p>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Data analysis and visualization : Weight and height of a population</h3>
+                    <p>The data to be used in this exercise correspond to the data stored in the population.csv file that you saved on your disk in the previous exercise.</p>
+                    <p class="bold">Question</p>
+                    <p>Using the stats.py module implemented in the first exercise, calculate and display:</p>
+                    <ul>
+                        <li>the mean of the weight and height of the population;</li>
+                        <li>the median of the weight and height of the population;</li>
+                        <li>the variance of the weight and height of the population.</li>
+                    </ul>
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Using the <span class="text">Pyplot</span> sub-module, write a program to draw a graph showing the scatterplot (points, size) as in the following figure:</p>
+                    <img src="PoidsTaille.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>Write a program that adds the weight/height regression line to this graph, as in the following figure:</p>
+                    <img src="PoidsTailleRegression.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Write a program to plot the scatterplot (weight; height) for women with its weight/height regression line.</p>
+                    <img src="Femmes.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Write a program to plot :</p>
+                    <ul>
+                        <li>a graph on the left showing the distribution for women as a scatter plot (weight; height) and with the regression line;</li>
+                        <li>a graph on the right showing the same for men.</li>
+                    </ul>
+                    <img src="HommesFemmes.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>The body mass index (BMI) is defined as <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                          <mi>p</mi>
+                          <msup>
+                            <mi>t</mi>
+                            <mn>2</mn>
+                          </msup>
+                        </mfrac>
+                      </math> with : </p>
+                    <ul>
+                        <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                          </math> the weight in <span class="bold">kg</span> ; <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>p</mi>
+                          </math> le poids en <span class="bold">kg</span> ;</li>
+                        <li><math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mi>t</mi>
+                          </math>the height in <span class="bold">meter</span>.</li>
+                    </ul>
+                    <p>Write a program to plot a histogram showing the number of people per gender with the correct BMI (i.e., between 18.5 and 25), as in the following figure:</p>
+                    <img src="IMC_Correct.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Write a program to plot:</p>  
+                    <ul>
+                        <li>a histogram on the left showing the number of people by sex who are underweight (i.e., with a cpi less than 18.5) ;</li>
+                        <li>a histogram on the right showing the number of people per sex who are overweight (i.e. with an imc greater than 25).</li>
+                    </ul> 
+                    <p>You should end up with the following graph:</p>   
+                    <img src="MaigreurSurcharge.png" class="center_img">      
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p class="bold">Question</p>
+                    <p>Using the tutorial at <a href="https://python-graph-gallery.com/85-density-plot-with-matplotlib/">https://python-graph-gallery.com/85-density-plot-with-matplotlib/</a> draw a density plot showing the point cloud (weight, height):</p>
+                    <img src="density.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>Mathplotlib has several color scales.</p>
+                    <p>These scales are referenced at <a href="https://matplotlib.org/2.0.2/examples/color/colormaps_reference.html">https://matplotlib.org/2.0.2/examples/color/colormaps_reference.html</a>.</p>
+                    <p>Change the color scale of your graph, by testing for example the scale <span class="inline">"nipy_spectral"</span> :</p>
+                    <img src="density2.png" class="center_img">
+<iframe src="https://trinket.io/embed/python3/2dd9670d4d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>  
+            </div>
+            

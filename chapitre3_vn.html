@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi" xml:lang="vi" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giới thiệu về khóa học lập trình trên Python</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="top">
+    <h1 style="padding: 10px;">Chương 3: Lập trình hướng đối tượng: Lớp và đối tượng</h1>
+  </div>
+  <div class="container">
+    <div class="class2">
+      <h2>Giới thiệu</h2>
+      <p>
+        Lập trình mệnh lệnh có cấu trúc dưới dạng hàm và thủ tục cho phép chia
+        một vấn đề thành nhiều vấn đề phụ. Mỗi phương pháp giải quyết được một
+        phần vấn đề. Hậu quả: kiến ​​trúc của chương trình được tạo ra từ các
+        phương pháp xử lý mà nó thực hiện
+      </p>
+      <p><strong>Nhược điểm của lập trình mệnh lệnh:</strong></p>
+      <p>Lập trình mệnh lệnh xuất hiện hạn chế khi:</p>
+      <ul>
+        <li>
+          chúng tôi muốn kiến ​​trúc ứng dụng: thu thập các quy trình, tạo quy
+          trình mới, xóa chúng. Làm cách nào để thu thập các quy trình này
+          theo ngữ nghĩa của chúng?
+        </li>
+        <li>để duy trì/phát triển mã.</li>
+        <li>
+          chúng tôi muốn đảm bảo rằng người dùng không sửa đổi một số biến
+          "quan trọng" của mã: vấn đề về độ mạnh của mã
+        </li>
+      </ul>
+      <p>
+        Lập trình hướng đối tượng (OOP) được phát triển ngay từ năm 1960 (bởi
+        Dah và Nygaard) và sau đó vào năm 1970 bởi Alan Kay bằng cách đề xuất
+        một bộ nguyên tắc nhằm hạn chế những vấn đề này. Đó là một mô hình lập
+        trình
+      </p>
+      <p>
+        OOP cho phép mô hình hóa pb từ dữ liệu chúng xử lý và cách các dữ liệu
+        này tương tác với nhau. Những dữ liệu này được gọi là Object. Kiến
+        trúc của chương trình được tạo từ dữ liệu mà nó xử lý.
+      </p>
+      <p><strong>Mục tiêu OOP:</strong></p>
+      <ul>
+        <li>Tạo điều kiện thuận lợi cho việc sử dụng lại mã</li>
+        <li>Tạo điều kiện cho sự phát triển của nó</li>
+        <li>
+          Cải thiện thiết kế của giải pháp để cải thiện khả năng bảo trì của
+          nó
+        </li>
+      </ul>
+      <p><strong>Ví dụ: Mô hình hóa hoạt động của TV</strong></p>
+      <ul>
+        <li>Đối tượng: - Màn hình (kích thước, độ phân giải, ...)</li>
+        <li>Điều khiển từ xa (màu sắc, trọng lượng)</li>
+        <li>Phương pháp: - bật / tắt</li>
+        <li>tăng/giảm âm thanh</li>
+        <li>chuyển kênh</li>
+      </ul>
+      <p><strong>Lịch sử :</strong></p>
+      <ul>
+        <li>
+          1967: SIMULA -> nguồn gốc của OOP. Mô hình hóa mô phỏng. Mô tả tự nhiên bằng các đối tượng thay đổi (OOP + lập trình hướng sự kiện)
+        </li>
+        <li>
+          70's : SmallTalk -> Phát triển OOP. Ngôn ngữ đối tượng đầu tiên. Sự ra đời của môi trường cửa sổ WIMP (Cửa sổ, Menu, Thiết bị trỏ)
+        </li>
+        <li>
+          Thập niên 80: Sự xuất hiện của các ngôn ngữ OO, C++, Object Pascal, Delphi, Objective C
+        </li>
+        <li>
+          1996: Sự xuất hiện của ngôn ngữ Java: ngôn ngữ OO "cấp cao"
+        </li>
+        <li>1998: C++ standard</li>
+      </ul>
+    </div>
+    <div class="class2">
+      <h3>Đối tượng (Object)</h3>
+      <div class="class3">
+        <h3>Khái niệm đối tượng (Object)</h3>
+        <h4>Object : Đối tượng <span class="right">Định nghĩa</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            Một đối tượng là sự biểu diễn ngữ nghĩa của một đối tượng thực
+          </p>
+        </div>
+        <h4><span class="right">Ví dụ</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>A person, a car, a TV, ...</p>
+        </div>
+        <h4><span class="right">Nền tảng</span></h4>
+        <div class="footer">
+          <p>Một đối tượng được xác định bởi:</p>
+          <ul>
+            <li>
+              <span class="bold">Một cái tên</span> : tên của một đối
+              tượng(object)
+            </li>
+            <li>
+              <span class="bold">One or more states </span>(color = blue,
+              weight = 10kg,...)
+            </li>
+            <li>
+              <span class="bold">One or more behaviors</span> (treatments)
+            </li>
+          </ul>
+        </div>
+        <h4><span class="right">Ví dụ</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>A black Peugeot 207 driving at 90km/h</p>
+          <ul>
+            <li>Name: Peugeot 207</li>
+            <li>Status: color = black, speed = 90km/h</li>
+            <li>Behavior: drives</li>
+          </ul>
+        </div>
+        <h4><span class="right">Nhận xét</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            Họ cũng có thể trả về giá trị trạng thái của đối tượng. Ví dụ: hàm
+            xử lý GiveSpeed() có thể trả về giá trị tốc độ của ô tô.
+          </p>
+          <ul>
+            <li>
+              Việc xử lý một đối tượng có thể sửa đổi các đặc tính của đối
+              tượng. Ví dụ: quá trình xử lý ChangeColor() có thể thay đổi màu
+              của ô tô.
+            </li>
+            <li>
+              Họ cũng có thể trả về giá trị trạng thái của đối tượng. Ví dụ:
+              hàm xử lý GiveSpeed() có thể trả về giá trị tốc độ của ô tô.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="class2">
+      <h3>Lớp(Classes)</h3>
+      <div class="class3">
+        <h3>Khái niệm lớp(classes)</h3>
+        <h4>Class : Lớp<span class="right">Định nghĩa</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            Một lớp là một cái khuôn dùng để xây dựng các đối tượng. Đó là sự
+            tập hợp các đặc điểm và cách xử lý trong một thực thể duy nhất.
+            Một lớp là một sự trừu tượng
+          </p>
+        </div>
+        <h4><span class="right">Ví dụ</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <p>
+            Lớp Car được sử dụng để chế tạo ô tô (Peugeot 207, Renaut
+            Mégane,..)
+          </p>
+          <ul>
+            <li>Tên: : Car</li>
+            <li>Đặc trưng : color, speed</li>
+            <li>Phương pháp : start(), accelerate(), decelerate(), stop()</li>
+          </ul>
+        </div>
+        <h4>
+          Các thuộc tính và phương thức: <span class="right">Cơ bản</span>
+        </h4>
+        <div class="footer"></div>
+          <ul>
+            <li>
+              Các đặc tính của một lớp được gọi là thuộc tính(attributs).
+            </li>
+            <li>
+              Các phương pháp điều trị được gọi là phương thức(methods).
+            </li>
+          </ul>
+        </div>
+        <h4>Một lớp bằng ngôn ngữ Python:<span class="right">Nền tảng</span></h4>
+        <div class="footer">
+          <p>Trong Python, một lớp được khai báo theo cú pháp sau:</p>
+          <pre>
+<div class="line-number">   1</div><code>class ClassName :</code>
+<div class="line-number">   2</div><code>                  </code>   
+<div class="line-number">   3</div><code>   # Methods of the class</code>
+<div class="line-number">   4</div><code>                  </code>   
+<div class="line-number">   5</div><code>   # Attributes of the class</code></pre>
+        </div>
+        <h4>Lớp Car: <span class="right">Ví dụ</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+          <iframe src="https://trinket.io/embed/python/e6a941d087" width="100%" height="356" frameborder="0"
+            marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Các phương thức(methods) của một lớp</h3>
+        <div class="class4">
+          <h4>Giới thiệu</h4>
+          <p>Mỗi lớp phải có 4 loại phương thức(methods):</p>
+          <ul>
+            <li>
+              phương thức(methods) được gọi là
+              <span class="bold">constructors</span>cho phép xây dựng đồ vật ;
+            </li>
+            <li>
+              phương thức cho phép trả về giá trị của từng thuộc tính. Những
+              phương thức này được gọi là getters;
+            </li>
+            <li>
+              phương thức cho phép trả về giá trị của từng thuộc tính. Những
+              phương thức này được gọi là setters ;
+            </li>
+            <li>
+              các phương thức cho phép thay đổi trạng thái của các thuộc tính
+              (ví dụ drive, stop, ...)
+            </li>
+          </ul>
+        </div>
+        <div class="class4">
+          <h4>Hàm tạo của một lớp</h4>
+          <h5>Hàm tạo của một lớp</h5>
+          <p>
+            Hàm tạo là một phương thức cho phép xây dựng các đối tượng cùng loại với lớp. Trong Python, hàm tạo được khai báo dưới dạng :
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>def __init__(self, param1 = valueDefault1, param2 = valueDefault2, ... paramN = valueDefaultN)</code></pre>
+
+          <ul>
+            <li>
+                self là đối tượng chúng ta tạo ra (thể hiện chúng ta thao tác);
+            </li>
+            <li>param1, .. paramN : các tham số của hàm tạo. Nói chung, các tham số này là các biến khởi tạo giá trị của các thuộc tính. Có thể đưa ra các giá trị mặc định (valueDefault1, ..., valueDefaultN)</li>
+            
+          </ul>
+          <h5>
+            Hàm tạo của lớp Car : <span class="right">Ví dụ</span>
+          </h5>
+          <iframe src="https://trinket.io/embed/python3/7d041f3358" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          <h5><span class="right">* Chú ý</span></h5>
+          <p>Xin nhắc lại, ngôn ngữ Python không hỗ trợ nạp chồng hàm. Vì vậy không thể định nghĩa nhiều hàm tạo trong cùng một lớp.</p>
+        </div>
+        <div class="class4">
+          <h4>Getter</h4>
+          <p>
+            Getter là một phương thức trả về giá trị của một thuộc tính. Trong Python, một getter được khai báo là:
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>def _get_attributeName(self)</code></pre>
+          <ul>
+            <li>self chỉ định đối tượng chúng ta tạo ra (ví dụ chúng ta vận dụng).</li>
+          </ul>
+          <h5>Getters của các thuộc tính của lớp Car :<span class="right">Exemple</span></h5>
+          <iframe src="https://trinket.io/embed/python3/60f3fb2096" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        <div class="class4">
+          <h4>Setter</h4>
+          <p>
+            Setter là một phương thức cho phép thay đổi giá trị của một thuộc tính bằng giá trị được truyền trong tham số. Phương pháp này không trả về bất kỳ kết quả nào.
+          </p>
+          <p>Trong Python, một setter được khai báo là :</p>
+          <pre>
+<div class="line-number">   1</div><code>def _set_attributeName(self)</code></pre>
+          <h4>Setters các thuộc tính của lớp Car :<span class="right">Exemple</span>
+            <iframe src="https://trinket.io/embed/python3/5275272c88" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          </h4>
+        </div>
+        <div class="class4">
+          <h4>Phương pháp methods</h4>
+          <p>
+            Có thể khai báo bất kỳ loại phương thức nào cho phép thay đổi trạng thái của một đối tượng và do đó thay đổi giá trị của các thuộc tính hoặc tổng quát hơn là thực hiện xử lý từ dữ liệu của đối tượng.
+          </p>
+          <p>
+            Loại phương thức này được khai báo theo cách tiêu chuẩn. Chúng phải luôn lấy self làm tham số, tức là chúng ta thao tác
+          </p>
+          <h5>Các phương thức tăng và giảm tốc của lớp Car:<span class="right">Exemple</span></h5>
+          <iframe src="https://trinket.io/embed/python3/cae64d77df" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Các thuộc tính của lớp</h3>
+        <h4><span class="right">Nền tảng</span></h4>
+        <div class="footer"></div>
+          <p>
+            Trong Python, các thuộc tính của một lớp được khai báo bằng cách chỉ định getter và setter của thuộc tính:
+          </p>
+          <pre>
+<div class="line-number">   1</div><code>attributeName = property(_get_attributeName, _set_attributeName)</code></pre>
+        </div>
+        <h4>
+            Các thuộc tính của lớp Car : <span class="right">Ví dụ</span>
+        </h4>
+        <iframe src="https://trinket.io/embed/python3/06fd729513" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>Bài 1: Khai báo lớp Point2D</h3>
+        <h4>Câu hỏi</h4>
+        <ul>
+          <li>Trong ngôn ngữ Python, viết mã cho lớp Point2D mô hình hóa một điểm trong không gian 2D với tọa độ Descartes (x và y) và tọa độ cực (r và theta).</li>
+          <li>Thêm các phương thức cartesian2Polar và Polar2Cartesian cho phép thay đổi hệ quy chiếu bằng cách tính toán lại giá trị của thuộc tính r và theta hoặc x và y.</li>
+          <li>Thêm phương thức print để hiển thị tọa độ của điểm trong không gian Descartes và trong không gian cực.</li>
+        </ul>
+        <h4>Giải pháp</h4>
+        <iframe src="https://trinket.io/embed/python3/ffdce0c836" width="100%" height="356" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Khởi tạo và thao tác đối tượng</h2>
+      <div class="class3">
+        <h3>Giới thiệu</h3>
+        <p>Một đối tượng được xây dựng từ một lớp bằng cách gọi hàm tạo. Chúng ta nói rằng một vật thể là<span class="bold">an instantiation of a class</span></p>
+      </div>
+      <div class="class3">
+        <h3>Khởi tạo</h3>
+        <p>Để xây dựng một đối tượng, hàm tạo của lớp phải được gọi ngầm với cú pháp sau:</p>
+        <pre>
+<div class="line-number">   1</div><code>myObject = ClassName(valueParam1, valueParam2, ..., valueParamN)</code></pre>
+        <h4>Cấu tạo một ô tô màu đen có vận tốc 10km/h:<span class="right">Exemple</span></h4>
+        <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+            <pre>
+<div class="line-number">   1</div><code>car1 = Car("black",20.0)</code></pre>
+            <p>Nếu hàm tạo của lớp có các tham số được khởi tạo với các giá trị mặc định thì có thể khởi tạo giá trị của các thuộc tính với các giá trị mặc định sau:</p>
+            <pre>
+<div class="line-number">   1</div><code>car2 = Car()</code></pre>
+            <p> 
+            Trong trường hợp này, chiếc xe được tạo ra sẽ có màu đỏ và tốc độ của nó sẽ là 0 km/h.
+            </p>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Thao tác với một đối tượng</h3>
+        <p>Thao tác của một đối tượng bao gồm:</p>
+        <ul>
+          <li>để truy cập hoặc thay đổi giá trị của một thuộc tính;</li>
+          <li>để gọi một phương thức xử lý (ví dụ tăng tốc, giảm tốc, ...).</li>
+        </ul>
+        <p>Giá trị của một thuộc tính được truy cập bằng cách chỉ định thuộc tính theo tên của nó và sử dụng cú pháp sau:</p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.attributeName</code></pre>
+        <p>Có thể thay đổi giá trị của một thuộc tính bằng cách thay thế nó (sử dụng toán tử gán) bằng một giá trị mới. Giá trị mới này phải cùng loại với thuộc tính.</p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.attributeName = newValue</code></pre>
+        <p>Một phương thức xử lý được truy cập bằng cách chỉ định tên phương thức (với các giá trị tham số, nếu có) và sử dụng cú pháp sau:</p>
+        <pre>
+<div class="line-number">   1</div><code>objectName.method(valueParam1, valueParam2, .., valueParamN)</code></pre>
+        <h4><span class="right">Exemple</span></h4>
+        <iframe src="https://trinket.io/embed/python3/920e7fa1a5" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>
+            Bài 2: Khởi tạo và thao tác với đối tượng Point2D
+        </h3>
+        <h4>Question</h4>
+        <p>Từ lớp Point2D được khai báo trong bài tập trước:</p>
+        <ul>
+          <li>khai báo một đối tượng p kiểu Point2D có tọa độ Descartes bằng 10.0 và 10.0 ;</li>
+          <li>gọi phương thức cartesian2Polar để tính tọa độ cực của điểm p ;</li>
+          <li>gọi phương thức in của đối tượng p để hiển thị tất cả tọa độ của điểm p.</li>
+        </ul>
+        <p>Giải pháp</p>
+        <iframe src="https://trinket.io/embed/python3/bcd4237124" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Thành phần và tổng hợp</h2>
+      <div class="class3">
+        <h3>Giới thiệu</h3>
+        <p>Các thuộc tính của một lớp có thể là đối tượng của các lớp khác. Do đó, một lớp có thể nhóm các đối tượng được tạo từ một lớp khác lại với nhau.</p>
+        <p>Nói cách khác, một thuộc tính có thể tham chiếu đến một đối tượng. Tùy thuộc vào vòng đời của đối tượng này, chúng ta sẽ nói về tập hợp hoặc thành phần.</p>
+      </div>
+      <div class="class3">
+        <h3>Thành phần</h3>
+        <p>Bố cục chuyển dịch mối quan hệ lệ thuộc, thuộc về. Đó là một liên kết mạnh mẽ đại diện cho một liên kết phụ. Về mặt ngữ nghĩa, nó thể hiện mối quan hệ “sở hữu”.</p>
+        <p>Một lớp B được tổng hợp trong một lớp A nếu vòng đời của một thể hiện của B phụ thuộc vào vòng đời của A.</p>
+        <p>Ví dụ: Một chiếc ô tô có động cơ. Nếu chúng ta phá hủy chiếc xe thì chúng ta sẽ phá hủy động cơ.</p>
+        <p>Ở cấp độ mã, điều này được dịch bằng sự hiện diện của một thể hiện của lớp B có trong lớp chứa A. Thể hiện của lớp B được tạo bởi lớp A.</p>
+        <h4>Car and Engine Class : <span class="right">Exemple</span></h4>
+        <iframe src="https://trinket.io/embed/python3/b42c7c60c8" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+      <div class="class3">
+        <h3>Sự tổng hợp</h3>
+        <h4>Nền tảng</h4>
+        <div class="footer">
+          <p>Trong trường hợp tổng hợp, không có khái niệm về vùng chứa/nội dung, chỉ có mối quan hệ được sử dụng. Hai trường hợp biết nhau tại một thời điểm nhất định. Vòng đời của chúng không liên kết với nhau và chúng độc lập.</p>
+          <p>Ở cấp độ mã, việc tổng hợp dẫn đến sự hiện diện của một thể hiện của lớp B có trong lớp chứa A. Thể hiện này không được tạo bởi lớp A</p>
+          <h4>Lớp Car và Driver : <span class="right">Ví dụ</span></h4>
+          <iframe src="https://trinket.io/embed/python3/957e6ffde8" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="class3">
+        <h3>Bài tập 3: Bút đánh dấu 2D</h3>
+        <h4>Câu hỏi</h4>
+        <p>Hãy xem xét một bảng trò chơi 2D được xác định bởi hai Point2D p1 và p2 và một người chơi có vị trí loại Point2D đang di chuyển trong bảng này.</p>
+        <ul>
+          <li>Xác định các lớp Board và Player.</li>
+          <li>Tạo một chương trình khởi tạo một bảng trò chơi với:</li>
+          <ul>
+            <li>p1 tại tọa độ (0,0);</li>
+            <li>p2 tại tọa độ (10,10) ;</li>
+            <li>một người chơi ở vị trí (1,1).</li>
+          </ul>
+        </ul>
+        <p>Solution</p>
+        <iframe src="https://trinket.io/embed/python3/5cbaab0964" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="class2">
+      <h2>Bài tập: Bài giảng 3 – Lập trình hướng đối tượng: Lớp và đối tượng</h2>
+      <div class="class3">
+        <h4>Bài tập 1: Lớp Point2D</h4>
+        <p>Xét lớp  <span class="bold">Point2D</span> biểu diễn một điểm trong không gian 2D và được đặc trưng bởi hai tọa độ x và y.</p>
+        <ol>
+          <li>Viết mã của lớp <span class="bold">Point2D</span> cho phép biểu diễn lớp này và các thuộc tính của nó bằng</li>
+          <ul>
+            <li>một hàm tạo theo mặc định sẽ khởi tạo các giá trị của x và y thành 0;</li>
+            <li>một hàm tạo khởi tạo các giá trị của x và y thành các giá trị được truyền trong tham số.</li>
+          </ul>
+          <li>Thêm vào lớp này các bộ truy cập (getters) và bộ biến đổi (setters) của thuộc tính x và y</li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Bài tập 2: Lớp Robot</h4>
+        <p>Chúng ta xem xét một lớp <span class="bold">Robot</span> đại diện cho một robot có thể di chuyển trong không gian 2D. Mỗi robot được đặc trưng bởi tên tên (được biểu thị bằng chuỗi ký tự), vị trí pos (được biểu thị bằng một điểm trong không gian 2D).</p>
+        <ol>
+          <li>Viết mã của lớp <span class="bold">Robot</span> cho phép đại diện cho lớp <span class="bold">Robot</span>. Theo mặc định, robot ở vị trí (0, 0) và có tên là "John". </li>
+          <li>Thêm vào lớp này các trình truy cập và trình biến đổi của thuộc tính name và pos.</li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Bài tập 3: Lớp bảng</h4>
+        <p>Chúng tôi biểu diễn một bảng có lưới các điểm 2D (lưới) được biểu thị bằng danh sách 2D các điểm gồm N hàng và M cột. Nó cũng chứa một danh sách các đối tượng thuộc loại <span class="bold">Robot</span> robot và một lối ra đầu ra thuộc loại <span class="bold">Point2D</span>.</p>
+        <ol>
+          <li>Viết mã của một lớp Board cho phép biểu diễn lớp này cũng như các thuộc tính của nó. Theo mặc định, một bảng có 8 hàng và 8 cột, không chứa robot và đầu ra ở vị trí (0, 0).</li>
+          <li>Thêm vào lớp này các bộ truy cập và bộ biến đổi của các thuộc tính của lớp <span class="bold">Board</span></li>
+          <li>Thêm phương thức cho phép bạn thêm robot vào danh sách robot</li>
+          <li>Thêm phương thức cho phép loại bỏ robot có chỉ mục i khỏi danh sách robot</li>
+          <li>Chúng tôi coi rằng một ô của bảng có thể là một bức tường hoặc một ô trống bằng boolean (0 nếu ô là một bức tường; 1 nếu ô đó là tự do). Sửa đổi lưới thuộc tính để thể hiện thông tin này.</li>
+          <li>Chúng ta xem xét phương pháp <span class="bold">moveRobot</span> cho phép di chuyển robot từ danh sách robot đến vị trí cuối. Theo vị trí của robot được xem xét và sự hiện diện của các bức tường, phương thức này trả về một boolean có giá trị cho biết liệu robot có thể được di chuyển đến vị trí này (1) hay không (0), cũng như danh sách các ô được duyệt qua . Khai báo và viết code của hàm <span class="bold">moveRobot</span></li>
+        </ol>
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <h4>Bài tập 4: Alice và Bob</h4>
+        <p>Bài tập này là để kiểm tra sử dụng lớp "class".</p>
+        <ol>
+          <li>
+            Viết chương trình khởi tạo hai robot tên <span class="bold">Alice</span> và <span class="bold">Bob</span> và đặt ở vị trí như hình 1
+          </li>
+          <li>
+            Hoàn thành chương trình này để khởi tạo một khay gồm 11 hàng và 11 cột có tường giống như hình 1. Robot <span class="bold">Alice</span> và <span class="bold">Bob</span> lên bảng trước đó trong danh sách các robot trong bảng một phương thức cho phép bạn di chuyển <span class="bold">Alice</span> và <span class="bold">Bob</span> đến lối ra.
+          </li>
+        </ol>
+        <img src="TD3.png" class="center_img">
+        <iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

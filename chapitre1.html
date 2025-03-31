@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduction au Cours de Programmation en Python</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <body>
+        <div class="top">
+            <h1 style="padding-right:10px">Python language : the basics</h1>
+        </div>
+        <div class="container">
+            <div class="class2 ">  
+                <h2>Introduction</h2>
+                <p>The objective of this course is to present concepts of algorithmic and advanced programming. The
+                        language chosen for this course is Python.</p>
+                <h4>Advantages of this language :</h4>
+                <ul>
+                    <li>It is an interpreted language and not compiled</li></br>
+                    <li>Easy debugging thanks to traceback</li></br>
+                    <li>Better readability of the code: indentation is mandatory otherwise errors will occur</li></br>
+                    <li>Excellent and numerous documentations</li></br>
+                    <li>Existence of many modules for data visualization, scientific computing, machine learning, etc.
+                    </li>
+                </ul>
+                <p>This course is divided into 3 chapters:</p>
+                <ol>
+                    <li><strong>The fundamentals of the Python language</strong></li></br>
+                    <li><strong>Data structures in Python</strong></li></br>
+                    <li><strong>Introduction to object-oriented programming in Python </strong></li></br>
+                </ol>               
+            </div>
+            <div class="class2">
+                <h2>The variables</h2>
+                <div class="class3">
+                    <h3>Introduction</h3>
+                    <p>A variable refers to the fact of assigning a name or identifier to information: by naming them, one can
+                        manipulate this information much more easily.</p>
+                    <p>The advantage of using variables is that you can write programs that are valid for values that vary: you can
+                        change the value of the variables, and the program will always run the same way and do the same types of
+                        calculations regardless of the values manipulated. Variables play a role similar to the unknowns in a
+                        mathematical equation.</p>
+                </div>
+                <div class="class3">
+                    <h3>Definitions</h3>
+                    <h4>Definition : Notion of variable </h4>
+                    <div class="content">
+                        <p>A <span class="bold">variable</span> is characterized by :</p>
+                        <ul>
+                            <li><span class="bold">an identifier</span> : it can contain letters, numbers, underlined blanks but it cannot
+                                start with a number. Lower case and upper case are differentiated. It is also unique.</li>
+                            <li><span class="bold">a type</span> : is an information about the content of the variable which tells the
+                                python interpreter how to handle this information.</li>
+                        </ul>
+                    </div>
+                    <h4>Definition : Constant variables</h4>
+                    <div class="content">
+                        <p>Constants are the opposite of variables, they are all numerical values, strings, ..., everything that is not
+                            designated by a name. Constants have a type but no identifier.</p>
+                    
+                    </div>
+                    <h4><span class="color">Fondamental : Dynamic typing</span></h4>
+                    <div class="footer">
+                        <p>The typing in Python is dynamic : the type is not explicitly specified, it is implicitly linked to the
+                            manipulated information. For example, writing x=3.4 does not specify the type of the variable x but it is
+                            implicit because x receives a real value : x is of type float in Python.</p>
+                        <p>Unlike languages such as C, there is no need to declare a variable to indicate that it exists, it is enough to
+                            assign a value to it. The type of the variable will be defined by the type of the constant assigned to it. The
+                            type of a variable can change, it always corresponds to the type of the last assignment.</p>                   
+<iframe src="https://trinket.io/embed/python3/f697ca962f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+                
+                <div class="class3">
+                    <h3>Data types in Python</h3>
+                    <h4>Integers and real numbers</h4>
+                    <p>There are two types of numbers in Python, real numbers float and integers int. The instruction x=3 creates a
+                        variable of type int initialized to 3 while y=3.0 creates a variable of type float initialized to 3.0.</p>
+                    <p>The following program allows to check this by displaying for the variables x and y, their values and their
+                        respective types thanks to the type function.</p>
+<iframe src="https://trinket.io/embed/python3/da767a1a7d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Immutable type (or immutable)</h4>
+                    <strong>
+                        <p>A variable of immutable type cannot be modified. An operation on a variable of this type necessarily
+                            leads to the creation of another variable of the same type, even if the latter is temporary.</p>
+                    </strong>
+                    <p>In other words, the simple instruction x+=3 which consists in adding to the variable x the value 3 creates a
+                        second variable whose value is that of x increased by 3 then to copy its contents in that of the variable x.
+                        Numbers are immutable types just like strings and tuples which are arrays of objects. It is not possible to
+                        modify a variable of this type, it is necessary to recreate another one of the same type which will
+                        integrate the modification.</p>
+                    <h4>None type</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                        <p>Python provides a None type to mean that a variable contains nothing. The variable is of type None and is
+                            equal to None.</p>
+                        <pre>
+<div class="line-number">   1</div><code>x = none</code></pre>   
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>The operators</h3>
+                    <h4>Arithmetic operators</h4>
+                    <p>The list of arithmetic opera     tors in Python is summarized in the following table:</p>
+                    <p style="text-align: center;">List of arithmetic operators</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Operator</th>
+                            <th class="col2">Meaning</th>
+                            <th class="col3">Example</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                << >>   
+                            </td>
+                            <td>shift left, shift right</td>
+                            <td>x = 8 << 1</td>
+                        </tr>
+                        <tr>
+                            <td>|</td>
+                            <td>logical operator or bit by bit</td>
+                            <td>x = 8 | 1</td>
+                        </tr>
+                        <tr>
+                            <td>&</td>
+                            <td>logical operator and bit by bit</td>
+                            <td>x = 11 & 2</td>
+                        </tr>
+                        <tr>
+                            <td>+ -</td>
+                            <td>addition, subtraction</td>
+                            <td>x = y + z</td>
+                        </tr>
+                        <tr>
+                            <td>+= -=</td>
+                            <td>addition or subtraction then assignment</td>
+                            <td>x += 3</td>
+                        </tr>
+                        <tr>
+                            <td>//</td>
+                            <td>integer division, the result is real if one of the numbers is real</td>
+                            <td>x = y // 3</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Remainder of an integer division (modulo)</td>
+                            <td>x = y % 3</td>
+                        </tr>
+                        <tr>
+                            <td>*= /=</td>
+                            <td>multiplication or division then assignment</td>
+                            <td>x *= 3 </td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>power (integer or not, square root = ** 0.5)</td>
+                            <td>x = y ** 3</td>
+                        </tr>
+                    </table>
+                
+                
+                    <h4>Conversion from integer to real and vice versa</h4>
+                    <p>The functions int and float are used to convert any number or string into an integer (rounded) and a real
+                        number respectively.</p>            
+<iframe src="https://trinket.io/embed/python3/858f9b8e92" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                
+                    <h4>Boolean operators</h4>
+                    <p style="text-align: center;">List of boolean operators</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Operator</th>
+                            <th class="col2">Meaning</th>
+                            <th class="col3">Example</th>
+                        </tr>
+                        <tr>
+                            <td>and, or</td>
+                            <td>Logical and, or</td>
+                            <td>x = True or False (result = True)</td>
+                        </tr>
+                        <tr>
+                            <td>not</td>
+                            <td>Logical negation</td>
+                            <td>x = not x</td>
+                        </tr>
+                    </table>
+                
+                
+                    <h4>Comparison operators</h4>
+                    <p style="text-align: center;">List of comparison operators</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Operator</th>
+                            <th class="col2">Meaning</th>
+                            <th class="col3">Example</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <, >
+                            </td>
+                            <td>lower, upper</td>
+                            <td>x = 5 < 5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <=, >=
+                            </td>
+                            <td>less than or equal to, greater than or equal to</td>
+                            <td>x = 5 <= 5</td>
+                        </tr>
+                        <tr>
+                            <td>==, !=</td>
+                            <td>equal, different</td>
+                            <td>x = 5 == 5</td>
+                        </tr>
+                    </table>
+                    <p>Python also has operators to test the identification or membership of a set of elements:</p>
+                    <table>
+                        <tr>
+                            <th class="col1">Operator</th>
+                            <th class="col2">Meaning</th>
+                            <th class="col3">Example</th>
+                        </tr>
+                        <tr>
+                            <td>is</td>
+                            <td>identification test </td>
+                            <td>"3" is str</td>
+                        </tr>
+                        <tr>
+                            <td>in</td>
+                            <td>membership test</td>
+                            <td>3 in [3, 4, 5]</td>
+                        </tr>
+                    </table>
+                    <p>These two operators will be used later.</p>
+                    <ul>
+                        <li>The instruction "in" with lists, dictionaries, loops ;</li>
+                        <li>The instruction "is" when studying the lists.</li>
+                    </ul>
+                </div>               
+            </div>
+            <div class="class2">
+                <h2>Input / Output in Python</h2>
+                <div class="class3">
+                    <h3>The input instruction</h3>
+                    <ul>
+                        <li>This instruction will return a string. So if the user types the integer 25, the initial result is '25'.
+                        </li>
+                        <li>If we want to convert the string into an integer, we can use the int() function.</li>
+                        <li>A less precise way is to let Python choose the type with the eval() function.</li>
+                    </ul>
+                </div>
+                <div class="class3"> 
+                    <h3>The print instruction</h3>
+            
+                    <ul>
+                        <li>This instruction allows to display mainly strings.</li>
+                        <li>As for the input() instruction, if you want to convert an integer into a string, you can use the repr()
+                            function.</li>
+                        <li>The print instruction causes a line break (default behavior). To write a sequence of strings, you can
+                            use the concatenation of strings by using the "+" operator.</li>
+                    </ul>
+                    <h4>Exemple</h4>               
+<iframe src="https://trinket.io/embed/python3/c913463579" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                    
+            </div>
+            <div class="class2">
+                <h2>Tests and loops</h2>
+                <div class="class3">
+                    <h3>Introduction</h3>
+                    <p>Conditional (tests) and iterative (loops) structures are a fundamental concept in algorithmics.</p>
+                </div>
+                <div class="class3">
+                    <h3>The tests</h3>
+                    <h4>Definition: The tests</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                        <p>The tests allow to execute different instructions depending on the value of a logical condition.</p>
+                        <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code>   
+<div class="line-number">   3</div><code>   instruction2</code>
+<div class="line-number">   4</div><code>   ...</code> 
+<div class="line-number">   5</div><code>else :</code>   
+<div class="line-number">   6</div><code>   instruction3</code>  
+<div class="line-number">   7</div><code>   instruction4</code>  
+<div class="line-number">   8</div><code>   ...</code></pre>      
+                    </div>   
+                <h4>Remarque : The else clause is falcultative</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">    
+                <p>When condition1 is false and there is no instruction to execute in this case, the else clause is useless. The syntax of the test becomes :</p>
+                <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code>   
+<div class="line-number">   3</div><code>   instruction2</code>  
+<div class="line-number">   4</div><code>   ...</code></pre>
+                </div>
+                <h4>Remarque : Several elif clauses</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>If it is necessary to link several tests in a row, it is possible to condense the writing with the elif keyword :</p>
+                    <pre>
+<div class="line-number">   1</div><code>if condition1 :</code>
+<div class="line-number">   2</div><code>   instruction1</code> 
+<div class="line-number">   3</div><code>   instruction2</code>   
+<div class="line-number">   4</div><code>   ...</code>  
+<div class="line-number">   5</div><code>elif condition2 :</code>  
+<div class="line-number">   6</div><code>   instruction3</code>  
+<div class="line-number">   7</div><code>   instruction4</code>   
+<div class="line-number">   8</div><code>   ...</code>   
+<div class="line-number">   9</div><code>elif condition3 :</code> 
+<div class="line-number">  10</div><code>   instruction5</code> 
+<div class="line-number">  11</div><code>   instruction6</code>  
+<div class="line-number">  12</div><code>else :</code>  
+<div class="line-number">  13</div><code>   instruction7</code>  
+<div class="line-number">  14</div><code>   instruction8</code>   
+<div class="line-number">  15</div><code>   ...</code></pre>       
+                </div>
+                <h4><span class="color">Fondamental : Writing a conditional structure</span></h4>
+                <div class="footer">
+                <p>
+                    The offset of statements from the lines containing the keywords if, elif, else is very important: it is part of the language syntax and is called indentation. It allows to group the instructions together. If a line is badly indented then it is not executed in the action block of the conditional structure.
+                </p>    
+                <p>Example:</p>
+                <iframe src="https://trinket.io/embed/python3/247ca6fe6a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <h4>Two forms of writing</h4>
+                <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>There are two condensed test scripts.</p>
+                    <ul>
+                        <li>
+                            The first is to write a test and the single instruction that depends on it on a single line.
+                        </li>
+                    </ul>
+                    <p>If it is necessary to link several tests in a row, it is possible to condense the writing with the elif keyword :</p>
+                    <pre>
+<div class="line-number">   1</div><code>if condition : instruction1</code>
+<div class="line-number">   2</div><code>else : instruction2</code></pre>   
+                </div>
+                <p>The condensed writing of the following code:</p>
+<iframe src="https://trinket.io/embed/python3/0ac4414b19" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>can be changed by :</p>
+<iframe src="https://trinket.io/embed/python3/199bde99fe" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <ul>
+                    <li>The second case of condensed writing concerns chained comparisons.</li>
+                    <li>The test if 3 < x and x < 5 : statement can be condensed by if 3 < x < 5 : statement. Thus, it is possible to juxtapose as many comparisons as necessary: if 3 < x < y < 5 : statement.</li>
+                    <li>The keyword "in" also allows to condense some tests when the variable to be tested is integer. if x == 1 or x == 6 or x == 50 : statement can be simply summarized by if x in (1,6,50) : statement or if x in {1,6,50} : statements for large lists.</li>
+                </ul>
+                <p>The condensed writing of the following code:</p>
+                <iframe src="https://trinket.io/embed/python3/436fee8a86" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <p>can be changed by :</p>
+                <iframe src="https://trinket.io/embed/python3/aafa102c6c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>The loops</h3>
+                    <p>The Python language offers two types of loops: the while loop and the for loop. There is no do...while loop in Python (the equivalent of the "Repeat" loop in algorithmic)</p>
+                    <h4><span class="color">Fondamental : While</span></h4>
+                    <div class="footer">
+                        <p>The implementation of a while loop follows the following writing scheme:</p>
+                        <pre>
+<div class="line-number">   1</div><code>while condition :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>   
+<div class="line-number">   3</div><code>   ...</code> 
+<div class="line-number">   4</div><code>   instruction n</code></pre>  
+                        <p>Where condition is a condition that determines the continuation of the repetition of the instructions included in the loop. As long as this condition is true, the instructions 1 to n are executed.</p>
+                    </div>
+                <h4>Exemple : Example of a while loop</h4>       
+<iframe src="https://trinket.io/embed/python3/331eb7c463" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Remarque : Indentation</h4>             
+<iframe src="https://trinket.io/embed/python3/0cca5e03e6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Remarque : Infinite loop</h4>
+                <p>The condition that governs this loop must necessarily be modified within it. Otherwise, such a loop is called an infinite loop since it is impossible to get out of it.</p>
+                <p>The following example contains an infinite loop because the = symbol is missing in the last instruction. The variable n is never modified and the condition n<3 is always true.</p>
+<iframe src="https://trinket.io/embed/python3/71f3066cfc" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4><span class="color">Fondamental : While</span></h4>
+                <div class="footer">    
+                    <p>The implementation of a for loop follows the following writing scheme:</p>
+                    <pre>
+<div class="line-number">   1</div><code>for x in set :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>
+<div class="line-number">   3</div><code>   ...</code>
+<div class="line-number">   4</div><code>   instruction n</code></pre> 
+                <p>To browse a set of values between two excluded min and max bounds, use the range function:</p>
+                <pre>
+<div class="line-number">   1</div><code>for x in range(min,max)</code>
+<div class="line-number">   2</div><code>   instruction1</code>  
+<div class="line-number">   3</div><code>   ...</code>   
+<div class="line-number">   4</div><code>   instruction n</code></pre>  
+                </div>
+                <h4>Exemple : Example of a for loop</h4>
+<iframe src="https://trinket.io/embed/python3/951a4b84ed" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Exemple : Example of a loop to sum the first 10 integers</h4>
+<iframe src="https://trinket.io/embed/python3/213b087134" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4>Combined structures</h4>
+                <p>As in C language, it is possible to nest iterative and/or conditional structures between them.</p>
+                <p>Example:</p>
+<iframe src="https://trinket.io/embed/python3/faffee322d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Write your first program in Python language with Spyder (Anaconda)</h3>
+                    <h4>Multiplication table</h4>
+                    <p>In Python language, write a program to calculate the multiplication table of a number entered by the user</p>
+                    <ul>
+                        <li>with a <span class="bold">while</span></li>
+                        <li>with a <span class="bold">for</span></li>
+                    </ul>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Solve the problem</h3>
+                    <p>A farmer raises sheep and turkeys and, when it comes time to pay his taxes, he curiously declares: I have 36 heads and 100 legs in my farm! Find an algorithm to determine the number of sheep and turkeys, then translate it into Python according to the following scheme (M: sheep, D: turkeys, p: legs)</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class2">
+                <h2>The functions in Python language</h2>
+                <div class="class3">
+                    <h3>Concept</h3>
+                    <h4>Introduction</h4>
+                    <p>Functions are small programs that allow to modularize an algorithm into elementary tasks.</p>
+                    <p>Advantages :</p>
+                    <ul>
+                        <li>Better readability of the code: the final program is thus easier to understand ;</li>
+                        <li>Allows better debugging: it is easier to isolate an error if one occurs: just test one by one or the functions to determine which one returns a bad result;</li>
+                        <li>Avoid and prevent code redundancy.</li>
+                    </ul>              
+                    <h4>Definition : Function</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>A function is a part of a program - or subprogram - that operates independently of the rest of the program. It receives a list of parameters and returns a result. The body of the function is any statement in the program that is executed if the function is called.</p>
+                    </div>
+                    <h4><span class="color">Fondamental : Declaration of a fonction</span></h4>
+                    <div class="footer">  
+                        <pre>
+<div class="line-number">   1</div><code>def function_name (par_1, ..., par_n) :</code>
+<div class="line-number">   2</div><code>   instruction 1</code>  
+<div class="line-number">   3</div><code>   ...</code>   
+<div class="line-number">   4</div><code>   instruction n</code>
+<div class="line-number">   5</div><code>   return res_1, ..., res_n</code></pre>        
+                    <ul class="distance">
+                        <li>function_name is the name of the function, it follows the same rules as the variable names.</li>
+                        <li>par_1 to par_n are the names of the parameters.</li>
+                        <li>res_1 to res_n are the results returned by the function.</li>
+                        <li>The instructions associated with a function must be indented with respect to the def keyword.</li>
+                        <li>If there is no result, the return statement is optional or can be used alone without being followed by a value or a variable. This statement can appear several times in the function code but only one of them will be executed. From that moment on, all other statements in the function will be ignored.</li>
+                        <li>The global instruction allows you to extend (and thus modify) the scope of a variable to the enclosing module; by default the scope of a variable defined in a function is local.</li>
+                        <li>The parameters of a function are passed by reference (copy).</li>
+                    </ul>
+                    </div>
+                    <h4><span class="color">Fondamental : Calling a function</span></h4>
+                    <div class="footer">
+                    <p>To execute a function defined in this way, it is sufficient to follow the following syntax:</p>
+                        <pre>
+<div class="line-number">   1</div><code>x_1, ..., x_n = function_name (value_1, value_2, ..., value_n)</code></pre>
+                <p>Where function_name is the name of the function, value_1 to value_n where the value of the parameters, x_1 to x_n are the results of the function. This assignment is facultative.</p>
+                <p>If you don't want to keep the results, you can call the function as follows:</p>
+                        <pre>
+<div class="line-number">   1</div><code>function_name (value_1, value_2, ..., value_n)</code></pre>
+                    </div>
+                <h4>Exemple : Example of declaration and call of functions</h4></pre>
+                <p>The following program uses two functions. The first one converts cartesian coordinates into polar coordinates. It takes two real numbers as parameters and returns two other real numbers. The second function displays the results of the first one for any pair of values (x; y). It does not return any result.</p>       
+<iframe src="https://trinket.io/embed/python3/f4334e0b7a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Scope of variables</h3>
+                    <h4>Generalities</h4>
+                    <p>Defining a function means defining a new namespace, so all internal declarations of a function are not visible to
+                        other functions. In this case we speak of local scope to designate this behavior.</p>
+                    <p>A function is defined within an enclosing space called a module, which has a global scope.</p>
+                    <p>These two types are linked as follows:</p>
+                    <ul>
+                        <li>The enclosing module defines a global scope, i.e. a space where the created variables reside (by assignment).
+                        </li>
+                        <li>Each function call (in the module) defines a new local scope, i.e. a self-contained space for names that does
+                            not conflict with the enclosing space.</li>
+                        <li>Assigned names are local, unless explicitly declared otherwise by the global statement.</li>
+                        <li>All remaining names are either global (i.e. defined in the enclosing module) or internal (i.e. names pre-defined
+                            by python).</li>
+                    </ul>
+                    
+                    <h4><span class="color">Fondamental : 3-span rules L, G and I</span></h4>
+                    <div class="footer">
+                        <p>The reference to variable names triggers the search within three levels of scope, local (L), global (G) and finally internal (I).</p>
+                        <p>Name assignment creates or modifies local names by default</p>
+                        <p>The declaration by the global statement allows the names to be attached to the enclosing module (namespace).</p>
+                        <div class="center_img">
+                            <img src="scope.png">
+                        </div>
+                    </div>
+                    <h4>Definition : Local variable</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>A local variable is a variable whose scope is reduced to a function.</p>
+                    </div>
+                    <h4>Definition : Global variable</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">
+                    <p>A global variable is a variable whose scope is the whole program.</p>
+                    </div>
+                    <h4>Exemple : Example of a local variable and a global variable</h4>
+                    <p>The following example mixes local and global variables. The identifier n is used to designate both a global variable
+                        equal to 1 and a local variable equal to 1. Inside the function, n designates the local variable equal to 2. Outside
+                        the function, n designates the global variable equal to 1.</p>                 
+<iframe src="https://trinket.io/embed/python3/f16923f7d0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>The "global" instruction</h4>
+                    <p>It is possible to refer to global variables in a function via the global keyword. This indicates to the function that the identifier is no longer a local variable but a global variable already declared.</p>
+<iframe src="https://trinket.io/embed/python3/764927768f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                <h4 style="color: rouge">* Attention</h4>
+                <p>This possibility should be avoided as much as possible because locale_global can be considered as a function with a hidden parameter. The locale_global function is no longer independent of the other functions since it modifies one of the program data.</p>                
+                </div>
+                <div class="class3">
+                    <h3>Scope of functions</h3>
+                    <h4>Generalities</h4>
+                    <p>The python language also considers functions as variables of a particular type. The scope of functions follows the
+                        same rules as those of variables. A function can only be called if it has been defined before being called.</p>
+                    <h4>Nested functions</h4>
+                    <p>As it is possible to declare local variables, it is also possible to define local functions or nested functions. A
+                        local function can only be called from within the function in which it is defined.</p>
+                    <h4>Exemple</h4>
+                    <p>In the following example, the display_pair function includes a local function that can only be called by this function.</p>
+<iframe src="https://trinket.io/embed/python3/d1748b080b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>   
+                <div class="class3"> 
+                    <h3>Parameters with default values</h3>
+                    <p>When a function is often called with the same values for its parameters, it is possible to specify a default value for them</p>
+                    <pre>
+<div class="line-number">   1</div><code>def function_name (param_1, param_2 = value_2, ..., param_n = value_n):</code>
+<div class="line-number">   2</div><code>   ...</code></pre>   
+                    <ul>
+                        <li>Where function_name is the name of the function, param_1 to param_n are the name of the parameters, value_2 to value_n are the default values of param_2 to param_n.</li>
+                        <li>The only constraint in this definition is that if a default value is specified for a parameter, then all subsequent parameters must also have a default value.</li>
+                    </ul>
+                    <h4>Exemple : Example of function declaration with default parameters</h4>
+<iframe src="https://trinket.io/embed/python3/60aaaf9108" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Remarque : Placement of default parameters</h4>
+                    <p>It is impossible for a parameter without an associated default value to come after a parameter with a specified
+                        default value. The following program cannot be executed.</p>               
+<iframe src="https://trinket.io/embed/python3/a65fec962c" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3"> 
+                    <h3>Parameters order</h3>
+                    <p>During the call, the name of the parameters does not intervene anymore, assuming that each parameter receives for value the one that has the same position as it when the function is called. It is however possible to change this order by specifying which parameter should receive which value.</p>
+                    <pre>
+<div class="line-number">   1</div><code>x_1, ..., x_n = function_name (param_1 = value_1, ..., param_n = value_n)</code></pre>
+                    <p>Where function_name is the name of the function, param_1 to param_n are the name of the parameters, value_1 to value_n are the parameters values.</p>
+                    <p>With this syntax, the writing order does not matter. The value value_i will always be assigned to param_i. The variables x_1 to x_n receive the results returned by the function.</p>
+                    <p>The order of the results cannot be changed. If there are several results returned, it is impossible to choose which ones to keep: either all or none.</p>
+                    <p>This possibility is interesting especially when there are many default parameters and only the value of one of the last parameters must be changed.</p>                
+<iframe src="https://trinket.io/embed/python3/0c58702a81" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Function overload</h3>
+                    <h4>Generalities</h4>
+                    <p>Unlike other languages, python does not allow function overloading. In other words, it is not possible to have
+                        several functions with the same name even if each of them has a different number of parameters.</p>
+                    <h4>Exemple</h4>         
+<iframe src="https://trinket.io/embed/python3/bed3626b3b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>The previous small program is syntactically correct but its execution generates an error because the second
+                        definition of the function deletes the first.</p>
+                </div>
+                <div class="class3">
+                    <h3>Parameters modifications</h3>
+                    <p>Parameters of non mutable and modifiable types behave in different ways inside a function.</p>
+                    <p>These parameters are manipulated in the body of the function and sometimes even modified. Depending on the type
+                        of
+                        parameter, these modifications have repercussions outside the function. Immutable types cannot be modified and
+                        this
+                        remains true. When a function accepts a parameter of an immutable type, it only receives a copy of its value.
+                    </p>
+                    <p>It can therefore modify this parameter without affecting the variable or value used when the function was called.
+                        This is called parameter passing by value.</p>
+                    <p>On the other hand, any modification of a variable of a modifiable type inside a function is reflected in the
+                        variable
+                        that was used when the function was called. This second type of passing is called passing by address.</p>
+                    <h4>Exemple</h4>
+                    <p>The following example uses a function elements_sum which modifies two parameters.</p>
+                    <p>The first parameter n, is non mutable : its modification has no impact on the variable nb.</p>
+                    <p>On the other hand, the first element of the list parameter receives the value 0. The first element of the list l
+                        does
+                        not have the same value after calling the elements_sum than the one he had before.</p>
+<iframe src="https://trinket.io/embed/python3/7d344545f7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>The list l is <span class="bold">modified inside the function</span> elements_sum. Inside the function, the list l is designated by the
+                        list
+                        identifier, it is the same list.</p>
+                    <p>The variable nb is of a non mutable type. Its value has been copied into the parameter n of the function
+                        elements_sum
+                    </p>
+                    <p>Any modification of n inside this function has no repercussions outside the function.</p>
+                    <h4>Remarque</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+                    <p>In practice, parameter passing in Python is very similar to that of C language :</p>
+                    <ul>
+                        <li>The non-modifiable (mutable) parameters correspond to the passage by reference of C. In fact the passage is
+                            done
+                            by reference, but since it is impossible to change non-modifiable objects in place, it amounts to making a
+                            copy.
+                        </li>
+                        <li>The modifiable (mutable) parameters, such as lists, dictionaries ... correspond to the C address passage.
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="class3">
+                    <h3>Recursive function</h3>
+                    <h4>Definition : Generalities</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px"> 
+                    <p>A recursive function is a function that calls itself.</p>
+                    </div>
+                    <h4>Exemple</h4>
+                    <div style="font-size: 15px; background-color: aliceblue; padding: 8px">  
+                        <p>The most frequently cited recursive function is the factorial function. This one highlights the two components of
+                            a
+                            recursive function, the recursion itself and the stop condition.</p>         
+<iframe src="https://trinket.io/embed/python3/81c1693718" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>                
+                    <p>The last line of the factorial function is the recursion, while the previous one is the stop condition, without
+                        which
+                        the function would keep calling itself, preventing the program from completing its execution. If this condition
+                        is
+                        incorrectly specified or missing, the python interpreter displays an uninterrupted sequence of messages</p>
+                    </div>
+                    <h4>Attention !</h4>
+                    <p>Python does not allow more than 1000 recursive calls : factorielle(999) necessarily causes a runtime error even
+                        if
+                        the stop condition is well specified.</p>
+                    <p>In this case, you have to transform this function into an equivalent non-recursive function, which is always
+                        possible.</p>
+<iframe src="https://trinket.io/embed/python3/c4d63b9204" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="class2">
+                <h2>Writing a program in Python</h2>
+                <div class="class3">
+                    <h3>Writing rule</h3>
+                    <h4>One line = one instruction</h4>
+                    <p>Python requires one statement per line. It is not possible to use two lines to write an assignment unless you
+                        conclude each line that is not the last one with the symbol \ The following example is impossible.</p>
+<iframe src="https://trinket.io/embed/python/163c3c9569" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+            <div class="class2">
+                <h2>First training</h2>
+                <div class="class3">
+                    <h3>Exercice : Surface of a circle</h3>
+                    <p>Implement a function <span class="bold">surfCircle(R)</span> that returns the surface of circle (R is the half-diameter of the circle).
+                    </p>
+                    <p>For example :</p>
+                    <p>print(surfCircle(2.5)) must print the value 19.635</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Maximum of three values</h3>
+                    <p>Implement a function <span class="bold">maximum(n1,n2,n3)</span>that returns the largest of 3 numbers n1, n2, n3 given as arguments.
+                    </p>
+                    <p>For example, the execution of the instruction :</p>
+                    <p>print(maximum(2,5,4)) must return the value of 5</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+                <div class="class3">
+                    <h3>Exercice : Name of a month</h3>
+                    <p>Implement a function <span class="bold">nameMonth(n)</span> which returns the name of a month n.</p>
+                    <p>For example, the execution of the instruction :</p>
+                    <p>print(nameMonth(4)) must return the value of April</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>  
+            <div class="class2">
+                <h2>Exercices of lecture 1 – Python language : the basis</h2>   
+                <div class="class3">
+                    <h4>Exercice 1: Equation of second degree</h4>
+                    <p>
+    We want to calculate the two roots, if they exist, of a second degree equation :<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+            <mi>a</mi>
+        </msup>
+        <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>c</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+    </math></p>
+<p>The program acquires the three coefficients A, B, C and provides: either the two roots, or the double root, or the unique
+root if the equation is negative (i.e. if a=0), or the fact that the equation has no real root
+Write a program that computes and displays the solutions of this equation with A, B and C entered by the user.</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Exercice 2: Prime number</h4>
+                    <p>1. Propose an algorithm that determines if a number n is prime, that is divisible only by 1 and itself</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Modify this algorithm so that it writes which are the first numbers among the first m integers.</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Exercice 3: Display problems</h4>      
+                    <p>Let N be an integer entered by the user such that N ≥ 0</p>
+                    <p>1. Write a program that displays N lines built like this (line numbers are also to be written):
+                        <ol>
+                            <li>∗</li>
+                            <li>∗ ∗</li>
+                            <li>∗ ∗ ∗</li>
+                            <li>∗ ∗ ∗∗</li>
+                        </ol>
+                    </p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Write a program that displays N lines constructed as follows :
+                        <ol>
+                            <li>∗</li>
+                            <li>***</li>
+                            <li>*****</li>
+                            <li>*******</li>
+                        </ol></p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Exercice 4: Recurring suite</h4>
+                    <p>Let the recurrent suite U be defined by :
+                        
+                        
+                        
+                        U0 = 1
+                        Ui+1 =
+                        { −Ui + 3 if Ui is divisible by 2
+                        −3Ui + 1 else.
+                        with N ≥ 0.
+                        Write a program that calculates and displays the terms of rank 0 to N with N entered by the user.</p>    
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <h4>Exercice 5: Dice thrower</h4> 
+                    <p>The game consists of rolling two dice and trying to get two 6 out. When the user makes a 6 with one of his dice,
+                        it is possible to keep this dice and to throw only the other dice. We suppose that the dice have issued the values D1 and D2.</p> 
+                    <p>1. Write the function rollDice which takes as parameters the value of the dice D1 and D2 and which returns the dice
+                        to restart (or none)</p>             
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                    <p>2. Write a program that simulates a game loop: as long as the dice that come out do not match two 6, the computer
+                        will throw dice again. This program must call the function rollDice.</p>
+<iframe src="https://trinket.io/embed/python3/e8d040c3f6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </body> 
+
+</html>
+
